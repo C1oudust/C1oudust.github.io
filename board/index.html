@@ -7,7 +7,6 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta name="baidu-site-verification" content="FqzS6BarYC" />
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -82,17 +81,17 @@
 
 
 
-<meta name="description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的     var gitment = new Gitment({   id: &quot;C1oudust&quot;, // 可选。默认为 location.href   owner: &quot;C1oudDust&quot;,   repo: &quot;github.com/C1oudDust/C1oudDust.github.io&quot;,   oauth: {     client_i">
+<meta name="description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的  import &apos;gitment/style/default.css&apos; import Gitment from &apos;gitment&apos; const myTheme = {   render(state, instance) {     const container = document.createElement(&apos;div&apos;)     con">
 <meta property="og:type" content="website">
 <meta property="og:title" content="留言">
 <meta property="og:url" content="http://Cloudust.coding.me/board/index.html">
 <meta property="og:site_name" content="Vedfolnir">
-<meta property="og:description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的     var gitment = new Gitment({   id: &quot;C1oudust&quot;, // 可选。默认为 location.href   owner: &quot;C1oudDust&quot;,   repo: &quot;github.com/C1oudDust/C1oudDust.github.io&quot;,   oauth: {     client_i">
+<meta property="og:description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的  import &apos;gitment/style/default.css&apos; import Gitment from &apos;gitment&apos; const myTheme = {   render(state, instance) {     const container = document.createElement(&apos;div&apos;)     con">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-02T16:15:42.624Z">
+<meta property="og:updated_time" content="2017-11-02T23:23:35.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="留言">
-<meta name="twitter:description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的     var gitment = new Gitment({   id: &quot;C1oudust&quot;, // 可选。默认为 location.href   owner: &quot;C1oudDust&quot;,   repo: &quot;github.com/C1oudDust/C1oudDust.github.io&quot;,   oauth: {     client_i">
+<meta name="twitter:description" content="既然来了，就留下你的脚印吧每一条留言我都会认真看并回复的  import &apos;gitment/style/default.css&apos; import Gitment from &apos;gitment&apos; const myTheme = {   render(state, instance) {     const container = document.createElement(&apos;div&apos;)     con">
 
 
 
@@ -283,11 +282,23 @@
         
         
           <p><br><center>既然来了，就留下你的脚印吧<br>每一条留言我都会认真看并回复的</center></p>
-<p><div id="container"></div></p>
-<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-var gitment = new Gitment({
+import 'gitment/style/default.css'
+import Gitment from 'gitment'
+const myTheme = {
+  render(state, instance) {
+    const container = document.createElement('div')
+    container.lang = "en-US"
+    container.className = 'gitment-container gitment-root-container'
+    container.appendChild(instance.renderHeader(state, instance))
+    container.appendChild(instance.renderEditor(state, instance))
+    container.appendChild(instance.renderComments(state, instance))
+    container.appendChild(instance.renderFooter(state, instance))
+    return container
+  },
+}
+const gitment = new Gitment({
+  theme: myTheme,
   id: "C1oudust", // 可选。默认为 location.href
   owner: "C1oudDust",
   repo: "github.com/C1oudDust/C1oudDust.github.io",
