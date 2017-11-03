@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://Cloudust.coding.metags/index.html</loc>
+    
+    <lastmod>2017-11-03T08:23:40.946Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meabout/index.html</loc>
+    
+    <lastmod>2017-11-03T01:41:07.955Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://Cloudust.coding.meboard/index.html</loc>
     
     <lastmod>2017-11-03T01:37:51.250Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://Cloudust.coding.meabout/index.html</loc>
-    
-    <lastmod>2017-11-02T04:34:27.164Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://Cloudust.coding.meblog/Lared20171029/</loc>
     
     <lastmod>2017-11-01T16:25:45.120Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.metags/index.html</loc>
-    
-    <lastmod>2017-11-01T09:27:42.474Z</lastmod>
     
   </url>
   
