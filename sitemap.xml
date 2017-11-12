@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://Cloudust.coding.meboard/index.html</loc>
+    
+    <lastmod>2017-11-12T06:44:23.108Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://Cloudust.coding.me404/index.html</loc>
     
     <lastmod>2017-11-03T09:39:46.069Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://Cloudust.coding.meabout/index.html</loc>
     
     <lastmod>2017-11-03T01:41:07.955Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meboard/index.html</loc>
-    
-    <lastmod>2017-11-03T01:37:51.250Z</lastmod>
     
   </url>
   
