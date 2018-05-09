@@ -113,13 +113,14 @@
   <meta name="keywords" content="Ubuntu,Windows," />
 
 
+<meta name="description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。 Ubuntu子系统的安装为了体验这一功能，需要在控制面板-&amp;gt;程序和功能-&amp;gt;启用或关闭Windows功能 中 开启WSL服">
 <meta name="keywords" content="Ubuntu,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL与桌面环境安装">
 <meta property="og:url" content="http://Cloudust.coding.me/blog/WSL与桌面环境安装20180509/index.html">
 <meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。 Ubuntu子系统的安装为了体验这一功能，需要在控制面板-&amp;gt;程序和功能-&amp;gt;启用或关闭Windows功能 中 开启WSL服">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png">
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png">
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185developerMode.png">
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185WSLwindowstore.png">
@@ -131,10 +132,11 @@
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png">
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185cmatrix.gif">
 <meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185w3cbaidu.png">
-<meta property="og:updated_time" content="2018-05-09T15:13:37.058Z">
+<meta property="og:updated_time" content="2018-05-09T15:18:41.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL与桌面环境安装">
-<meta name="twitter:image" content="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png">
+<meta name="twitter:description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。 Ubuntu子系统的安装为了体验这一功能，需要在控制面板-&amp;gt;程序和功能-&amp;gt;启用或关闭Windows功能 中 开启WSL服">
+<meta name="twitter:image" content="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png">
 
 
 
@@ -391,9 +393,7 @@
       
 
       
-        <div align="center"><br><br><img src="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png" alt=""><br><br></div>
-
-<a id="more"></a>
+        <a id="more"></a>
 <p>早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。</p>
 <h3 id="Ubuntu子系统的安装"><a href="#Ubuntu子系统的安装" class="headerlink" title="Ubuntu子系统的安装"></a>Ubuntu子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启WSL服务，如图所示：</p>
 <p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png" alt=""></div></p>
@@ -426,7 +426,8 @@
 <p>启动X-Windows，在Bash中执行：</p>
 <p><code>export  DISPLAY=localhost:0</code></p>
 <p><code>ccsm</code></p>
-<p>在X-windows中，即会弹出ccsm的配置界面，勾选需要的Desktop组件（只需要勾选Desktop中的Ubuntu Unity Plugin即可，其它默认）：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png" alt=""><br>点击close关闭ccsm，执行compiz，短暂的加载后，在X-windows的界面中就能看到桌面版的Ubuntu了。<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png" alt=""><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png" alt=""></div></div></div></p>
+<p>在X-windows中，即会弹出ccsm的配置界面，勾选需要的Desktop组件（只需要勾选Desktop中的Ubuntu Unity Plugin即可，其它默认）：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png" alt=""></div></p>
+<p>点击close关闭ccsm，执行compiz，短暂的加载后，在X-windows的界面中就能看到桌面版的Ubuntu了。<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png" alt=""><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png" alt=""></div></div></p>
 </li>
 </ul>
 <p>关于WSL的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10内置Linux子系统初体验</a></p>
