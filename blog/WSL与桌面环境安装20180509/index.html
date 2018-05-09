@@ -110,22 +110,31 @@
 
 
   
-  <meta name="keywords" content="游戏,电影," />
+  <meta name="keywords" content="Ubuntu,Windows," />
 
 
-<meta name="keywords" content="游戏,电影">
+<meta name="keywords" content="Ubuntu,Windows">
 <meta property="og:type" content="article">
-<meta property="og:title" content="冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》">
-<meta property="og:url" content="http://Cloudust.coding.me/blog/冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》20180322/index.html">
+<meta property="og:title" content="WSL与桌面环境安装">
+<meta property="og:url" content="http://Cloudust.coding.me/blog/WSL与桌面环境安装20180509/index.html">
 <meta property="og:site_name" content="Vedfolnir">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20183saya_and_water.jpg">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20183songofsaya.jpg">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20183water.jpeg">
-<meta property="og:updated_time" content="2018-03-28T15:52:59.257Z">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185developerMode.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185WSLwindowstore.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185ubuntuOnWindows.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185Xwindow.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185installdesktop.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185cmatrix.gif">
+<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185w3cbaidu.png">
+<meta property="og:updated_time" content="2018-05-09T15:13:37.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》">
-<meta name="twitter:image" content="http://oyq24xmaa.bkt.clouddn.com/20183saya_and_water.jpg">
+<meta name="twitter:title" content="WSL与桌面环境安装">
+<meta name="twitter:image" content="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png">
 
 
 
@@ -134,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="http://Cloudust.coding.me/blog/冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》20180322/"/>
+  <link rel="canonical" href="http://Cloudust.coding.me/blog/WSL与桌面环境安装20180509/"/>
 
 
 
@@ -143,7 +152,7 @@
     sidebar: "",
   };
 </script>
-  <title>冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》 | Vedfolnir</title>
+  <title>WSL与桌面环境安装 | Vedfolnir</title>
   
 
 
@@ -298,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》20180322/">
+    <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/WSL与桌面环境安装20180509/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="C1oudust">
@@ -315,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》</h1>
+          <h1 class="post-title" itemprop="name headline">WSL与桌面环境安装</h1>
         
 
         <div class="post-meta">
@@ -327,7 +336,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T00:00:00+08:00">2018-03-22</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T00:00:00+08:00">2018-05-09</time>
             
 
             
@@ -348,7 +357,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -382,30 +391,51 @@
       
 
       
-        <p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20183saya_and_water.jpg" alt=""><br><a id="more"></a></div></p>
-<p>　　三月飞雪，恰逢雪后初晴，空气中还残留着化雪后寒意。呼出的暖气凝结在镜片上，变成淡淡薄霜，又渐渐消散。鲜有行人的街道上，苍白的路灯光透过丝丝冷风，沉浸在《水形物语》的意境中。</p>
-<p>　　比起定位成奇幻爱情片，《水形物语》更是一部黑暗成人童话。除了色调和音乐上的讨喜，《水形物语》对孤独的诠释也足以成为使之获得金狮奖的原因之一。位于社会最底层的哑巴清洁工，研究所中身负枷锁的鱼人，同性恋老年落魄画家，背叛了一切的克格勃科学家 —— 无时无刻不在倾诉着这个孤独的世界。</p>
-<p>　　所以，整个故事无非是孤独者的彼此救赎。</p>
-<p>　　那么孤独的人聚集在一起就能摆脱孤独吗？答案当然是不能。畸形人兽恋在伦理中无法被理解，同性恋最终受到排斥，为了心中的大义所背叛一切的人最终被其大义背叛。</p>
-<p>　　这点与《沙耶之歌》似乎如出一辙 —— 老虚笔下所描绘的渴望变成人类的“怪物”沙耶与厌恶世界的病态主人公郁纪的绝望爱情故事。</p>
-<p>　　郁纪在车祸之后所看到的，是一个充满污秽与肮脏的世界，人类变成 “肉块” ，声音令人作呕，建筑上充满了鲜血、腐肉与不可言状之物，所及之处是破碎和混乱的风景。于是他的性格变得极端，自私，人性的黑暗完全体现在了他身上。身陷腐肉固然痛苦，然而真正使他化为恶魔的却是他自身的劣根性。后来郁纪对自己曾经朋友所犯下的恶行，很多是源于他的食欲与性欲。</p>
-<p>　　但幸运的是，他遇到了同类——沙耶，一个在病态的郁纪眼里以少女形态出现的生物，在郁纪被视为异端，孤立无援之时出现的一盏灯。沙耶为郁纪的接纳而开心，郁纪为这个柔软美好的存在而稍微从孤独中挣脱出来了。沙耶就是“人”这个符号的象征 —— 被发现吃人肉时的惊恐，不想被郁纪知道真身的自卑，对瑶进行改造后的喜悦，这都是人类所具有的情感与性格。</p>
-<p>　　“无论形态如何，那灵魂的形状是与我们所接近的。”</p>
-<p>　　《水形物语》中主人公的生活环境虽然不如《沙耶之歌》中的那么恶劣与极端，但依然在强烈体现着孤独。</p>
-<p>　　故事的大背景发生在冷战时期的美国，剧院上的小隔间以及工作所在研究所，是哑女千篇一律生活的起点与终点。</p>
-<p>　　哑女是孤独的 —— 生活简单的千篇一律，唯一的乐趣是在浴缸里自慰。无法说话，自然不能表达出自己的情感，只有用狠狠的砸墙来表达其极度想要拯救男主的心情。</p>
-<p>　　老年画家是孤独的 —— 同性恋，画作从未被接受，始终与猫为伴。</p>
-<p>　　鱼人是孤独的 —— 被南美土著奉为神灵却在研究所遭受折磨。它是所有人的玩物，更是女主收养的美丽的宠物。</p>
-<p>　　苏联科学家是孤独的 —— 不被美国人信任，不被自己人信任，甚至自己的名字 “迪米特里” 也是一个不能说出口的秘密。他是影片中唯一一个三观正常的人，却也是第一个死掉的人。</p>
-<p>　　连大反派也是孤独的 —— 在家庭与工作中，都格格不入，只有通过虐待男主来发泄心中的郁闷。</p>
-<p>　　他们的孤独，不被也无法被人理解，以至于通过相互依赖才能缓解独自存活的痛苦。在现实生活中越是难以被人理解、心灵和精神越孤独的人，越想要在幻想中创造一个这样能完全理解、完全接受自己的灵魂。孤独之人所在的世界是冰冷的，唯一能抵御冰冷孤独世界的东西，只有爱 —— 畸形的爱。而就好像人类离不开食物一样，当这种爱变成赖以生存的食粮，一种病态而美丽的安全感就会滋生其中 —— 像毒品使人沦陷。</p>
-<p>　　《水形物语》中，鱼人与哑女最终突破了囚禁他们的冰冷牢笼，哑女脖颈间的神秘伤疤化为腮，与鱼人重获新生。在《沙耶之歌》中，爱仍旧是存在的。一个结局里，身处绝境濒临死亡两“人”仍然艰难地接近彼此，想要在生命最后留住对方的体温，而另一个结局里，沙耶结束了自己的生命，孕育出了无数“孢子”，为郁纪创造了一个美丽的新世界。他们的确相爱着，即使曾经自私冷酷，但在这一秒，心脏只为对方悸动，灵魂也只为对方无私。</p>
-<div align="center">
+        <div align="center"><br><br><img src="http://oyq24xmaa.bkt.clouddn.com/year-month_xiaoguotu.png" alt=""><br><br></div>
 
-<p><img src="http://oyq24xmaa.bkt.clouddn.com/20183songofsaya.jpg" alt="沙耶之歌"></p>
-<p><img src="http://oyq24xmaa.bkt.clouddn.com/20183water.jpeg" alt="水形物语"></p>
-<p><div align="left"><br>　　这就是世界。没有纯粹的善恶，也不像英雄电影那种非黑即白。而我们是人类，始终贪婪丑陋自私，也始终追求着能令自己变得无私美好的迷失。每个人都是孤独的个体，在漫漫时间长河中，能遇到一个自己所爱的事物，即使相隔深渊，也依然要去追寻吧。<br>　　以上。</div></p>
-</div>
+<a id="more"></a>
+<p>早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。</p>
+<h3 id="Ubuntu子系统的安装"><a href="#Ubuntu子系统的安装" class="headerlink" title="Ubuntu子系统的安装"></a>Ubuntu子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启WSL服务，如图所示：</p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png" alt=""></div></p>
+<p>也可以通过在 PowerShell(管理员) 运行以下命令开启开启</p>
+<p><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></p>
+<p>之后在设置里开启开发人员模式</p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185developerMode.png" alt=""></div></p>
+<p>然后在Windows的应用商店里就能只能下载想要体验的 Linux子系统了。可以看到它提供了很多类型的 Linux系统，这里就选择我最喜欢的Ubuntu Linux来做演示。</p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185WSLwindowstore.png" alt=""></div></p>
+<p>等待安装完成后，点击开始菜单里的Ubuntu图标或者在powershell里输入<code>bash</code>即可启动Ubuntu Linux子系统。等待了几分钟的初始化之后，我们输入用户名和密码（可以跳过），然后就能看到Ubuntu 的命令行界面了.</p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ubuntuOnWindows.png" alt=""></div></p>
+<p>在刚安装好WSL后，与普通实体机上的Ubuntu系统一样，需要更新软件列表和软件包：<br><code>sudo apt update</code><br><code>sudo apt upgrade</code></p>
+<p>这样就可以像使用普通 Ubuntu 系统一样使用WSL了。</p>
+<h3 id="桌面环境的安装与启动"><a href="#桌面环境的安装与启动" class="headerlink" title="桌面环境的安装与启动"></a>桌面环境的安装与启动</h3><p>WSL的方便之处就在于它和双系统的Linux没有很大区别，并且比虚拟机性能更快一点。美中不足的是，WSL并没有自带图形化界面，因此如果想要运行桌面应用，就不禁徒叹奈何了。<br>不过在WSL推出不久，就有大神提供了 WSL 安装桌面环境的方法，并发到了WSL github的issues里：<a href="http://t.cn/R3AWMQo" target="_blank" rel="external">Run any Desktop Environment in WSL</a></p>
+<p>根据这个教程，我们就可以在WSL红安装桌面环境以获得比较完整的体验。</p>
+<ul>
+<li><p><strong>安装X-Windows</strong></p>
+<p>可供选择安装的X-Windows有多个：VcXsrv Windows X Server、Xming、Cygwin X Server，教程中选择的是VcXsrv，因为比较容易和稳定。</p>
+<p>软件首页：<br><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="external">https://sourceforge.net/projects/vcxsrv/</a></p>
+<p>下载地址：<br><a href="https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe" target="_blank" rel="external">https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe</a></p>
+<p>安装后首次启动会自动进入界面设置。</p>
+<p>选择：“one large window”，Display number设置成0，其它默认：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185Xwindow.png" alt=""></div></p>
+</li>
+<li><p><strong>WSL安装桌面环境</strong></p>
+<p>这里选择安装unity桌面环境，我们同样可以选择xfce4桌面环境。</p>
+<p>在bash下执行 <code>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</code><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185installdesktop.png" alt=""></div></p>
+<p>需要提醒的是，Ubuntu桌面版自带的unity桌面环境与依赖包有600多M，解压之后近2.6G，所以前提需要保证足够的磁盘空间。</p>
+</li>
+<li><p><strong>配置compiz并运行桌面环境</strong></p>
+<p>启动X-Windows，在Bash中执行：</p>
+<p><code>export  DISPLAY=localhost:0</code></p>
+<p><code>ccsm</code></p>
+<p>在X-windows中，即会弹出ccsm的配置界面，勾选需要的Desktop组件（只需要勾选Desktop中的Ubuntu Unity Plugin即可，其它默认）：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png" alt=""><br>点击close关闭ccsm，执行compiz，短暂的加载后，在X-windows的界面中就能看到桌面版的Ubuntu了。<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png" alt=""><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png" alt=""></div></div></div></p>
+</li>
+</ul>
+<p>关于WSL的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10内置Linux子系统初体验</a></p>
+<p>这里推荐一个软件 —— <a href="https://goreliu.github.io/wsl-terminal/README.zh_CN.html" target="_blank" rel="external">wsl-terminal</a>，用于 WSL 的终端模拟器，基于 mintty 和 wslbridge。github上有很全的中文文档，添加了很多实用功能，可以利用终端做更多很酷很有趣的事~</p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185cmatrix.gif" alt=""></div></p>
+<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185w3cbaidu.png" alt=""></div></p>
+<p>自此，开始折腾自己的Linux吧~</p>
+<p>以上。</p>
+
       
     </div>
 
@@ -425,9 +455,9 @@
       
         <div class="post-tags">
           
-            <a href="/source/tags/游戏/" rel="tag"><i class="fa fa-tag"></i> 游戏</a>
+            <a href="/source/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
           
-            <a href="/source/tags/电影/" rel="tag"><i class="fa fa-tag"></i> 电影</a>
+            <a href="/source/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
           
         </div>
       
@@ -440,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/关于自学计算机专业课程的一点体会20180226/" rel="next" title="关于自学计算机专业课程的一点体会">
-                <i class="fa fa-chevron-left"></i> 关于自学计算机专业课程的一点体会
+              <a href="/blog/腾讯没梦想，自媒体有春梦20180509/" rel="next" title="腾讯没梦想，自媒体有春梦">
+                <i class="fa fa-chevron-left"></i> 腾讯没梦想，自媒体有春梦
               </a>
             
           </div>
@@ -449,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》20180407/" rel="prev" title="不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》">
-                不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -807,6 +842,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu子系统的安装"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu子系统的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#桌面环境的安装与启动"><span class="nav-number">2.</span> <span class="nav-text">桌面环境的安装与启动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
