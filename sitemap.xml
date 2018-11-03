@@ -2,72 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://Cloudust.coding.meblog/%E3%80%8A%E5%A4%AA%E5%90%BE%E7%BB%98%E5%8D%B7%E3%80%8B%E6%98%AF%E5%90%A6%E8%83%BD%E6%88%90%E4%B8%BA%E6%AD%A6%E4%BE%A0%E8%BF%B7%E6%9C%9F%E5%BE%85%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%B1%9F%E6%B9%96%EF%BC%9F20181013/</loc>
-    
-    <lastmod>2018-10-13T08:25:31.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E4%BD%BF%E7%94%A8easyx%E5%9B%BE%E5%BD%A2%E5%BA%93%E7%BC%96%E5%86%992D%E6%B8%B8%E6%88%8F20180723/</loc>
-    
-    <lastmod>2018-07-23T10:17:27.027Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://Cloudust.coding.meblog/%E9%98%BB%E6%AD%A2%E6%88%91%E4%BB%AC%E6%88%90%E5%8A%9F%E7%9A%84%EF%BC%8C%E5%8F%AA%E6%9C%89%E6%87%92%E6%83%B020180625/</loc>
     
-    <lastmod>2018-06-25T05:16:29.240Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E4%BD%93%E4%BC%9A20180226/</loc>
-    
-    <lastmod>2018-05-29T18:06:27.966Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%8520180509/</loc>
-    
-    <lastmod>2018-05-10T15:16:33.975Z</lastmod>
+    <lastmod>2018-11-03T05:26:10.134Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://Cloudust.coding.meblog/%E8%85%BE%E8%AE%AF%E6%B2%A1%E6%A2%A6%E6%83%B3%EF%BC%8C%E8%87%AA%E5%AA%92%E4%BD%93%E6%9C%89%E6%98%A5%E6%A2%A620180509/</loc>
     
-    <lastmod>2018-05-09T05:56:24.472Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E3%80%8A%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8B%E5%88%B0%E5%BA%95%E6%95%91%E8%B5%8E%E4%BA%86%E8%B0%81%EF%BC%9F20180429/</loc>
-    
-    <lastmod>2018-04-29T16:07:33.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E4%B8%8D%E5%A4%AA%E2%80%9C%E7%A1%AC%E6%A0%B8%E2%80%9D%E7%9A%84%E7%A1%AC%E6%A0%B8%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%20%E2%80%94%E2%80%94%20%E3%80%8A%E9%9A%90%E9%BE%99%E4%BC%A0%E9%9A%90%E8%B8%AA%E3%80%8B20180407/</loc>
-    
-    <lastmod>2018-04-06T16:41:35.387Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E5%86%B0%E5%86%B7%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%AD%A4%E7%8B%AC%E7%88%B1%E6%81%8B%20%E2%80%94%E2%80%94%20%E3%80%8A%E6%B0%B4%E5%BD%A2%E7%89%A9%E8%AF%AD%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E8%80%B6%E4%B9%8B%E6%AD%8C%E3%80%8B20180322/</loc>
-    
-    <lastmod>2018-03-28T15:52:59.257Z</lastmod>
+    <lastmod>2018-11-03T05:26:03.115Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://Cloudust.coding.meblog/%E6%9C%89%E5%85%B3%E6%89%8B%E6%9C%BA%E5%88%B7%E6%9C%BA%E7%9A%84%E6%80%BB%E7%BB%9320180219/</loc>
     
-    <lastmod>2018-02-18T14:43:08.389Z</lastmod>
+    <lastmod>2018-11-03T05:25:51.711Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E5%86%B0%E5%86%B7%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%AD%A4%E7%8B%AC%E7%88%B1%E6%81%8B%20%E2%80%94%E2%80%94%20%E3%80%8A%E6%B0%B4%E5%BD%A2%E7%89%A9%E8%AF%AD%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E8%80%B6%E4%B9%8B%E6%AD%8C%E3%80%8B20180322/</loc>
+    
+    <lastmod>2018-11-03T05:25:40.817Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E4%BD%93%E4%BC%9A20180226/</loc>
+    
+    <lastmod>2018-11-03T05:25:33.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E4%BD%BF%E7%94%A8easyx%E5%9B%BE%E5%BD%A2%E5%BA%93%E7%BC%96%E5%86%992D%E6%B8%B8%E6%88%8F20180723/</loc>
+    
+    <lastmod>2018-11-03T05:25:24.892Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%BA%8C)20180212/</loc>
+    
+    <lastmod>2018-11-03T05:25:12.288Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%B8%80)20180205/</loc>
+    
+    <lastmod>2018-11-03T05:25:05.100Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E4%B8%8D%E5%A4%AA%E2%80%9C%E7%A1%AC%E6%A0%B8%E2%80%9D%E7%9A%84%E7%A1%AC%E6%A0%B8%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%20%E2%80%94%E2%80%94%20%E3%80%8A%E9%9A%90%E9%BE%99%E4%BC%A0%E9%9A%90%E8%B8%AA%E3%80%8B20180407/</loc>
+    
+    <lastmod>2018-11-03T05:24:56.430Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%8520180509/</loc>
+    
+    <lastmod>2018-11-03T05:24:44.010Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/rEFind%E5%BC%95%E5%AF%BCWindows10+Ubutnu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B20180129/</loc>
+    
+    <lastmod>2018-11-03T05:24:34.307Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E3%80%8A%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8B%E5%88%B0%E5%BA%95%E6%95%91%E8%B5%8E%E4%BA%86%E8%B0%81%EF%BC%9F20180429/</loc>
+    
+    <lastmod>2018-11-03T05:24:18.742Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Cloudust.coding.meblog/%E3%80%8A%E5%A4%AA%E5%90%BE%E7%BB%98%E5%8D%B7%E3%80%8B%E6%98%AF%E5%90%A6%E8%83%BD%E6%88%90%E4%B8%BA%E6%AD%A6%E4%BE%A0%E8%BF%B7%E6%9C%9F%E5%BE%85%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%B1%9F%E6%B9%96%EF%BC%9F20181013/</loc>
+    
+    <lastmod>2018-11-03T05:23:56.147Z</lastmod>
     
   </url>
   
@@ -75,20 +96,6 @@
     <loc>http://Cloudust.coding.meabout/index.html</loc>
     
     <lastmod>2018-02-12T07:53:12.831Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%BA%8C)20180212/</loc>
-    
-    <lastmod>2018-02-11T15:52:02.851Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%B8%80)20180205/</loc>
-    
-    <lastmod>2018-02-11T15:51:53.213Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>http://Cloudust.coding.me404/index.html</loc>
     
     <lastmod>2018-02-10T04:43:19.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meblog/rEFind%E5%BC%95%E5%AF%BCWindows10+Ubutnu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B20180129/</loc>
-    
-    <lastmod>2018-02-04T08:19:46.349Z</lastmod>
     
   </url>
   

@@ -113,30 +113,30 @@
   <meta name="keywords" content="Ubuntu,Windows," />
 
 
-<meta name="description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。">
+<meta name="description" content="早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。">
 <meta name="keywords" content="Ubuntu,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装">
 <meta property="og:url" content="http://Cloudust.coding.me/blog/Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装20180509/index.html">
 <meta property="og:site_name" content="Vedfolnir">
-<meta property="og:description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。">
+<meta property="og:description" content="早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185developerMode.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185WSLwindowstore.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185ubuntuOnWindows.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185Xwindow.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185installdesktop.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185cmatrix.gif">
-<meta property="og:image" content="http://oyq24xmaa.bkt.clouddn.com/20185w3cbaidu.png">
-<meta property="og:updated_time" content="2018-05-10T15:16:33.975Z">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185OpenWSLService.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185developerMode.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185WSLwindowstore.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185ubuntuOnWindows.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185Xwindow.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185installdesktop.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185ccsm.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185compiz.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185UbuntuDesktoponWSL.png">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185cmatrix.gif">
+<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20185w3cbaidu.png">
+<meta property="og:updated_time" content="2018-11-03T05:24:44.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装">
-<meta name="twitter:description" content="早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。">
-<meta name="twitter:image" content="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png">
+<meta name="twitter:description" content="早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。">
+<meta name="twitter:image" content="http://c1oudust-blog.test.upcdn.net/20185OpenWSLService.png">
 
 
 
@@ -413,47 +413,52 @@
       
 
       
-        <p>早在Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux系统。<br><a id="more"></a></p>
-<h3 id="Ubuntu子系统的安装"><a href="#Ubuntu子系统的安装" class="headerlink" title="Ubuntu子系统的安装"></a>Ubuntu子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启WSL服务，如图所示：</p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185OpenWSLService.png" alt=""></div></p>
+        <p>早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。</p>
+<a id="more"></a>
+<h3 id="Ubuntu-子系统的安装"><a href="#Ubuntu-子系统的安装" class="headerlink" title="Ubuntu 子系统的安装"></a>Ubuntu 子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启 WSL 服务，如图所示：</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185OpenWSLService.png" alt=""></div></p>
 <p>也可以通过在 PowerShell(管理员) 运行以下命令开启开启</p>
 <p><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></p>
 <p>之后在设置里开启开发人员模式</p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185developerMode.png" alt=""></div></p>
-<p>然后在Windows的应用商店里就能只能下载想要体验的 Linux子系统了。可以看到它提供了很多类型的 Linux系统，这里就选择我最喜欢的Ubuntu Linux来做演示。</p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185WSLwindowstore.png" alt=""></div></p>
-<p>等待安装完成后，点击开始菜单里的Ubuntu图标或者在powershell里输入<code>bash</code>即可启动Ubuntu Linux子系统。等待了几分钟的初始化之后，我们输入用户名和密码（可以跳过），然后就能看到Ubuntu 的命令行界面了.</p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ubuntuOnWindows.png" alt=""></div></p>
-<p>在刚安装好WSL后，与普通实体机上的Ubuntu系统一样，需要更新软件列表和软件包：<br><code>sudo apt update</code><br><code>sudo apt upgrade</code></p>
-<p>这样就可以像使用普通 Ubuntu 系统一样使用WSL了。</p>
-<h3 id="桌面环境的安装与启动"><a href="#桌面环境的安装与启动" class="headerlink" title="桌面环境的安装与启动"></a>桌面环境的安装与启动</h3><p>WSL的方便之处就在于它和双系统的Linux没有很大区别，并且比虚拟机性能更快一点。美中不足的是，WSL并没有自带图形化界面，因此如果想要运行桌面应用，就不禁徒叹奈何了。<br>不过在WSL推出不久，就有大神提供了 WSL 安装桌面环境的方法，并发到了WSL github的issues里：<a href="http://t.cn/R3AWMQo" target="_blank" rel="external">Run any Desktop Environment in WSL</a></p>
-<p>根据这个教程，我们就可以在WSL里安装桌面环境以获得比较完整的体验。</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185developerMode.png" alt=""></div></p>
+<p>然后在 Windows 的应用商店里就能只能下载想要体验的 Linux 子系统了。可以看到它提供了很多类型的 Linux 系统，这里就选择我最喜欢的 Ubuntu Linux 来做演示。</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185WSLwindowstore.png" alt=""></div></p>
+<p>等待安装完成后，点击开始菜单里的 Ubuntu 图标或者在 powershell 里输入<code>bash</code>即可启动 Ubuntu Linux 子系统。等待了几分钟的初始化之后，我们输入用户名和密码（可以跳过），然后就能看到 Ubuntu 的命令行界面了.</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ubuntuOnWindows.png" alt=""></div></p>
+<p>在刚安装好 WSL 后，与普通实体机上的 Ubuntu 系统一样，需要更新软件列表和软件包：<br><code>sudo apt update</code><br><code>sudo apt upgrade</code></p>
+<p>这样就可以像使用普通 Ubuntu 系统一样使用 WSL 了。</p>
+<h3 id="桌面环境的安装与启动"><a href="#桌面环境的安装与启动" class="headerlink" title="桌面环境的安装与启动"></a>桌面环境的安装与启动</h3><p>WSL 的方便之处就在于它和双系统的 Linux 没有很大区别，并且比虚拟机性能更快一点。美中不足的是，WSL 并没有自带图形化界面，因此如果想要运行桌面应用，就不禁徒叹奈何了。<br>不过在 WSL 推出不久，就有大神提供了 WSL 安装桌面环境的方法，并发到了 WSL github 的 issues 里：<a href="http://t.cn/R3AWMQo" target="_blank" rel="external">Run any Desktop Environment in WSL</a></p>
+<p>根据这个教程，我们就可以在 WSL 里安装桌面环境以获得比较完整的体验。</p>
 <ul>
-<li><p><strong>安装X-Windows</strong></p>
-<p>可供选择安装的X-Windows有多个：VcXsrv Windows X Server、Xming、Cygwin X Server，教程中选择的是VcXsrv，因为比较容易和稳定。</p>
+<li><p><strong>安装 X-Windows</strong></p>
+<p>可供选择安装的 X-Windows 有多个：VcXsrv Windows X Server、Xming、Cygwin X Server，教程中选择的是 VcXsrv，因为比较容易和稳定。</p>
 <p>软件首页：<br><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="external">https://sourceforge.net/projects/vcxsrv/</a></p>
 <p>下载地址：<br><a href="https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe" target="_blank" rel="external">https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe</a></p>
 <p>安装后首次启动会自动进入界面设置。</p>
-<p>选择：“one large window”，Display number设置成0，其它默认：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185Xwindow.png" alt=""></div></p>
+<p>选择：“one large window”，Display number 设置成 0，其它默认：</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185Xwindow.png" alt=""></div></p>
 </li>
-<li><p><strong>WSL安装桌面环境</strong></p>
-<p>这里选择安装unity桌面环境，我们同样可以选择xfce4桌面环境。</p>
-<p>在bash下执行 <code>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</code><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185installdesktop.png" alt=""></div></p>
-<p>需要提醒的是，Ubuntu桌面版自带的unity桌面环境与依赖包有600多M，解压之后近2.6G，所以前提需要保证足够的磁盘空间。</p>
+<li><p><strong>WSL 安装桌面环境</strong></p>
+<p>这里选择安装 unity 桌面环境，我们同样可以选择 xfce4 桌面环境。</p>
+<p>在 bash 下执行 <code>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</code></p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185installdesktop.png" alt=""></div></p>
+<p>需要提醒的是，Ubuntu 桌面版自带的 unity 桌面环境与依赖包有 600 多 M，解压之后近 2.6G，所以前提需要保证足够的磁盘空间。</p>
 </li>
-<li><p><strong>配置compiz并运行桌面环境</strong></p>
-<p>启动X-Windows，在Bash中执行：</p>
-<p><code>export  DISPLAY=localhost:0</code></p>
+<li><p><strong>配置 compiz 并运行桌面环境</strong></p>
+<p>启动 X-Windows，在 Bash 中执行：</p>
+<p><code>export DISPLAY=localhost:0</code></p>
 <p><code>ccsm</code></p>
-<p>在X-windows中，即会弹出ccsm的配置界面，勾选需要的Desktop组件（只需要勾选Desktop中的Ubuntu Unity Plugin即可，其它默认）：<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185ccsm.png" alt=""></div></p>
-<p>点击close关闭ccsm，执行compiz，短暂的加载后，在X-windows的界面中就能看到桌面版的Ubuntu了。<br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185compiz.png" alt=""><br><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185UbuntuDesktoponWSL.png" alt=""></div></div></p>
+<p>在 X-windows 中，即会弹出 ccsm 的配置界面，勾选需要的 Desktop 组件（只需要勾选 Desktop 中的 Ubuntu Unity Plugin 即可，其它默认）：</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ccsm.png" alt=""></div></p>
+<p>点击 close 关闭 ccsm，执行 compiz，短暂的加载后，在 X-windows 的界面中就能看到桌面版的 Ubuntu 了。</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185compiz.png" alt=""><br><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185UbuntuDesktoponWSL.png" alt=""></div></div></p>
 </li>
 </ul>
-<h3 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h3><p>关于WSL的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10内置Linux子系统初体验</a></p>
-<p>这里推荐一个软件 —— <a href="https://goreliu.github.io/wsl-terminal/README.zh_CN.html" target="_blank" rel="external">wsl-terminal</a>，用于 WSL 的终端模拟器，基于 mintty 和 wslbridge。github上有很全的中文文档，添加了很多实用功能，可以利用终端做更多很酷很有趣的事~</p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185cmatrix.gif" alt=""></div></p>
-<p><div align="center"><br><img src="http://oyq24xmaa.bkt.clouddn.com/20185w3cbaidu.png" alt=""></div></p>
-<p>自此，开始折腾自己的Linux吧~</p>
+<h3 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h3><p>关于 WSL 的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10 内置 Linux 子系统初体验</a></p>
+<p>这里推荐一个软件 —— <a href="https://goreliu.github.io/wsl-terminal/README.zh_CN.html" target="_blank" rel="external">wsl-terminal</a>，用于 WSL 的终端模拟器，基于 mintty 和 wslbridge。github 上有很全的中文文档，添加了很多实用功能，可以利用终端做更多很酷很有趣的事~</p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185cmatrix.gif" alt=""></div></p>
+<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185w3cbaidu.png" alt=""></div></p>
+<p>自此，开始折腾自己的 Linux 吧~</p>
 <p>以上。</p>
 
       
@@ -787,12 +792,12 @@
     var t = 30;
     var n = 350;
     var r = 350;
-    var i = "//oyq24xmaa.bkt.clouddn.com/harlem-shake.mp3";
+    var i = "//c1oudust-blog.test.upcdn.net/harlem-shake.mp3";
     var s = "mw-harlem_shake_me";
     var o = "im_first";
     var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
     var a = "mw-strobe_light";
-    var f = "//oyq24xmaa.bkt.clouddn.com/harlem-shake-style.css";
+    var f = "//c1oudust-blog.test.upcdn.net/harlem-shake-style.css";
     var l = "mw_added_css";
     var b = g();
     var w = y();
@@ -880,7 +885,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu子系统的安装"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu子系统的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#桌面环境的安装与启动"><span class="nav-number">2.</span> <span class="nav-text">桌面环境的安装与启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他推荐"><span class="nav-number">3.</span> <span class="nav-text">其他推荐</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu-子系统的安装"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 子系统的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#桌面环境的安装与启动"><span class="nav-number">2.</span> <span class="nav-text">桌面环境的安装与启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他推荐"><span class="nav-number">3.</span> <span class="nav-text">其他推荐</span></a></li></ol></div>
             
 
           </div>
@@ -942,7 +947,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客共 25.2k字</span>
+  <span class="post-count">博客共 25.4k字</span>
 </div
         
 
