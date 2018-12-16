@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('这篇文章加密了哦') !== ''){
+                alert('不对哟，联系博主获取密码吧！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/m.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/s.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="C#,操作系统," />
+
+
+<meta name="description" content="实验目的 用 C#语言编程实现对 N 个进程采用四种进程调度算法——先来先服务算法（FCFS）、短进程优先算法（SJF）、高响应比优先调度算法(HRRN)和时间片轮转调度算法（RR）调度执行模拟。">
+<meta name="keywords" content="C#,操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机操作系统调度算法模拟程序设计（C#）">
+<meta property="og:url" content="http://Cloudust.coding.me/blog/计算机操作系统调度算法模拟程序设计20181214/index.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="实验目的 用 C#语言编程实现对 N 个进程采用四种进程调度算法——先来先服务算法（FCFS）、短进程优先算法（SJF）、高响应比优先调度算法(HRRN)和时间片轮转调度算法（RR）调度执行模拟。">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-12-16T10:26:05.618Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机操作系统调度算法模拟程序设计（C#）">
+<meta name="twitter:description" content="实验目的 用 C#语言编程实现对 N 个进程采用四种进程调度算法——先来先服务算法（FCFS）、短进程优先算法（SJF）、高响应比优先调度算法(HRRN)和时间片轮转调度算法（RR）调度执行模拟。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Vedfolnir" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://Cloudust.coding.me/blog/计算机操作系统调度算法模拟程序设计20181214/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>计算机操作系统调度算法模拟程序设计（C#） | Vedfolnir</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bdd200f2f058d5e4b7a3b67d62baa87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/C1oudust" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vedfolnir</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我们飞翔得越高,在那些不能飞翔的人眼中的形象越渺小</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/计算机操作系统调度算法模拟程序设计20181214/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="C1oudust">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oyq24xmaa.bkt.clouddn.com/67b7e7deefb87b514e63be1d63e2df24.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vedfolnir">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机操作系统调度算法模拟程序设计（C#）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T00:00:00+08:00">2018-12-14</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/计算机操作系统调度算法模拟程序设计20181214/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/计算机操作系统调度算法模拟程序设计20181214/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a><strong>实验目的</strong></h2></blockquote>
+<p>用 C#语言编程实现对 N 个进程采用四种进程调度算法——先来先服务算法（FCFS）、短进程优先算法（SJF）、高响应比优先调度算法(HRRN)和时间片轮转调度算法（RR）调度执行模拟。</p>
+<a id="more"></a>
+<blockquote>
+<h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a><strong>实验原理</strong></h2></blockquote>
+<p>先构建每个用来标识进程的进程控制块 PCB，包括以下字段：</p>
+<ul>
+<li>进程标识数 id</li>
+<li>进程优先数 priority，并规定优先数越大的进程，其优先权越高</li>
+<li>进程到达时间 arriveTime</li>
+<li>进程已占用 CPU 时间 serveTime</li>
+<li>进程还需占用的 CPU 时间 needTime。当进程运行完毕时，needTime 变为 0</li>
+<li>进程被阻塞的时间 blockTime，表示已阻塞的进程再等待 blockTime 个时间片后，将转换成就绪状态</li>
+<li>进程状态 state</li>
+</ul>
+<h3 id="FCFS-算法"><a href="#FCFS-算法" class="headerlink" title="FCFS 算法"></a><strong>FCFS 算法</strong></h3><p>先来先服务(FCFS)调度算法是一种最简单的调度算法，该算法既可用于作业调度，也可用于进程调度。当在作业调度中采用该算法时，每次调度都是从后备作业队列中选择一个或多个最先进入该队列的作业，将它们调入内存，为它们分配资源、创建进程，然后放入就绪队列。在进程调度中采用 FCFS 算法时，则每次调度是从就绪队列中选择一个最先进入该队列的进程，为之分配处理机，然后投入运行。该进程一直运行到完成或发生某事件而阻塞后才放弃处理机。</p>
+<h3 id="SJ-P-F-算法"><a href="#SJ-P-F-算法" class="headerlink" title="SJ(P)F 算法"></a><strong>SJ(P)F 算法</strong></h3><p>短作业(进程)优先调度算法 SJ(P)F，是指对短作业或短进程优先调度的算法。它们可以分别用于作业调度和进程调度。短作业优先(SJF)的调度算法是从后备队列中选择一个或若干个估计运行时间最短的作业，将它们调入内存运行。而短进程优先(SPF)调度算法则是从就绪队列中选出一个估计运行时间最短的进程，将处理机分配给它，使它立即执行并一直执行到完成，或发生某事件而被阻塞放弃处理机时再重新调度。</p>
+<h3 id="HRRN-算法"><a href="#HRRN-算法" class="headerlink" title="HRRN 算法"></a><strong>HRRN 算法</strong></h3><p>高响应比算法，是一种动态调整优先级的算法。HRRN 算法每次都计算作业的优先级，随着作业等待时间的变长，优先级不断的提高，所以能够得到更快的执行。<br>这个优先级可以描述为: 优先级 = (作业已等待时间 + 作业的服务时间) / 作业的服务时间<br>在本实验的代码模拟中，设定初始优先级固定，之后当进程运行一个时间片后，优先级减 3，同时就绪队列中的其他进程优先级加 1。</p>
+<h3 id="RR-算法"><a href="#RR-算法" class="headerlink" title="RR 算法"></a><strong>RR 算法</strong></h3><p>RR 算法是使用非常广泛的一种调度算法。<br>首先将所有就绪的队列按 FCFS 策略排成一个就绪队列，然后系统设置一定的时间片，每次给队首作业分配时间片。如果此作业运行结束，即使时间片没用完，立刻从队列中去除此作业，并给下一个作业分配新的时间片；如果作业时间片用完没有运行结束，则将此作业重新加入就绪队列尾部等待调度。</p>
+<blockquote>
+<h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a><strong>代码部分</strong></h2></blockquote>
+<h3 id="PCB-类"><a href="#PCB-类" class="headerlink" title="PCB 类"></a><strong>PCB 类</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">public class PCB</div><div class="line">&#123;</div><div class="line">    public int id &#123; get; set; &#125;</div><div class="line">    public int priority &#123; get; set; &#125;</div><div class="line">    public int cpuTime &#123; get; set; &#125;</div><div class="line">    public int blockTime &#123; get; set; &#125;</div><div class="line">    public int state &#123; get; set; &#125;</div><div class="line">    public int arriveTime &#123; get; set; &#125;</div><div class="line">    public int serveTime &#123; get; set; &#125;</div><div class="line">    public int needTime &#123; get; set; &#125;</div><div class="line">    public int finishTime &#123; get; set; &#125;</div><div class="line">    //state : 1:ready,2:running</div><div class="line">    public PCB(int id, int arriveTime, int serveTime, int state)</div><div class="line">    &#123;</div><div class="line">        this.id = id;</div><div class="line">        this.arriveTime = arriveTime;</div><div class="line">        this.serveTime = serveTime;</div><div class="line">        this.state = state;</div><div class="line">    &#125;</div><div class="line">    public PCB(int id, int arriveTime, int serveTime, int blockTime, int state)</div><div class="line">    &#123;</div><div class="line">        this.id = id;</div><div class="line">        this.arriveTime = arriveTime;</div><div class="line">        this.serveTime = serveTime;</div><div class="line">        this.blockTime = blockTime;</div><div class="line">        this.state = state;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public PCB(int id, int priority, int arriveTime, int serveTime, int state, bool isD)</div><div class="line">    &#123;</div><div class="line">        this.id = id;</div><div class="line">        this.priority = priority;</div><div class="line">        this.arriveTime = arriveTime;</div><div class="line">        this.serveTime = serveTime;</div><div class="line">        this.state = state;</div><div class="line">    &#125;</div><div class="line">    public void showState()</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;&#123;0&#125;\t\t&#123;1&#125;\t\t&#123;2&#125;\t\t&#123;3&#125;\t\t&#123;4&#125;\t\t&#123;5&#125;&quot;, id, priority, arriveTime, needTime, serveTime, state);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    public void showState(int i)</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;&#123;0&#125;\t\t&#123;1&#125;\t\t&#123;2&#125;\t\t&#123;3&#125;\t\t&#123;4&#125;\t\t&#123;5&#125;\t\t&#123;6&#125;&quot;, id, priority, arriveTime, needTime, serveTime, blockTime, state);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a><strong>FCFS</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Threading;</div><div class="line">using System.Collections.Generic;</div><div class="line"></div><div class="line">class FCFS</div><div class="line">&#123;</div><div class="line">    List&lt;PCB&gt; Ready = new List&lt;PCB&gt;();</div><div class="line">    static int FCFS_PRIORITY = 15;</div><div class="line">    int times;</div><div class="line">    public void Init()</div><div class="line">    &#123;</div><div class="line">        PCB a = new PCB(1, 0, 3, 1),</div><div class="line">            b = new PCB(2, 2, 6, 1),</div><div class="line">            c = new PCB(3, 4, 4, 1),</div><div class="line">            d = new PCB(4, 6, 5, 1),</div><div class="line">            e = new PCB(5, 8, 2, 1);</div><div class="line">        times = 1;</div><div class="line">        Ready.Add(e);</div><div class="line">        Ready.Add(d);</div><div class="line">        Ready.Add(c);</div><div class="line">        Ready.Add(b);</div><div class="line">        Ready.Add(a);</div><div class="line">        //对优先权priority与服务需要的时间needTime进行赋值</div><div class="line">        for (int i = 0; i &lt; Ready.Count; i++)</div><div class="line">        &#123;</div><div class="line">            Ready[i].priority = FCFS_PRIORITY - Ready[i].needTime;</div><div class="line">            Ready[i].needTime = Ready[i].serveTime;</div><div class="line">        &#125;</div><div class="line">        PCB temp = null;</div><div class="line">        //对优先权排序</div><div class="line">        for (int i = 0; i &lt; Ready.Count - 1; i++)</div><div class="line">        &#123;</div><div class="line">            for (int j = 0; j &lt; Ready.Count - i - 1; j++)</div><div class="line">            &#123;</div><div class="line">                if (Ready[j].priority &lt; Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    temp = Ready[j];</div><div class="line">                    Ready[j] = Ready[j + 1];</div><div class="line">                    Ready[j + 1] = temp;</div><div class="line">                &#125;</div><div class="line">                else if (Ready[j].priority == Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    if (Ready[j].serveTime &gt; Ready[j + 1].serveTime)</div><div class="line">                    &#123;</div><div class="line">                        temp = Ready[j];</div><div class="line">                        Ready[j] = Ready[j + 1];</div><div class="line">                        Ready[j + 1] = temp;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Start()</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;先来先服务(FCFS)&quot;);</div><div class="line">        System.Console.WriteLine(&quot;进程状态标志(procState)：1：准备，2：正在运行&quot;);</div><div class="line">        System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">        while (Ready != null &amp;&amp; Ready.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line">            System.Console.WriteLine(&quot;Id\t     Priority\t     ArriveTime\t       NeedTime\t    ServeTime\t    State\n&quot;);</div><div class="line">            if (Ready[0] != null)</div><div class="line">            &#123;</div><div class="line">                while (Ready[0].needTime &gt; 0)</div><div class="line">                &#123;</div><div class="line">                    Ready[0].state = 2;</div><div class="line">                    // 输出单个时间片中全部进程的状态</div><div class="line">                    // foreach (var item in Ready)</div><div class="line">                    // &#123;</div><div class="line">                    //     item.showState();</div><div class="line">                    // &#125;</div><div class="line">                    // 仅输出单个时间片运行中的程序状态</div><div class="line">                    Ready[0].showState();</div><div class="line">                    System.Console.WriteLine(&quot;time:&#123;0&#125;&quot;, times);</div><div class="line">                    Thread.Sleep(1000);</div><div class="line">                    System.Console.WriteLine(&quot;-----------------------------------------------------------------------------------&quot;);</div><div class="line">                    Ready[0].needTime--;</div><div class="line">                    times++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Ready[0].state = 0;</div><div class="line">            System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">            System.Console.WriteLine(&quot;\t\t\t\t\t\t\t\t\tprocess &#123;0&#125; completed\n&quot;, Ready[0].id);</div><div class="line">            Ready.RemoveAt(0);</div><div class="line">        &#125;</div><div class="line">        System.Console.WriteLine(&quot;                 All processes have been completed,takes &#123;0&#125; times\n&quot;, times - 1);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="SJB"><a href="#SJB" class="headerlink" title="SJB"></a><strong>SJB</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Threading;</div><div class="line">using System.Collections.Generic;</div><div class="line"></div><div class="line">class SJF</div><div class="line">&#123;</div><div class="line">    List&lt;PCB&gt; Ready = new List&lt;PCB&gt;();</div><div class="line">    static int SJF_PRIORITY = 15;</div><div class="line">    int times;</div><div class="line">    public void Init()</div><div class="line">    &#123;</div><div class="line">        PCB a = new PCB(1, 0, 3, 1),</div><div class="line">            b = new PCB(2, 2, 6, 1),</div><div class="line">            c = new PCB(3, 4, 4, 1),</div><div class="line">            d = new PCB(4, 6, 5, 1),</div><div class="line">            e = new PCB(5, 8, 2, 1);</div><div class="line">        times = 1;</div><div class="line">        Ready.Add(e);</div><div class="line">        Ready.Add(d);</div><div class="line">        Ready.Add(c);</div><div class="line">        Ready.Add(b);</div><div class="line">        Ready.Add(a);</div><div class="line">        //对优先权priority与服务需要的时间needTime进行赋值</div><div class="line">        for (int i = 0; i &lt; Ready.Count; i++)</div><div class="line">        &#123;</div><div class="line">            Ready[i].priority = SJF_PRIORITY - Ready[i].serveTime;</div><div class="line">            Ready[i].needTime = Ready[i].serveTime;</div><div class="line">        &#125;</div><div class="line">        PCB temp = null;</div><div class="line">        //对优先权排序</div><div class="line">        for (int i = 0; i &lt; Ready.Count - 1; i++)</div><div class="line">        &#123;</div><div class="line">            for (int j = 0; j &lt; Ready.Count - i - 1; j++)</div><div class="line">            &#123;</div><div class="line">                if (Ready[j].priority &lt; Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    temp = Ready[j];</div><div class="line">                    Ready[j] = Ready[j + 1];</div><div class="line">                    Ready[j + 1] = temp;</div><div class="line">                &#125;</div><div class="line">                else if (Ready[j].priority == Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    if (Ready[j].arriveTime &gt; Ready[j + 1].arriveTime)</div><div class="line">                    &#123;</div><div class="line">                        temp = Ready[j];</div><div class="line">                        Ready[j] = Ready[j + 1];</div><div class="line">                        Ready[j + 1] = temp;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Start()</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;短作业优先(SJF)&quot;);</div><div class="line">        System.Console.WriteLine(&quot;进程状态标志(procState)：1：准备，2：正在运行&quot;);</div><div class="line">        System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">        while (Ready != null &amp;&amp; Ready.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line">            System.Console.WriteLine(&quot;Id\t     Priority\t     ArriveTime\t       NeedTime\t    ServeTime\t    State\n&quot;);</div><div class="line">            if (Ready[0] != null)</div><div class="line">            &#123;</div><div class="line">                while (Ready[0].needTime &gt; 0)</div><div class="line">                &#123;</div><div class="line">                    Ready[0].state = 2;</div><div class="line">                    // 输出单个时间片中全部进程的状态</div><div class="line">                    // foreach (var item in Ready)</div><div class="line">                    // &#123;</div><div class="line">                    //     item.showState();</div><div class="line">                    // &#125;</div><div class="line">                    // 仅输出单个时间片运行中的程序状态</div><div class="line">                    Ready[0].showState();</div><div class="line">                    System.Console.WriteLine(&quot;time:&#123;0&#125;&quot;, times);</div><div class="line">                    Thread.Sleep(1000);</div><div class="line">                    System.Console.WriteLine(&quot;-----------------------------------------------------------------------------------&quot;);</div><div class="line">                    Ready[0].needTime--;</div><div class="line">                    times++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Ready[0].state = 0;</div><div class="line">            System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">            System.Console.WriteLine(&quot;\t\t\t\t\t\t\t\t\tprocess &#123;0&#125; completed\n&quot;, Ready[0].id);</div><div class="line">            Ready.RemoveAt(0);</div><div class="line">        &#125;</div><div class="line">        System.Console.WriteLine(&quot;                 All processes have been completed,takes &#123;0&#125; times\n&quot;, times - 1);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="HRRN"><a href="#HRRN" class="headerlink" title="HRRN"></a><strong>HRRN</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Threading;</div><div class="line">using System.Collections.Generic;</div><div class="line"></div><div class="line">class HRRN</div><div class="line">&#123;</div><div class="line">    List&lt;PCB&gt; Ready = new List&lt;PCB&gt;();</div><div class="line">    int times;</div><div class="line">    public void Init()</div><div class="line">    &#123;</div><div class="line">        PCB a = new PCB(1, 2, 0, 3, 1, true),</div><div class="line">            b = new PCB(2, 10, 2, 6, 1, true),</div><div class="line">            c = new PCB(3, 5, 4, 4, 1, true),</div><div class="line">            d = new PCB(4, 3, 6, 5, 1, true),</div><div class="line">            e = new PCB(5, 8, 8, 2, 1, true);</div><div class="line">        times = 1;</div><div class="line">        Ready.Add(e);</div><div class="line">        Ready.Add(d);</div><div class="line">        Ready.Add(c);</div><div class="line">        Ready.Add(b);</div><div class="line">        Ready.Add(a);</div><div class="line">        //对服务需要的时间needTime进行赋值</div><div class="line">        for (int i = 0; i &lt; Ready.Count; i++)</div><div class="line">            Ready[i].needTime = Ready[i].serveTime;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Start()</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;高响应比优先调度算法(HRRN)&quot;);</div><div class="line">        System.Console.WriteLine(&quot;进程状态标志(State)：1：准备，2：正在运行&quot;);</div><div class="line">        System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">        while (Ready.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line">            PriorityChange();</div><div class="line">            Ready[0].state = 2;</div><div class="line">            System.Console.WriteLine(&quot;Id\t     Priority\t     ArriveTime\t       NeedTime\t    ServeTime\t    State\n&quot;);</div><div class="line">            // 输出单个时间片中全部进程的状态</div><div class="line">            // foreach (var item in Ready)</div><div class="line">            // &#123;</div><div class="line">            //     item.showState(1);</div><div class="line">            // &#125;</div><div class="line">            // 仅输出单个时间片运行中的进程状态</div><div class="line">            Ready[0].showState();</div><div class="line">            Ready[0].needTime--;</div><div class="line">            Ready[0].priority -= 3;</div><div class="line">            if (Ready[0].needTime == 0)</div><div class="line">            &#123;</div><div class="line">                Ready[0].state = 0;</div><div class="line">                System.Console.WriteLine(&quot;\t\t\t\t\t\t\t\t\tprocess &#123;0&#125; completed\n&quot;, Ready[0].id);</div><div class="line">                System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">                Ready.RemoveAt(0);</div><div class="line">            &#125;</div><div class="line">            for (int i = 1; i &lt; Ready.Count - 1; i++)</div><div class="line">            &#123;</div><div class="line">                Ready[i].priority++;</div><div class="line">            &#125;</div><div class="line">            Thread.Sleep(1000);</div><div class="line">            System.Console.WriteLine(&quot;-----------------------------------------------------------------------------------&quot;);</div><div class="line">            System.Console.WriteLine(&quot;time:&#123;0&#125;&quot;, times);</div><div class="line">            times++;</div><div class="line">        &#125;</div><div class="line">        System.Console.WriteLine(&quot;                 All processes have been completed,takes &#123;0&#125; times\n&quot;, times - 1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void PriorityChange()</div><div class="line">    &#123;</div><div class="line">        PCB temp = null;</div><div class="line">        //对优先权排序</div><div class="line">        for (int i = 0; i &lt; Ready.Count - 1; i++)</div><div class="line">        &#123;</div><div class="line">            for (int j = 0; j &lt; Ready.Count - i - 1; j++)</div><div class="line">            &#123;</div><div class="line">                if (Ready[j].priority &lt; Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    temp = Ready[j];</div><div class="line">                    Ready[j] = Ready[j + 1];</div><div class="line">                    Ready[j + 1] = temp;</div><div class="line">                &#125;</div><div class="line">                else if (Ready[j].priority == Ready[j + 1].priority) //优先权相同则短任务优先</div><div class="line">                &#123;</div><div class="line">                    if (Ready[j].serveTime &gt; Ready[j + 1].serveTime)</div><div class="line">                    &#123;</div><div class="line">                        temp = Ready[j];</div><div class="line">                        Ready[j] = Ready[j + 1];</div><div class="line">                        Ready[j + 1] = temp;</div><div class="line">                    &#125;</div><div class="line">                    else if (Ready[j].arriveTime &gt; Ready[j + 1].arriveTime) //服务时间相同则先到优先</div><div class="line">                    &#123;</div><div class="line">                        temp = Ready[j];</div><div class="line">                        Ready[j] = Ready[j + 1];</div><div class="line">                        Ready[j + 1] = temp;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="RR"><a href="#RR" class="headerlink" title="RR"></a><strong>RR</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Threading;</div><div class="line">using System.Collections.Generic;</div><div class="line"></div><div class="line">class RR</div><div class="line">&#123;</div><div class="line">    List&lt;PCB&gt; Ready = new List&lt;PCB&gt;();</div><div class="line">    List&lt;PCB&gt; Block = new List&lt;PCB&gt;();</div><div class="line">    static int RR_PRIORITY = 15;</div><div class="line">    int times;</div><div class="line">    public void Init()</div><div class="line">    &#123;</div><div class="line">        PCB a = new PCB(1, 0, 3, 1, 1),</div><div class="line">            b = new PCB(2, 2, 6, 1, 1),</div><div class="line">            c = new PCB(3, 4, 4, 1, 1),</div><div class="line">            d = new PCB(4, 6, 5, 1, 1),</div><div class="line">            e = new PCB(5, 8, 2, 1, 1);</div><div class="line">        times = 1;</div><div class="line">        Ready.Add(e);</div><div class="line">        Ready.Add(d);</div><div class="line">        Ready.Add(c);</div><div class="line">        Ready.Add(b);</div><div class="line">        Ready.Add(a);</div><div class="line">        //对优先权priority与服务需要的时间needTime进行赋值</div><div class="line">        for (int i = 0; i &lt; Ready.Count; i++)</div><div class="line">        &#123;</div><div class="line">            Ready[i].priority = RR_PRIORITY - Ready[i].needTime;</div><div class="line">            Ready[i].needTime = Ready[i].serveTime;</div><div class="line">        &#125;</div><div class="line">        PCB temp = null;</div><div class="line">        //对优先权排序</div><div class="line">        for (int i = 0; i &lt; Ready.Count - 1; i++)</div><div class="line">        &#123;</div><div class="line">            for (int j = 0; j &lt; Ready.Count - i - 1; j++)</div><div class="line">            &#123;</div><div class="line">                if (Ready[j].priority &lt; Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    temp = Ready[j];</div><div class="line">                    Ready[j] = Ready[j + 1];</div><div class="line">                    Ready[j + 1] = temp;</div><div class="line">                &#125;</div><div class="line">                else if (Ready[j].priority == Ready[j + 1].priority)</div><div class="line">                &#123;</div><div class="line">                    if (Ready[j].serveTime &gt; Ready[j + 1].serveTime)</div><div class="line">                    &#123;</div><div class="line">                        temp = Ready[j];</div><div class="line">                        Ready[j] = Ready[j + 1];</div><div class="line">                        Ready[j + 1] = temp;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Start()</div><div class="line">    &#123;</div><div class="line">        System.Console.WriteLine(&quot;时间片轮转(RR)&quot;);</div><div class="line">        System.Console.WriteLine(&quot;进程状态标志(procState):1：准备，2：正在运行&quot;);</div><div class="line">        System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">        while (Ready.Count &gt; 0 || Block.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line"></div><div class="line">            if (Ready.Count &gt; 0)</div><div class="line">            &#123;</div><div class="line">                Ready[0].state = 2;</div><div class="line">                System.Console.WriteLine(&quot;Id\t     Priority\t     ArriveTime\t       NeedTime\t    ServeTime\t    blockTime\t     State\n&quot;);</div><div class="line">                // 输出单个时间片中全部进程的状态</div><div class="line">                // foreach (var item in Ready)</div><div class="line">                // &#123;</div><div class="line">                //     item.showState(1);</div><div class="line">                // &#125;</div><div class="line">                // 仅输出单个时间片运行中的进程状态</div><div class="line">                Ready[0].showState(1);</div><div class="line">                Ready[0].needTime--;</div><div class="line">                if (Ready[0].needTime == 0)</div><div class="line">                &#123;</div><div class="line">                    Ready[0].state = 0;</div><div class="line">                    System.Console.WriteLine(&quot;\t\t\t\t\t\t\t\t\tprocess &#123;0&#125; completed\n&quot;, Ready[0].id);</div><div class="line">                    System.Console.WriteLine(&quot;===================================================================================&quot;);</div><div class="line">                    Ready.RemoveAt(0);</div><div class="line">                &#125;</div><div class="line">                else</div><div class="line">                &#123;</div><div class="line">                    Block.Add(Ready[0]);</div><div class="line">                    Ready.RemoveAt(0);</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">                System.Console.WriteLine(&quot;Ready list is empty!&quot;);</div><div class="line"></div><div class="line">            Thread.Sleep(1000);</div><div class="line">            if (Block.Count &gt; 0)</div><div class="line">            &#123;</div><div class="line"></div><div class="line">                Block[0].blockTime--;</div><div class="line">                if (Block[0].blockTime == 0)</div><div class="line">                &#123;</div><div class="line">                    Block[0].blockTime = 1;</div><div class="line">                    Ready.Add(Block[0]);</div><div class="line">                    Block.RemoveAt(0);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            System.Console.WriteLine(&quot;-----------------------------------------------------------------------------------&quot;);</div><div class="line">            System.Console.WriteLine(&quot;time:&#123;0&#125;&quot;, times);</div><div class="line">            times++;</div><div class="line">        &#125;</div><div class="line">        System.Console.WriteLine(&quot;                 All processes have been completed,takes &#123;0&#125; times\n&quot;, times - 1);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="实验心得"><a href="#实验心得" class="headerlink" title="实验心得"></a><strong>实验心得</strong></h2></blockquote>
+<p>操作系统这门课程并不是教如何使用操作系统的，而是讲操作系统内部机制的。操作系统的目标是为用户提供一个良好的界面，方便用户使用计算机，同时对内部各种软硬件资源能够进行有效地管理和分配，使整个系统能高效率得运行。操作系统主要有五大功能：处理机管理、存储器管理、设备管理、文件管理、用户接口。我们现在使用的大多是 PC 机，都是只有一块 CPU，而有时却要在计算机上运行多个程序，那么每道程序在什么时候使用 CPU，这需要合理得分配协调才行，操作系统关于处理机的分配有相应的调度算法，这些工作都由操作系统实现。</p>
+<p>这次综合实验利用 C#语言对 4 种调度算法进行了设计和模拟实现，并充分考虑了进程在执行过程中可能发生的多种情况，更好的体现了进程的就绪态和执行态二者之间的关系以及相互的转换。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/source/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+          
+            <a href="/source/tags/操作系统/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/《太吾绘卷》是否能成为武侠迷期待的真正江湖？20181013/" rel="next" title="《太吾绘卷》是否能成为武侠迷期待的真正江湖？">
+                <i class="fa fa-chevron-left"></i> 《太吾绘卷》是否能成为武侠迷期待的真正江湖？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a92feeba049a8fe" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://oyq24xmaa.bkt.clouddn.com/67b7e7deefb87b514e63be1d63e2df24.jpg"
+                alt="C1oudust" />
+            
+              <p class="site-author-name" itemprop="name">C1oudust</p>
+              <p class="site-description motion-element" itemprop="description">灵魂, <br /> 躁动不安...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+              <a title="偶尔High一下ヾ(✿ﾟ▽ﾟ)ノ" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//c1oudust-blog.test.upcdn.net/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//c1oudust-blog.test.upcdn.net/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/u/2268085703" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/HINT_er" target="_blank" title="Zhihu"><i class="fa fa-fw fa-book"></i>Zhihu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/amerkiousy" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://space.bilibili.com/15185215" target="_blank" title="BiliBili"><i class="fa fa-fw fa-paper-plane"></i>BiliBili</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:amerkiousy@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验原理"><span class="nav-number">2.</span> <span class="nav-text">实验原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FCFS-算法"><span class="nav-number">2.1.</span> <span class="nav-text">FCFS 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SJ-P-F-算法"><span class="nav-number">2.2.</span> <span class="nav-text">SJ(P)F 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HRRN-算法"><span class="nav-number">2.3.</span> <span class="nav-text">HRRN 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RR-算法"><span class="nav-number">2.4.</span> <span class="nav-text">RR 算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码部分"><span class="nav-number">3.</span> <span class="nav-text">代码部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PCB-类"><span class="nav-number">3.1.</span> <span class="nav-text">PCB 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FCFS"><span class="nav-number">3.2.</span> <span class="nav-text">FCFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SJB"><span class="nav-number">3.3.</span> <span class="nav-text">SJB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HRRN"><span class="nav-number">3.4.</span> <span class="nav-text">HRRN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RR"><span class="nav-number">3.5.</span> <span class="nav-text">RR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验心得"><span class="nav-number">4.</span> <span class="nav-text">实验心得</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C1oudust</span>
+
+  
+
+  
+</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+ <!--   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+  <div class="theme-info">
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  </div>
+
+-->
+
+
+  <div class="footer-custom"><i class="fa fa-bolt"></i> Powered By <a target="_blank" href="[图片]https://www.upyun.com/">又拍云</a></div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客共 28.3k字</span>
+</div
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'vYUXerjBfE6RCERqE2e4nkCf-gzGzoHsz',
+        appKey: 'EFq9TLGTQKotyFGe0hSaEuSn',
+        placeholder: '雁过留声，人过留名~',
+        avatar:'mp',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
