@@ -933,6 +933,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/C#中的结构和类20180629/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="C1oudust">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vedfolnir">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/C#中的结构和类20180629/" itemprop="url">C#中的结构和类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T00:00:00+08:00">2018-06-29</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/C#中的结构和类20180629/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/C#中的结构和类20180629/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。<br>以下定义一个结构体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public struct MyStruct</div><div class="line">&#123;</div><div class="line">    private string MyString;</div><div class="line">    private int MyNum;</div><div class="line">    public string MyString</div><div class="line">    &#123;</div><div class="line">        get</div><div class="line">        &#123;</div><div class="line">            return MyString;</div><div class="line">        &#125;</div><div class="line">        set</div><div class="line">        &#123;</div><div class="line">            MyString = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    public int GetMyNum()</div><div class="line">    &#123;</div><div class="line">        return MyNum;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以看到结构体和类非常相似,但细纠起来，还是有很多的不同。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
+<li>结构属于值类型，继承自System.ValueType，值类型在堆栈上分配地址。值类型能够降低垃圾回收，表现出更好的性能。但其也有不好的一面，比如会涉及到装箱拆箱等操作,因此不适合处理逻辑复杂的对象。所有基类型都是结构类型，如int 对应的是System.int32结构。</li>
+<li>对于值类型，编译器既不会生成默认构造函数。也不会调用默认构造函数。因此C#不允许结构体有无参的默认构造函数。结构体的构造函数内必须初始化所有变量。</li>
+<li>结构体对象之间赋值是创建新的结构，结构体不能从另外的结构继承，本身也不能够被继承，虽然结构没有明确的用 sealed 声明，可是结构是隐式的 sealed。</li>
+<li>虽然结构不能被继承 可是结构能够继承接口，方法和类继承接口一样。</li>
+</ul>
+<h3 id="内部结构"><a href="#内部结构" class="headerlink" title="内部结构"></a>内部结构</h3><blockquote>
+<ul>
+<li>没有默认的构造函数，但是能够添加构造函数；</li>
+<li>没有析构函数；</li>
+<li>没有abstract和sealed，不能有protected修饰符；</li>
+<li>可以不使用new实例化；</li>
+<li>在结构初始化实例字段是错误的。</li>
+</ul>
+</blockquote>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li><p>类是属于引用类型，继承自System.Object，引用类型是在堆上面分配地址。类对象之间的赋值是通过复制引用实现的。</p>
+</li>
+<li><p>如何不加sealed修饰符，类是可以继承其他类和接口且本身也可被继承。</p>
+</li>
+</ul>
+<h3 id="内部结构-1"><a href="#内部结构-1" class="headerlink" title="内部结构"></a>内部结构</h3><blockquote>
+<ul>
+<li>有默认的构造函数；</li>
+<li>有析构函数；</li>
+<li>可以使用abstract和sealed，有protected修饰符；</li>
+<li>必须使用new初始化。</li>
+</ul>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
+<li>堆栈的空间有限，对于有大量逻辑的复杂对象，使用类比结构体好一些。</li>
+<li>在表示抽象和多级别层次的对象时，使用类是更好的选择。</li>
+<li>在大多数情况下对象的类型只是数据时，使用结构是最好的选择。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/阻止我们成功的，只有懒惰20180625/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1386,167 +1574,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cloudust.coding.me/blog/《救赎之路》到底救赎了谁？20180429/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="C1oudust">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vedfolnir">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/《救赎之路》到底救赎了谁？20180429/" itemprop="url">《救赎之路》到底救赎了谁？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T00:00:00+08:00">2018-04-29</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/测评/" itemprop="url" rel="index"><span itemprop="name">测评</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/《救赎之路》到底救赎了谁？20180429/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/《救赎之路》到底救赎了谁？20180429/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20184sinner.jpg" alt=""><br></div><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/《救赎之路》到底救赎了谁？20180429/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1593,7 +1625,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1669,7 +1701,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1940,7 +1974,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客共 29.9k字</span>
+  <span class="post-count">博客共 30.6k字</span>
 </div
         
 
