@@ -113,18 +113,18 @@
   <meta name="keywords" content="C#,strcut," />
 
 
-<meta name="description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。以下定义一个结构体1234567891011121314151617181920public struct MyStruct&amp;#123;    private string MyString;    private int MyNum;    public string">
+<meta name="description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。">
 <meta name="keywords" content="C#,strcut">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#中的结构和类">
 <meta property="og:url" content="http://Cloudust.coding.me/blog/C#中的结构和类20180629/index.html">
 <meta property="og:site_name" content="Vedfolnir">
-<meta property="og:description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。以下定义一个结构体1234567891011121314151617181920public struct MyStruct&amp;#123;    private string MyString;    private int MyNum;    public string">
+<meta property="og:description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-02-10T07:00:12.861Z">
+<meta property="og:updated_time" content="2019-02-10T07:05:31.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#中的结构和类">
-<meta name="twitter:description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。以下定义一个结构体1234567891011121314151617181920public struct MyStruct&amp;#123;    private string MyString;    private int MyNum;    public string">
+<meta name="twitter:description" content="对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。">
 
 
 
@@ -401,8 +401,8 @@
       
 
       
-        <a id="more"></a>
-<p>对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。<br>以下定义一个结构体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public struct MyStruct</div><div class="line">&#123;</div><div class="line">    private string MyString;</div><div class="line">    private int MyNum;</div><div class="line">    public string MyString</div><div class="line">    &#123;</div><div class="line">        get</div><div class="line">        &#123;</div><div class="line">            return MyString;</div><div class="line">        &#125;</div><div class="line">        set</div><div class="line">        &#123;</div><div class="line">            MyString = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    public int GetMyNum()</div><div class="line">    &#123;</div><div class="line">        return MyNum;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。<br><a id="more"></a></p>
+<p>以下定义一个结构体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public struct MyStruct</div><div class="line">&#123;</div><div class="line">    private string MyString;</div><div class="line">    private int MyNum;</div><div class="line">    public string MyString</div><div class="line">    &#123;</div><div class="line">        get</div><div class="line">        &#123;</div><div class="line">            return MyString;</div><div class="line">        &#125;</div><div class="line">        set</div><div class="line">        &#123;</div><div class="line">            MyString = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    public int GetMyNum()</div><div class="line">    &#123;</div><div class="line">        return MyNum;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>可以看到结构体和类非常相似,但细纠起来，还是有很多的不同。</p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
 <li>结构属于值类型，继承自System.ValueType，值类型在堆栈上分配地址。值类型能够降低垃圾回收，表现出更好的性能。但其也有不好的一面，比如会涉及到装箱拆箱等操作,因此不适合处理逻辑复杂的对象。所有基类型都是结构类型，如int 对应的是System.int32结构。</li>
