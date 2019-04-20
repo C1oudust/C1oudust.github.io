@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Cloudust.coding.me/"/>
-  <updated>2019-03-07T04:57:18.152Z</updated>
+  <updated>2019-04-20T18:22:59.509Z</updated>
   <id>http://Cloudust.coding.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</title>
+    <link href="http://Cloudust.coding.me/blog/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AD%A6%E5%91%8Awxkey20190421/"/>
+    <id>http://Cloudust.coding.me/blog/微信小程序警告wxkey20190421/</id>
+    <published>2019-04-20T16:00:00.000Z</published>
+    <updated>2019-04-20T18:22:59.509Z</updated>
+    
+    <content type="html"><![CDATA[<p>在实际开发中遇到了一个警告：Now you can provide attr <code>wx:key</code> for a <code>wx:for</code> to improve performance.</p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/WeChatmicroApp_warning.jpg" alt=""><br></div><a id="more"></a><p>官方文档解释如下：</p><blockquote><p><strong>wx:key</strong><br>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <code>&lt;input&gt;</code>中的输入内容，<code>&lt;switch&gt;</code> 的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p><p><code>wx:key</code> 的值以两种形式提供</p><ul><li>字符串，代表在 for 循环的 array 中 item 的某个 <code>property</code>，该 <code>property</code> 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li><li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：<br>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。<br>如不提供 <code>wx:key</code>，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</li></ul></blockquote><p>简单来说，就是给 for 循环的每个项目添加一个唯一性标识符，以提升列表的渲染速度。<br>当一个列表是静态列表,比如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>-items=<span class="string">"&#123;&#123;postList&#125;&#125;"</span> &gt;</div></pre></td></tr></table></figure><p>不添加<code>wx:key</code>则会出现<code>warning： Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</code></p><p>此时可以选择忽略。</p><p>如果想要去掉 warning，就要给 array 的 每一个 item 都添加一个唯一识别的 <code>property</code> 来管理：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>-items=<span class="string">"&#123;&#123;postList&#125;&#125;"</span> wx:key=<span class="string">"index"</span>&gt;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在实际开发中遇到了一个警告：Now you can provide attr &lt;code&gt;wx:key&lt;/code&gt; for a &lt;code&gt;wx:for&lt;/code&gt; to improve performance.&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://c1oudust-blog.test.upcdn.net/WeChatmicroApp_warning.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://Cloudust.coding.me/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="微信小程序" scheme="http://Cloudust.coding.me/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows下使用SublimeText3调试运行Pascal程序</title>
@@ -255,29 +278,6 @@
     
     
       <category term="游戏" scheme="http://Cloudust.coding.me/source/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序警告：wx:key</title>
-    <link href="http://Cloudust.coding.me/blog/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AD%A6%E5%91%8Awxkey20180429/"/>
-    <id>http://Cloudust.coding.me/blog/微信小程序警告wxkey20180429/</id>
-    <published>2018-04-28T16:00:00.000Z</published>
-    <updated>2019-04-20T18:21:01.058Z</updated>
-    
-    <content type="html"><![CDATA[<p>在实际开发中遇到了一个警告：Now you can provide attr <code>wx:key</code> for a <code>wx:for</code> to improve performance.</p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/WeChatmicroApp_warning.jpg" alt=""><br></div><a id="more"></a><p>官方文档解释如下：</p><blockquote><p><strong>wx:key</strong><br>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 <code>&lt;input&gt;</code>中的输入内容，<code>&lt;switch&gt;</code> 的选中状态），需要使用 <code>wx:key</code> 来指定列表中项目的唯一的标识符。</p><p><code>wx:key</code> 的值以两种形式提供</p><ul><li>字符串，代表在 for 循环的 array 中 item 的某个 <code>property</code>，该 <code>property</code> 的值需要是列表中唯一的字符串或数字，且不能动态改变。</li><li>保留关键字 <code>*this</code> 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：<br>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。<br>如不提供 <code>wx:key</code>，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</li></ul></blockquote><p>简单来说，就是给 for 循环的每个项目添加一个唯一性标识符，以提升列表的渲染速度。<br>当一个列表是静态列表,比如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>-items=<span class="string">"&#123;&#123;postList&#125;&#125;"</span> &gt;</div></pre></td></tr></table></figure><p>不添加<code>wx:key</code>则会出现<code>warning： Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</code></p><p>此时可以选择忽略。</p><p>如果想要去掉 warning，就要给 array 的 每一个 item 都添加一个唯一识别的 <code>property</code> 来管理：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>-items=<span class="string">"&#123;&#123;postList&#125;&#125;"</span> wx:key=<span class="string">"index"</span>&gt;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在实际开发中遇到了一个警告：Now you can provide attr &lt;code&gt;wx:key&lt;/code&gt; for a &lt;code&gt;wx:for&lt;/code&gt; to improve performance.&lt;/p&gt;
-&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://c1oudust-blog.test.upcdn.net/WeChatmicroApp_warning.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://Cloudust.coding.me/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="微信小程序" scheme="http://Cloudust.coding.me/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
