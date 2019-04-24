@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Cloudust.coding.me/"/>
-  <updated>2019-04-20T18:22:59.509Z</updated>
+  <updated>2019-04-24T04:31:07.152Z</updated>
   <id>http://Cloudust.coding.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序报错:Page is not constructed because it is not found.</title>
+    <link href="http://Cloudust.coding.me/blog/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%A5%E9%94%99Page_is_not_constructed20190424/"/>
+    <id>http://Cloudust.coding.me/blog/小程序报错Page_is_not_constructed20190424/</id>
+    <published>2019-04-23T16:00:00.000Z</published>
+    <updated>2019-04-24T04:31:07.152Z</updated>
+    
+    <content type="html"><![CDATA[<p>在实际开发中遇到了一个错误：Page is not constructed because it is not found</p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/WeChatmicroApp_error01.jpg" alt=""><br></div><p>该错误多发生在点击事件切换页面的时候<br>解决方法：<br>在需要切换到的那个页面的 js 文件中添加</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Page(&#123; &#125;)</div></pre></td></tr></table></figure><p>方法即可解决此问题。</p><blockquote><p><strong>Tips: 在 js 文件中输入 Page 回车，可自动添加 Page 方法，包括里面的 data 初始化数据及 onLoad 等生命中期方法。</strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在实际开发中遇到了一个错误：Page is not constructed because it is not found&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://c1oudust-blog.test.upcdn.net/W
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://Cloudust.coding.me/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="微信小程序" scheme="http://Cloudust.coding.me/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</title>
