@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Cloudust.coding.me/"/>
-  <updated>2019-04-24T04:32:46.640Z</updated>
+  <updated>2019-06-21T13:51:06.534Z</updated>
   <id>http://Cloudust.coding.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>.NET Core + EF 报nuget包版本冲突错误</title>
+    <link href="http://Cloudust.coding.me/blog/dotNETCoreEF%E6%8A%A5nuget%E5%8C%85%E4%B8%8D%E5%85%BC%E5%AE%B920190621/"/>
+    <id>http://Cloudust.coding.me/blog/dotNETCoreEF报nuget包不兼容20190621/</id>
+    <published>2019-06-20T16:00:00.000Z</published>
+    <updated>2019-06-21T13:51:06.534Z</updated>
+    
+    <content type="html"><![CDATA[<p>错误信息如下：</p><p>错误    NU1107    Microsoft.EntityFrameworkCore 中检测到版本冲突。直接安装/引用 Microsoft.EntityFrameworkCore 2.2.4 到项目 CoreWeb 可解决此问题。 </p><a id="more"></a> <p> NewsPublish -&gt; NewsPublish.Service -&gt; Microsoft.EntityFrameworkCore (&gt;= 2.2.4)<br> NewsPublish -&gt; Microsoft.AspNetCore.App 2.1.1 -&gt; Microsoft.EntityFrameworkCore (&gt;= 2.1.1 &amp;&amp; &lt; 2.2.0).    </p><p>问题出现原因是：nuget包版本不兼容</p><p>升级包，发现无法升级，然后查原因是.net Core版本问题，</p><p>升级版本至2.2，并在项目上添加目标框架为2.2，问题解决。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;错误信息如下：&lt;/p&gt;
+&lt;p&gt;错误    NU1107    Microsoft.EntityFrameworkCore 中检测到版本冲突。直接安装/引用 Microsoft.EntityFrameworkCore 2.2.4 到项目 CoreWeb 可解决此问题。 &lt;/p&gt;
+    
+    </summary>
+    
+      <category term=".NET" scheme="http://Cloudust.coding.me/categories/NET/"/>
+    
+    
+      <category term="C#" scheme="http://Cloudust.coding.me/source/tags/C/"/>
+    
+      <category term=".NET" scheme="http://Cloudust.coding.me/source/tags/NET/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序报错:Page is not constructed because it is not found.</title>
@@ -475,24 +500,6 @@
       <category term="Windows" scheme="http://Cloudust.coding.me/source/tags/Windows/"/>
     
       <category term="双系统" scheme="http://Cloudust.coding.me/source/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>起初</title>
-    <link href="http://Cloudust.coding.me/blog/Lared20171029/"/>
-    <id>http://Cloudust.coding.me/blog/Lared20171029/</id>
-    <published>2017-10-29T11:48:23.384Z</published>
-    <updated>2018-01-28T07:18:57.141Z</updated>
-    
-    <content type="html"><![CDATA[<p><center>欢迎来到我的博客，Lared——鸷鸟栖息之所</center><br><a id="more"></a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;center&gt;欢迎来到我的博客，Lared——鸷鸟栖息之所&lt;/center&gt;&lt;br&gt;
-    
-    </summary>
-    
     
   </entry>
   
