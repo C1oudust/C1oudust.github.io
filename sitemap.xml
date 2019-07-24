@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://Cloudust.coding.meabout/index.html</loc>
+    
+    <lastmod>2019-07-24T10:56:32.340Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://Cloudust.coding.meblog/dotNETCoreEF%E6%8A%A5nuget%E5%8C%85%E4%B8%8D%E5%85%BC%E5%AE%B920190621/</loc>
     
     <lastmod>2019-06-21T13:51:06.534Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://Cloudust.coding.meblog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A120181214/</loc>
     
     <lastmod>2019-02-10T07:17:17.920Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://Cloudust.coding.meabout/index.html</loc>
-    
-    <lastmod>2019-02-10T07:09:48.014Z</lastmod>
     
   </url>
   
