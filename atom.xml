@@ -133,9 +133,9 @@
       <category term="Pascal" scheme="http://Cloudust.coding.me/categories/Pascal/"/>
     
     
-      <category term="Windows" scheme="http://Cloudust.coding.me/source/tags/Windows/"/>
-    
       <category term="Pascal" scheme="http://Cloudust.coding.me/source/tags/Pascal/"/>
+    
+      <category term="Windows" scheme="http://Cloudust.coding.me/source/tags/Windows/"/>
     
   </entry>
   
@@ -302,9 +302,9 @@
       <category term="Linux" scheme="http://Cloudust.coding.me/categories/Linux/"/>
     
     
-      <category term="Ubuntu" scheme="http://Cloudust.coding.me/source/tags/Ubuntu/"/>
-    
       <category term="Windows" scheme="http://Cloudust.coding.me/source/tags/Windows/"/>
+    
+      <category term="Ubuntu" scheme="http://Cloudust.coding.me/source/tags/Ubuntu/"/>
     
   </entry>
   
