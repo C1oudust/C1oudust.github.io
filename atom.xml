@@ -5,9 +5,9 @@
   <subtitle>我们飞翔得越高,在那些不能飞翔的人眼中的形象越渺小</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://lx78qk.coding-pages.com/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2019-08-05T05:04:12.418Z</updated>
-  <id>https://lx78qk.coding-pages.com/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>C1oudust</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>烈火燃尽后的生存与死亡</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E7%83%88%E7%81%AB%E7%87%83%E5%B0%BD%E5%90%8E%E7%9A%84%E7%94%9F%E5%AD%98%E4%B8%8E%E6%AD%BB%E4%BA%A120190805/"/>
-    <id>https://lx78qk.coding-pages.com/blog/烈火燃尽后的生存与死亡20190805/</id>
+    <link href="http://yoursite.com/blog/%E7%83%88%E7%81%AB%E7%87%83%E5%B0%BD%E5%90%8E%E7%9A%84%E7%94%9F%E5%AD%98%E4%B8%8E%E6%AD%BB%E4%BA%A120190805/"/>
+    <id>http://yoursite.com/blog/烈火燃尽后的生存与死亡20190805/</id>
     <published>2019-08-04T16:00:00.000Z</published>
     <updated>2019-08-05T05:04:12.418Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="电影" scheme="https://lx78qk.coding-pages.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
+      <category term="电影" scheme="http://yoursite.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>.NET Core + EF 报nuget包版本冲突错误</title>
-    <link href="https://lx78qk.coding-pages.com/blog/dotNETCoreEF%E6%8A%A5nuget%E5%8C%85%E4%B8%8D%E5%85%BC%E5%AE%B920190621/"/>
-    <id>https://lx78qk.coding-pages.com/blog/dotNETCoreEF报nuget包不兼容20190621/</id>
+    <link href="http://yoursite.com/blog/dotNETCoreEF%E6%8A%A5nuget%E5%8C%85%E4%B8%8D%E5%85%BC%E5%AE%B920190621/"/>
+    <id>http://yoursite.com/blog/dotNETCoreEF报nuget包不兼容20190621/</id>
     <published>2019-06-20T16:00:00.000Z</published>
     <updated>2019-06-21T13:51:06.534Z</updated>
     
@@ -54,19 +54,19 @@
     
     </summary>
     
-      <category term=".NET" scheme="https://lx78qk.coding-pages.com/categories/NET/"/>
+      <category term=".NET" scheme="http://yoursite.com/categories/NET/"/>
     
     
-      <category term="C#" scheme="https://lx78qk.coding-pages.com/source/tags/C/"/>
+      <category term="C#" scheme="http://yoursite.com/source/tags/C/"/>
     
-      <category term=".NET" scheme="https://lx78qk.coding-pages.com/source/tags/NET/"/>
+      <category term=".NET" scheme="http://yoursite.com/source/tags/NET/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序报错:Page is not constructed because it is not found.</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%A5%E9%94%99Page_is_not_constructed20190424/"/>
-    <id>https://lx78qk.coding-pages.com/blog/小程序报错Page_is_not_constructed20190424/</id>
+    <link href="http://yoursite.com/blog/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%A5%E9%94%99Page_is_not_constructed20190424/"/>
+    <id>http://yoursite.com/blog/小程序报错Page_is_not_constructed20190424/</id>
     <published>2019-04-23T16:00:00.000Z</published>
     <updated>2019-04-24T04:32:46.641Z</updated>
     
@@ -82,17 +82,17 @@
     
     </summary>
     
-      <category term="编程" scheme="https://lx78qk.coding-pages.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="微信小程序" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AD%A6%E5%91%8Awxkey20190421/"/>
-    <id>https://lx78qk.coding-pages.com/blog/微信小程序警告wxkey20190421/</id>
+    <link href="http://yoursite.com/blog/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AD%A6%E5%91%8Awxkey20190421/"/>
+    <id>http://yoursite.com/blog/微信小程序警告wxkey20190421/</id>
     <published>2019-04-20T16:00:00.000Z</published>
     <updated>2019-04-20T18:22:59.509Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="编程" scheme="https://lx78qk.coding-pages.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="微信小程序" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/source/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>Windows下使用SublimeText3调试运行Pascal程序</title>
-    <link href="https://lx78qk.coding-pages.com/blog/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8sublimetext3%E8%B0%83%E8%AF%95%E8%BF%90%E8%A1%8CPascal%E7%A8%8B%E5%BA%8F20190307/"/>
-    <id>https://lx78qk.coding-pages.com/blog/Windows下使用sublimetext3调试运行Pascal程序20190307/</id>
+    <link href="http://yoursite.com/blog/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8sublimetext3%E8%B0%83%E8%AF%95%E8%BF%90%E8%A1%8CPascal%E7%A8%8B%E5%BA%8F20190307/"/>
+    <id>http://yoursite.com/blog/Windows下使用sublimetext3调试运行Pascal程序20190307/</id>
     <published>2019-03-06T16:00:00.000Z</published>
     <updated>2019-03-07T04:57:18.153Z</updated>
     
@@ -130,19 +130,19 @@
     
     </summary>
     
-      <category term="Pascal" scheme="https://lx78qk.coding-pages.com/categories/Pascal/"/>
+      <category term="Pascal" scheme="http://yoursite.com/categories/Pascal/"/>
     
     
-      <category term="Windows" scheme="https://lx78qk.coding-pages.com/source/tags/Windows/"/>
+      <category term="Windows" scheme="http://yoursite.com/source/tags/Windows/"/>
     
-      <category term="Pascal" scheme="https://lx78qk.coding-pages.com/source/tags/Pascal/"/>
+      <category term="Pascal" scheme="http://yoursite.com/source/tags/Pascal/"/>
     
   </entry>
   
   <entry>
     <title>对你来说活着意味着什么？</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E5%AF%B9%E4%BD%A0%E6%9D%A5%E8%AF%B4%E6%B4%BB%E7%9D%80%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%8820190119/"/>
-    <id>https://lx78qk.coding-pages.com/blog/对你来说活着意味着什么20190119/</id>
+    <link href="http://yoursite.com/blog/%E5%AF%B9%E4%BD%A0%E6%9D%A5%E8%AF%B4%E6%B4%BB%E7%9D%80%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%8820190119/"/>
+    <id>http://yoursite.com/blog/对你来说活着意味着什么20190119/</id>
     <published>2019-01-18T16:00:00.000Z</published>
     <updated>2019-01-20T07:57:41.780Z</updated>
     
@@ -155,19 +155,19 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="电影" scheme="https://lx78qk.coding-pages.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
+      <category term="电影" scheme="http://yoursite.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
     
-      <category term="动漫" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%8A%A8%E6%BC%AB/"/>
+      <category term="动漫" scheme="http://yoursite.com/source/tags/%E5%8A%A8%E6%BC%AB/"/>
     
   </entry>
   
   <entry>
     <title>计算机操作系统调度算法模拟程序设计（C#）</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A120181214/"/>
-    <id>https://lx78qk.coding-pages.com/blog/计算机操作系统调度算法模拟程序设计20181214/</id>
+    <link href="http://yoursite.com/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A120181214/"/>
+    <id>http://yoursite.com/blog/计算机操作系统调度算法模拟程序设计20181214/</id>
     <published>2018-12-13T16:00:00.000Z</published>
     <updated>2019-02-10T07:17:17.921Z</updated>
     
@@ -181,19 +181,19 @@
     
     </summary>
     
-      <category term="C#" scheme="https://lx78qk.coding-pages.com/categories/C/"/>
+      <category term="C#" scheme="http://yoursite.com/categories/C/"/>
     
     
-      <category term="C#" scheme="https://lx78qk.coding-pages.com/source/tags/C/"/>
+      <category term="C#" scheme="http://yoursite.com/source/tags/C/"/>
     
-      <category term="操作系统" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://yoursite.com/source/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>《太吾绘卷》是否能成为武侠迷期待的真正江湖？</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E3%80%8A%E5%A4%AA%E5%90%BE%E7%BB%98%E5%8D%B7%E3%80%8B%E6%98%AF%E5%90%A6%E8%83%BD%E6%88%90%E4%B8%BA%E6%AD%A6%E4%BE%A0%E8%BF%B7%E6%9C%9F%E5%BE%85%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%B1%9F%E6%B9%96%EF%BC%9F20181013/"/>
-    <id>https://lx78qk.coding-pages.com/blog/《太吾绘卷》是否能成为武侠迷期待的真正江湖？20181013/</id>
+    <link href="http://yoursite.com/blog/%E3%80%8A%E5%A4%AA%E5%90%BE%E7%BB%98%E5%8D%B7%E3%80%8B%E6%98%AF%E5%90%A6%E8%83%BD%E6%88%90%E4%B8%BA%E6%AD%A6%E4%BE%A0%E8%BF%B7%E6%9C%9F%E5%BE%85%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%B1%9F%E6%B9%96%EF%BC%9F20181013/"/>
+    <id>http://yoursite.com/blog/《太吾绘卷》是否能成为武侠迷期待的真正江湖？20181013/</id>
     <published>2018-10-12T16:00:00.000Z</published>
     <updated>2018-11-03T05:23:56.148Z</updated>
     
@@ -205,19 +205,19 @@
     
     </summary>
     
-      <category term="测评" scheme="https://lx78qk.coding-pages.com/categories/%E6%B5%8B%E8%AF%84/"/>
+      <category term="测评" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%84/"/>
     
     
-      <category term="游戏" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
+      <category term="游戏" scheme="http://yoursite.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
     
-      <category term="steam" scheme="https://lx78qk.coding-pages.com/source/tags/steam/"/>
+      <category term="steam" scheme="http://yoursite.com/source/tags/steam/"/>
     
   </entry>
   
   <entry>
     <title>使用EasyX图形库编写2D游戏</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E4%BD%BF%E7%94%A8easyx%E5%9B%BE%E5%BD%A2%E5%BA%93%E7%BC%96%E5%86%992D%E6%B8%B8%E6%88%8F20180723/"/>
-    <id>https://lx78qk.coding-pages.com/blog/使用easyx图形库编写2D游戏20180723/</id>
+    <link href="http://yoursite.com/blog/%E4%BD%BF%E7%94%A8easyx%E5%9B%BE%E5%BD%A2%E5%BA%93%E7%BC%96%E5%86%992D%E6%B8%B8%E6%88%8F20180723/"/>
+    <id>http://yoursite.com/blog/使用easyx图形库编写2D游戏20180723/</id>
     <published>2018-07-22T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:24.893Z</updated>
     
@@ -229,17 +229,17 @@
     
     </summary>
     
-      <category term="C++" scheme="https://lx78qk.coding-pages.com/categories/C/"/>
+      <category term="C++" scheme="http://yoursite.com/categories/C/"/>
     
     
-      <category term="EasyX" scheme="https://lx78qk.coding-pages.com/source/tags/EasyX/"/>
+      <category term="EasyX" scheme="http://yoursite.com/source/tags/EasyX/"/>
     
   </entry>
   
   <entry>
     <title>C#中的结构和类</title>
-    <link href="https://lx78qk.coding-pages.com/blog/CSharp%E4%B8%AD%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E7%B1%BB20180629/"/>
-    <id>https://lx78qk.coding-pages.com/blog/CSharp中的结构和类20180629/</id>
+    <link href="http://yoursite.com/blog/CSharp%E4%B8%AD%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E7%B1%BB20180629/"/>
+    <id>http://yoursite.com/blog/CSharp中的结构和类20180629/</id>
     <published>2018-06-28T16:00:00.000Z</published>
     <updated>2019-02-10T07:17:20.653Z</updated>
     
@@ -251,19 +251,19 @@
     
     </summary>
     
-      <category term="C#" scheme="https://lx78qk.coding-pages.com/categories/C/"/>
+      <category term="C#" scheme="http://yoursite.com/categories/C/"/>
     
     
-      <category term="C#" scheme="https://lx78qk.coding-pages.com/source/tags/C/"/>
+      <category term="C#" scheme="http://yoursite.com/source/tags/C/"/>
     
-      <category term="strcut" scheme="https://lx78qk.coding-pages.com/source/tags/strcut/"/>
+      <category term="strcut" scheme="http://yoursite.com/source/tags/strcut/"/>
     
   </entry>
   
   <entry>
     <title>阻止我们成功的，只有懒惰</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E9%98%BB%E6%AD%A2%E6%88%91%E4%BB%AC%E6%88%90%E5%8A%9F%E7%9A%84%EF%BC%8C%E5%8F%AA%E6%9C%89%E6%87%92%E6%83%B020180625/"/>
-    <id>https://lx78qk.coding-pages.com/blog/阻止我们成功的，只有懒惰20180625/</id>
+    <link href="http://yoursite.com/blog/%E9%98%BB%E6%AD%A2%E6%88%91%E4%BB%AC%E6%88%90%E5%8A%9F%E7%9A%84%EF%BC%8C%E5%8F%AA%E6%9C%89%E6%87%92%E6%83%B020180625/"/>
+    <id>http://yoursite.com/blog/阻止我们成功的，只有懒惰20180625/</id>
     <published>2018-06-24T16:00:00.000Z</published>
     <updated>2018-11-03T05:26:10.135Z</updated>
     
@@ -275,43 +275,19 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/source/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/source/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="思想" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%80%9D%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</title>
-    <link href="https://lx78qk.coding-pages.com/blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%8520180509/"/>
-    <id>https://lx78qk.coding-pages.com/blog/Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装20180509/</id>
-    <published>2018-05-08T16:00:00.000Z</published>
-    <updated>2018-11-03T05:24:44.011Z</updated>
-    
-    <content type="html"><![CDATA[<p>早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。</p><a id="more"></a><h3 id="Ubuntu-子系统的安装"><a href="#Ubuntu-子系统的安装" class="headerlink" title="Ubuntu 子系统的安装"></a>Ubuntu 子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启 WSL 服务，如图所示：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185OpenWSLService.png" alt=""></div></p><p>也可以通过在 PowerShell(管理员) 运行以下命令开启开启</p><p><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></p><p>之后在设置里开启开发人员模式</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185developerMode.png" alt=""></div></p><p>然后在 Windows 的应用商店里就能只能下载想要体验的 Linux 子系统了。可以看到它提供了很多类型的 Linux 系统，这里就选择我最喜欢的 Ubuntu Linux 来做演示。</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185WSLwindowstore.png" alt=""></div></p><p>等待安装完成后，点击开始菜单里的 Ubuntu 图标或者在 powershell 里输入<code>bash</code>即可启动 Ubuntu Linux 子系统。等待了几分钟的初始化之后，我们输入用户名和密码（可以跳过），然后就能看到 Ubuntu 的命令行界面了.</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ubuntuOnWindows.png" alt=""></div></p><p>在刚安装好 WSL 后，与普通实体机上的 Ubuntu 系统一样，需要更新软件列表和软件包：<br><code>sudo apt update</code><br><code>sudo apt upgrade</code></p><p>这样就可以像使用普通 Ubuntu 系统一样使用 WSL 了。</p><h3 id="桌面环境的安装与启动"><a href="#桌面环境的安装与启动" class="headerlink" title="桌面环境的安装与启动"></a>桌面环境的安装与启动</h3><p>WSL 的方便之处就在于它和双系统的 Linux 没有很大区别，并且比虚拟机性能更快一点。美中不足的是，WSL 并没有自带图形化界面，因此如果想要运行桌面应用，就不禁徒叹奈何了。<br>不过在 WSL 推出不久，就有大神提供了 WSL 安装桌面环境的方法，并发到了 WSL github 的 issues 里：<a href="http://t.cn/R3AWMQo" target="_blank" rel="external">Run any Desktop Environment in WSL</a></p><p>根据这个教程，我们就可以在 WSL 里安装桌面环境以获得比较完整的体验。</p><ul><li><p><strong>安装 X-Windows</strong></p><p>可供选择安装的 X-Windows 有多个：VcXsrv Windows X Server、Xming、Cygwin X Server，教程中选择的是 VcXsrv，因为比较容易和稳定。</p><p>软件首页：<br><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="external">https://sourceforge.net/projects/vcxsrv/</a></p><p>下载地址：<br><a href="https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe" target="_blank" rel="external">https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe</a></p><p>安装后首次启动会自动进入界面设置。</p><p>选择：“one large window”，Display number 设置成 0，其它默认：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185Xwindow.png" alt=""></div></p></li><li><p><strong>WSL 安装桌面环境</strong></p><p>这里选择安装 unity 桌面环境，我们同样可以选择 xfce4 桌面环境。</p><p>在 bash 下执行 <code>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</code></p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185installdesktop.png" alt=""></div></p><p>需要提醒的是，Ubuntu 桌面版自带的 unity 桌面环境与依赖包有 600 多 M，解压之后近 2.6G，所以前提需要保证足够的磁盘空间。</p></li><li><p><strong>配置 compiz 并运行桌面环境</strong></p><p>启动 X-Windows，在 Bash 中执行：</p><p><code>export DISPLAY=localhost:0</code></p><p><code>ccsm</code></p><p>在 X-windows 中，即会弹出 ccsm 的配置界面，勾选需要的 Desktop 组件（只需要勾选 Desktop 中的 Ubuntu Unity Plugin 即可，其它默认）：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ccsm.png" alt=""></div></p><p>点击 close 关闭 ccsm，执行 compiz，短暂的加载后，在 X-windows 的界面中就能看到桌面版的 Ubuntu 了。</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185compiz.png" alt=""><br><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185UbuntuDesktoponWSL.png" alt=""></div></div></p></li></ul><h3 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h3><p>关于 WSL 的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10 内置 Linux 子系统初体验</a></p><p>这里推荐一个软件 —— <a href="https://goreliu.github.io/wsl-terminal/README.zh_CN.html" target="_blank" rel="external">wsl-terminal</a>，用于 WSL 的终端模拟器，基于 mintty 和 wslbridge。github 上有很全的中文文档，添加了很多实用功能，可以利用终端做更多很酷很有趣的事~</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185cmatrix.gif" alt=""></div></p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185w3cbaidu.png" alt=""></div></p><p>自此，开始折腾自己的 Linux 吧~</p><p>以上。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://lx78qk.coding-pages.com/categories/Linux/"/>
-    
-    
-      <category term="Ubuntu" scheme="https://lx78qk.coding-pages.com/source/tags/Ubuntu/"/>
-    
-      <category term="Windows" scheme="https://lx78qk.coding-pages.com/source/tags/Windows/"/>
+      <category term="思想" scheme="http://yoursite.com/source/tags/%E6%80%9D%E6%83%B3/"/>
     
   </entry>
   
   <entry>
     <title>腾讯没梦想，自媒体有春梦</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E8%85%BE%E8%AE%AF%E6%B2%A1%E6%A2%A6%E6%83%B3%EF%BC%8C%E8%87%AA%E5%AA%92%E4%BD%93%E6%9C%89%E6%98%A5%E6%A2%A620180509/"/>
-    <id>https://lx78qk.coding-pages.com/blog/腾讯没梦想，自媒体有春梦20180509/</id>
+    <link href="http://yoursite.com/blog/%E8%85%BE%E8%AE%AF%E6%B2%A1%E6%A2%A6%E6%83%B3%EF%BC%8C%E8%87%AA%E5%AA%92%E4%BD%93%E6%9C%89%E6%98%A5%E6%A2%A620180509/"/>
+    <id>http://yoursite.com/blog/腾讯没梦想，自媒体有春梦20180509/</id>
     <published>2018-05-08T16:00:00.000Z</published>
     <updated>2018-11-03T05:26:03.115Z</updated>
     
@@ -323,19 +299,43 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/source/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/source/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="互联网" scheme="https://lx78qk.coding-pages.com/source/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+      <category term="互联网" scheme="http://yoursite.com/source/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</title>
+    <link href="http://yoursite.com/blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%8520180509/"/>
+    <id>http://yoursite.com/blog/Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装20180509/</id>
+    <published>2018-05-08T16:00:00.000Z</published>
+    <updated>2018-11-03T05:24:44.011Z</updated>
+    
+    <content type="html"><![CDATA[<p>早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。</p><a id="more"></a><h3 id="Ubuntu-子系统的安装"><a href="#Ubuntu-子系统的安装" class="headerlink" title="Ubuntu 子系统的安装"></a>Ubuntu 子系统的安装</h3><p>为了体验这一功能，需要在<code>控制面板-&gt;程序和功能-&gt;启用或关闭Windows功能</code> 中 开启 WSL 服务，如图所示：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185OpenWSLService.png" alt=""></div></p><p>也可以通过在 PowerShell(管理员) 运行以下命令开启开启</p><p><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></p><p>之后在设置里开启开发人员模式</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185developerMode.png" alt=""></div></p><p>然后在 Windows 的应用商店里就能只能下载想要体验的 Linux 子系统了。可以看到它提供了很多类型的 Linux 系统，这里就选择我最喜欢的 Ubuntu Linux 来做演示。</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185WSLwindowstore.png" alt=""></div></p><p>等待安装完成后，点击开始菜单里的 Ubuntu 图标或者在 powershell 里输入<code>bash</code>即可启动 Ubuntu Linux 子系统。等待了几分钟的初始化之后，我们输入用户名和密码（可以跳过），然后就能看到 Ubuntu 的命令行界面了.</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ubuntuOnWindows.png" alt=""></div></p><p>在刚安装好 WSL 后，与普通实体机上的 Ubuntu 系统一样，需要更新软件列表和软件包：<br><code>sudo apt update</code><br><code>sudo apt upgrade</code></p><p>这样就可以像使用普通 Ubuntu 系统一样使用 WSL 了。</p><h3 id="桌面环境的安装与启动"><a href="#桌面环境的安装与启动" class="headerlink" title="桌面环境的安装与启动"></a>桌面环境的安装与启动</h3><p>WSL 的方便之处就在于它和双系统的 Linux 没有很大区别，并且比虚拟机性能更快一点。美中不足的是，WSL 并没有自带图形化界面，因此如果想要运行桌面应用，就不禁徒叹奈何了。<br>不过在 WSL 推出不久，就有大神提供了 WSL 安装桌面环境的方法，并发到了 WSL github 的 issues 里：<a href="http://t.cn/R3AWMQo" target="_blank" rel="external">Run any Desktop Environment in WSL</a></p><p>根据这个教程，我们就可以在 WSL 里安装桌面环境以获得比较完整的体验。</p><ul><li><p><strong>安装 X-Windows</strong></p><p>可供选择安装的 X-Windows 有多个：VcXsrv Windows X Server、Xming、Cygwin X Server，教程中选择的是 VcXsrv，因为比较容易和稳定。</p><p>软件首页：<br><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="external">https://sourceforge.net/projects/vcxsrv/</a></p><p>下载地址：<br><a href="https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe" target="_blank" rel="external">https://ncu.dl.sourceforge.net/project/vcxsrv/vcxsrv/1.19.3.3/vcxsrv-64.1.19.3.3.installer.exe</a></p><p>安装后首次启动会自动进入界面设置。</p><p>选择：“one large window”，Display number 设置成 0，其它默认：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185Xwindow.png" alt=""></div></p></li><li><p><strong>WSL 安装桌面环境</strong></p><p>这里选择安装 unity 桌面环境，我们同样可以选择 xfce4 桌面环境。</p><p>在 bash 下执行 <code>sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</code></p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185installdesktop.png" alt=""></div></p><p>需要提醒的是，Ubuntu 桌面版自带的 unity 桌面环境与依赖包有 600 多 M，解压之后近 2.6G，所以前提需要保证足够的磁盘空间。</p></li><li><p><strong>配置 compiz 并运行桌面环境</strong></p><p>启动 X-Windows，在 Bash 中执行：</p><p><code>export DISPLAY=localhost:0</code></p><p><code>ccsm</code></p><p>在 X-windows 中，即会弹出 ccsm 的配置界面，勾选需要的 Desktop 组件（只需要勾选 Desktop 中的 Ubuntu Unity Plugin 即可，其它默认）：</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185ccsm.png" alt=""></div></p><p>点击 close 关闭 ccsm，执行 compiz，短暂的加载后，在 X-windows 的界面中就能看到桌面版的 Ubuntu 了。</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185compiz.png" alt=""><br><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185UbuntuDesktoponWSL.png" alt=""></div></div></p></li></ul><h3 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h3><p>关于 WSL 的玩法有很多，可以参照：<a href="http://t.cn/RtbzH6h" target="_blank" rel="external">玩转 Windows 10 中的 Linux 子系统</a> 和 <a href="http://t.cn/RTsqoVJ" target="_blank" rel="external">Windows10 内置 Linux 子系统初体验</a></p><p>这里推荐一个软件 —— <a href="https://goreliu.github.io/wsl-terminal/README.zh_CN.html" target="_blank" rel="external">wsl-terminal</a>，用于 WSL 的终端模拟器，基于 mintty 和 wslbridge。github 上有很全的中文文档，添加了很多实用功能，可以利用终端做更多很酷很有趣的事~</p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185cmatrix.gif" alt=""></div></p><p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20185w3cbaidu.png" alt=""></div></p><p>自此，开始折腾自己的 Linux 吧~</p><p>以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早在 Build 2016 上，微软就介绍了处于 Beta 阶段的 Windows 下的 Linux 子系统 —— Windows Subsystem for Linux（WSL），它可以让开发者们在 Windows 10 下不需要虚拟机就可以运行 Linux 系统。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/source/tags/Ubuntu/"/>
+    
+      <category term="Windows" scheme="http://yoursite.com/source/tags/Windows/"/>
     
   </entry>
   
   <entry>
     <title>《救赎之路》到底救赎了谁？</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E3%80%8A%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8B%E5%88%B0%E5%BA%95%E6%95%91%E8%B5%8E%E4%BA%86%E8%B0%81%EF%BC%9F20180429/"/>
-    <id>https://lx78qk.coding-pages.com/blog/《救赎之路》到底救赎了谁？20180429/</id>
+    <link href="http://yoursite.com/blog/%E3%80%8A%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8B%E5%88%B0%E5%BA%95%E6%95%91%E8%B5%8E%E4%BA%86%E8%B0%81%EF%BC%9F20180429/"/>
+    <id>http://yoursite.com/blog/《救赎之路》到底救赎了谁？20180429/</id>
     <published>2018-04-28T16:00:00.000Z</published>
     <updated>2018-11-03T05:24:18.742Z</updated>
     
@@ -347,17 +347,17 @@
     
     </summary>
     
-      <category term="测评" scheme="https://lx78qk.coding-pages.com/categories/%E6%B5%8B%E8%AF%84/"/>
+      <category term="测评" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%84/"/>
     
     
-      <category term="游戏" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
+      <category term="游戏" scheme="http://yoursite.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
   <entry>
     <title>不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E4%B8%8D%E5%A4%AA%E2%80%9C%E7%A1%AC%E6%A0%B8%E2%80%9D%E7%9A%84%E7%A1%AC%E6%A0%B8%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%20%E2%80%94%E2%80%94%20%E3%80%8A%E9%9A%90%E9%BE%99%E4%BC%A0%E9%9A%90%E8%B8%AA%E3%80%8B20180407/"/>
-    <id>https://lx78qk.coding-pages.com/blog/不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》20180407/</id>
+    <link href="http://yoursite.com/blog/%E4%B8%8D%E5%A4%AA%E2%80%9C%E7%A1%AC%E6%A0%B8%E2%80%9D%E7%9A%84%E7%A1%AC%E6%A0%B8%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%20%E2%80%94%E2%80%94%20%E3%80%8A%E9%9A%90%E9%BE%99%E4%BC%A0%E9%9A%90%E8%B8%AA%E3%80%8B20180407/"/>
+    <id>http://yoursite.com/blog/不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》20180407/</id>
     <published>2018-04-06T16:00:00.000Z</published>
     <updated>2018-11-03T05:24:56.431Z</updated>
     
@@ -369,19 +369,19 @@
     
     </summary>
     
-      <category term="测评" scheme="https://lx78qk.coding-pages.com/categories/%E6%B5%8B%E8%AF%84/"/>
+      <category term="测评" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%84/"/>
     
     
-      <category term="游戏" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
+      <category term="游戏" scheme="http://yoursite.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
     
-      <category term="steam" scheme="https://lx78qk.coding-pages.com/source/tags/steam/"/>
+      <category term="steam" scheme="http://yoursite.com/source/tags/steam/"/>
     
   </entry>
   
   <entry>
     <title>冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E5%86%B0%E5%86%B7%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%AD%A4%E7%8B%AC%E7%88%B1%E6%81%8B%20%E2%80%94%E2%80%94%20%E3%80%8A%E6%B0%B4%E5%BD%A2%E7%89%A9%E8%AF%AD%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E8%80%B6%E4%B9%8B%E6%AD%8C%E3%80%8B20180322/"/>
-    <id>https://lx78qk.coding-pages.com/blog/冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》20180322/</id>
+    <link href="http://yoursite.com/blog/%E5%86%B0%E5%86%B7%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%AD%A4%E7%8B%AC%E7%88%B1%E6%81%8B%20%E2%80%94%E2%80%94%20%E3%80%8A%E6%B0%B4%E5%BD%A2%E7%89%A9%E8%AF%AD%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E8%80%B6%E4%B9%8B%E6%AD%8C%E3%80%8B20180322/"/>
+    <id>http://yoursite.com/blog/冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》20180322/</id>
     <published>2018-03-21T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:40.817Z</updated>
     
@@ -393,19 +393,19 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://lx78qk.coding-pages.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="游戏" scheme="https://lx78qk.coding-pages.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
+      <category term="游戏" scheme="http://yoursite.com/source/tags/%E6%B8%B8%E6%88%8F/"/>
     
-      <category term="电影" scheme="https://lx78qk.coding-pages.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
+      <category term="电影" scheme="http://yoursite.com/source/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>关于自学计算机专业课程的一点体会</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E4%BD%93%E4%BC%9A20180226/"/>
-    <id>https://lx78qk.coding-pages.com/blog/关于自学计算机专业课程的一点体会20180226/</id>
+    <link href="http://yoursite.com/blog/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E4%BD%93%E4%BC%9A20180226/"/>
+    <id>http://yoursite.com/blog/关于自学计算机专业课程的一点体会20180226/</id>
     <published>2018-02-25T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:33.284Z</updated>
     
@@ -417,17 +417,17 @@
     
     </summary>
     
-      <category term="学习" scheme="https://lx78qk.coding-pages.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="学习" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://yoursite.com/source/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>关于手机刷机的个人总结</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E6%9C%89%E5%85%B3%E6%89%8B%E6%9C%BA%E5%88%B7%E6%9C%BA%E7%9A%84%E6%80%BB%E7%BB%9320180219/"/>
-    <id>https://lx78qk.coding-pages.com/blog/有关手机刷机的总结20180219/</id>
+    <link href="http://yoursite.com/blog/%E6%9C%89%E5%85%B3%E6%89%8B%E6%9C%BA%E5%88%B7%E6%9C%BA%E7%9A%84%E6%80%BB%E7%BB%9320180219/"/>
+    <id>http://yoursite.com/blog/有关手机刷机的总结20180219/</id>
     <published>2018-02-18T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:51.711Z</updated>
     
@@ -439,19 +439,19 @@
     
     </summary>
     
-      <category term="安卓" scheme="https://lx78qk.coding-pages.com/categories/%E5%AE%89%E5%8D%93/"/>
+      <category term="安卓" scheme="http://yoursite.com/categories/%E5%AE%89%E5%8D%93/"/>
     
     
-      <category term="安利" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%AE%89%E5%88%A9/"/>
+      <category term="安利" scheme="http://yoursite.com/source/tags/%E5%AE%89%E5%88%A9/"/>
     
-      <category term="Android" scheme="https://lx78qk.coding-pages.com/source/tags/Android/"/>
+      <category term="Android" scheme="http://yoursite.com/source/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>个人电脑实用软件汇总——Windows(二)</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%BA%8C)20180212/"/>
-    <id>https://lx78qk.coding-pages.com/blog/个人电脑实用软件汇总——Windows(二)20180212/</id>
+    <link href="http://yoursite.com/blog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%BA%8C)20180212/"/>
+    <id>http://yoursite.com/blog/个人电脑实用软件汇总——Windows(二)20180212/</id>
     <published>2018-02-11T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:12.288Z</updated>
     
@@ -463,19 +463,19 @@
     
     </summary>
     
-      <category term="软件" scheme="https://lx78qk.coding-pages.com/categories/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Windows" scheme="https://lx78qk.coding-pages.com/source/tags/Windows/"/>
+      <category term="Windows" scheme="http://yoursite.com/source/tags/Windows/"/>
     
-      <category term="安利" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%AE%89%E5%88%A9/"/>
+      <category term="安利" scheme="http://yoursite.com/source/tags/%E5%AE%89%E5%88%A9/"/>
     
   </entry>
   
   <entry>
     <title>个人电脑实用软件汇总——Windows(一)</title>
-    <link href="https://lx78qk.coding-pages.com/blog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%B8%80)20180205/"/>
-    <id>https://lx78qk.coding-pages.com/blog/个人电脑实用软件汇总——Windows(一)20180205/</id>
+    <link href="http://yoursite.com/blog/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB%E2%80%94%E2%80%94Windows(%E4%B8%80)20180205/"/>
+    <id>http://yoursite.com/blog/个人电脑实用软件汇总——Windows(一)20180205/</id>
     <published>2018-02-04T16:00:00.000Z</published>
     <updated>2018-11-03T05:25:05.101Z</updated>
     
@@ -490,12 +490,12 @@
     
     </summary>
     
-      <category term="软件" scheme="https://lx78qk.coding-pages.com/categories/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
-      <category term="Windows" scheme="https://lx78qk.coding-pages.com/source/tags/Windows/"/>
+      <category term="Windows" scheme="http://yoursite.com/source/tags/Windows/"/>
     
-      <category term="安利" scheme="https://lx78qk.coding-pages.com/source/tags/%E5%AE%89%E5%88%A9/"/>
+      <category term="安利" scheme="http://yoursite.com/source/tags/%E5%AE%89%E5%88%A9/"/>
     
   </entry>
   
