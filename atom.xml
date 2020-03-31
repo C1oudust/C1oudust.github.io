@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-31T09:14:42.520Z</updated>
+  <updated>2020-03-31T09:24:19.148Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/blog/CSS%E4%B9%8B%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E5%8C%BA%E5%88%AB20200321/"/>
     <id>http://yoursite.com/blog/CSS之隐藏元素的方法和区别20200321/</id>
     <published>2020-03-20T16:00:00.000Z</published>
-    <updated>2020-03-31T09:14:42.520Z</updated>
+    <updated>2020-03-31T09:24:19.148Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>隐藏一个元素有三种方法。分别是<code>display:none</code>, <code>visibility:hidden</code> 和 <code>opacity:0</code></strong></p><a id="more"></a><h2 id="display-none"><a href="#display-none" class="headerlink" title="display:none"></a><strong>display:none</strong></h2><ol><li>DOM 结构：浏览器不会渲染该元素并且不会在页面上占据空间；</li><li>事件监听： 无法进行 DOM 事件监听；</li><li>继承：不会被子元素继承，因为子类也不会被渲染；</li><li>transition: transition 不支持<code>display</code>；</li><li>性能：动态改变此属性时会引起重拍，性能较差(<code>css3</code> 的动画效果在<code>display:none</code> 的时候不耗费性能。)</li></ol><h2 id="visibility-hidden"><a href="#visibility-hidden" class="headerlink" title="visibility:hidden"></a><strong>visibility:hidden</strong></h2><ol><li>DOM 结构： 元素被隐藏但会被渲染，所以会占据空间；</li><li>事件监听： 无法进行 DOM 事件监听；</li><li>继承：会被子元素继承，并且子元素可以使用 <code>visibility:visible</code> 取消隐藏；</li><li>transition：visibility 会被立即显示，隐藏时会延时；</li><li>性能： 动态改变此属性时会引起重绘，性能较高。</li></ol><h2 id="opacity-0"><a href="#opacity-0" class="headerlink" title="opacity:0"></a><strong>opacity:0</strong></h2><ol><li>DOM 结构： 元素被隐藏但占据空间，因为只是改变透明度；</li><li>事件监听： 可以进行 DOM 事件监听；</li><li>继承： 会被子元素继承且子元素不能使用 <code>opacity:1</code> 取消隐藏；</li><li>transition： opacity 可以延时显示和隐藏；</li><li>性能：提升为合成层，不会触发重绘，性能较高。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><strong>隐藏一个元素有三种方法。分别是<code>display:none</code>, <code>visibility:hidden</code> 和 <code>opacity:0</code></strong></p><a id="more"></a><h2 id="display-none"><a href="#display-none" class="headerlink" title="display:none"></a><strong>display:none</strong></h2><ol><li>DOM 结构：浏览器不会渲染该元素并且不会在页面上占据空间；</li><li>事件监听： 无法进行 DOM 事件监听；</li><li>继承：不会被子元素继承，因为子类也不会被渲染；</li><li>transition: transition 不支持<code>display</code>；</li><li>性能：动态改变此属性时会引起重排，性能较差(<code>css3</code> 的动画效果在<code>display:none</code> 的时候不耗费性能。)</li></ol><h2 id="visibility-hidden"><a href="#visibility-hidden" class="headerlink" title="visibility:hidden"></a><strong>visibility:hidden</strong></h2><ol><li>DOM 结构： 元素被隐藏但会被渲染，所以会占据空间；</li><li>事件监听： 无法进行 DOM 事件监听；</li><li>继承：会被子元素继承，并且子元素可以使用 <code>visibility:visible</code> 取消隐藏；</li><li>transition：visibility 会被立即显示，隐藏时会延时；</li><li>性能： 动态改变此属性时会引起重绘，性能较高。</li></ol><h2 id="opacity-0"><a href="#opacity-0" class="headerlink" title="opacity:0"></a><strong>opacity:0</strong></h2><ol><li>DOM 结构： 元素被隐藏但占据空间，因为只是改变透明度；</li><li>事件监听： 可以进行 DOM 事件监听；</li><li>继承： 会被子元素继承且子元素不能使用 <code>opacity:1</code> 取消隐藏；</li><li>transition： opacity 可以延时显示和隐藏；</li><li>性能：提升为合成层，不会触发重绘，性能较高。</li></ol>]]></content>
     
     <summary type="html">
     
