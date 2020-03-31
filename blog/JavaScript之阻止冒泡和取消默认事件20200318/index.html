@@ -110,19 +110,21 @@
 
 
   
-  <meta name="keywords" content="Lared·鸷鸟栖息之所" />
+  <meta name="keywords" content="前端,JavaScript," />
 
 
-<meta name="description" content="灵魂,  躁动不安...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vedfolnir">
-<meta property="og:url" content="http://yoursite.com/archives/2018/05/index.html">
+<meta name="description" content="冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。 在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。">
+<meta name="keywords" content="前端,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript之阻止冒泡和取消默认事件">
+<meta property="og:url" content="http://yoursite.com/blog/JavaScript之阻止冒泡和取消默认事件20200318/index.html">
 <meta property="og:site_name" content="Vedfolnir">
-<meta property="og:description" content="灵魂,  躁动不安...">
+<meta property="og:description" content="冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。 在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2020-03-31T09:56:23.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vedfolnir">
-<meta name="twitter:description" content="灵魂,  躁动不安...">
+<meta name="twitter:title" content="JavaScript之阻止冒泡和取消默认事件">
+<meta name="twitter:description" content="冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。 在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。">
 
 
 
@@ -131,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/05/"/>
+  <link rel="canonical" href="http://yoursite.com/blog/JavaScript之阻止冒泡和取消默认事件20200318/"/>
 
 
 
@@ -140,7 +142,7 @@
     sidebar: "",
   };
 </script>
-  <title>归档 | Vedfolnir</title>
+  <title>JavaScript之阻止冒泡和取消默认事件 | Vedfolnir</title>
   
 
 
@@ -197,7 +199,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/C1oudust" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -289,117 +291,218 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 27 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/JavaScript之阻止冒泡和取消默认事件20200318/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="C1oudust">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vedfolnir">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/blog/Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装20180509/" itemprop="url">
-              
-                <span itemprop="name">Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JavaScript之阻止冒泡和取消默认事件</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-09T00:00:00+08:00"
-              content="2018-05-09" >
-          05-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T00:00:00+08:00">2020-03-18</time>
+            
 
-    </header>
-  </article>
+            
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/JavaScript之阻止冒泡和取消默认事件20200318/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/JavaScript之阻止冒泡和取消默认事件20200318/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/腾讯没梦想，自媒体有春梦20180509/" itemprop="url">
-              
-                <span itemprop="name">腾讯没梦想，自媒体有春梦</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-09T00:00:00+08:00"
-              content="2018-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。</p>
+<p>在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。</p>
+<a id="more"></a>
+<h2 id="冒泡和捕获"><a href="#冒泡和捕获" class="headerlink" title="冒泡和捕获"></a>冒泡和捕获</h2><p>参考以下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onload = () =&gt; &#123;</div><div class="line">    $(&apos;#level1&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;1&apos;)&#125;);</div><div class="line">    $(&apos;#level2&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;2&apos;)&#125;);</div><div class="line">    $(&apos;#level3&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;3&apos;)&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在这个例子中，id 为 level3 的元素在 level2 元素内部，而 level2 元素又在 level1 的元素内部，因此点击了 level3 的元素，这个点击事件也会被 level2 和 level1 的元素接收到。因此这时会输出 <code>3 2 1</code>。这就是冒泡。</p>
+<p>而为了触发 捕获，则需要将 addEventListener 的第三个参数设置为 true(默认是 false)。这时候就会输出 <code>1 2 3</code>。</p>
+<h2 id="阻止事件传递"><a href="#阻止事件传递" class="headerlink" title="阻止事件传递"></a>阻止事件传递</h2><p>为了在点击 level3 元素时，不发生 level1 和 level2 元素的点击事件，就需要对事件传递进行阻止。</p>
+<p>w3c 的方法是 <code>e.stopPropagation()</code>，也是目前最常使用的方法(兼容性为除了 IE9 以下,Edge12 以下的所有浏览器)，IE 则是使用 <code>e.cancelBubble = true</code>(IE6 7 8)</p>
+<p><code>stopPropagation</code> 是事件对象(Event)的一个方法，作用是阻止目标元素的冒泡事件，但不会阻止默认行为。</p>
+<h2 id="取消默认事件"><a href="#取消默认事件" class="headerlink" title="取消默认事件"></a>取消默认事件</h2><p>w3c 的方法是 <code>e.preventDefault()</code> ，IE 则是使用 <code>e.returnValue = false</code>;</p>
+<p><code>preventDefault</code> 它是事件对象(Event)的一个方法，作用是取消一个目标元素的默认行为。既然是说默认行为，当然是元素必须有默认行为才能被取消。如链接 <code>&lt;a&gt;</code>，提交按钮 <code>&lt;input type=”submit”&gt;</code>等。当 Event 对象的 cancelable 为 false 时，表示没有默认行为，这时即使有默认行为，调用 preventDefault 也是不会起作用的。</p>
+<h2 id="return-false"><a href="#return-false" class="headerlink" title="return false"></a>return false</h2><p><code>return false</code> 等效于同时调用 <code>e.preventDefault()</code>和 <code>e.stopPropagation()</code></p>
+<p><code>return false</code> 除了阻止默认行为之外，还会阻止事件冒泡。</p>
+<p>在 jQuery 的源码中，有如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (ret === <span class="literal">false</span>) &#123;</div><div class="line">  event.preventDefault();</div><div class="line">  event.stopPropagation();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/source/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/source/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/JavaScript之闭包理解20200316/" rel="next" title="JavaScript之闭包的理解">
+                <i class="fa fa-chevron-left"></i> JavaScript之闭包的理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/CSS之BFC的理解20200320/" rel="prev" title="CSS之BFC的理解">
+                CSS之BFC的理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a92feeba049a8fe" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -420,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -774,6 +886,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡和捕获"><span class="nav-number">1.</span> <span class="nav-text">冒泡和捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止事件传递"><span class="nav-number">2.</span> <span class="nav-text">阻止事件传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消默认事件"><span class="nav-number">3.</span> <span class="nav-text">取消默认事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-false"><span class="nav-number">4.</span> <span class="nav-text">return false</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -925,6 +1053,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
 
   
 
