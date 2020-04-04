@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="Vedfolnir">
 <meta property="og:description" content="冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。 在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2020-03-31T09:56:23.809Z">
+<meta property="og:updated_time" content="2020-03-31T11:17:56.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之阻止冒泡和取消默认事件">
 <meta name="twitter:description" content="冒泡和捕获是 JS 中事件的两种传递方式。在   冒泡   中，内部元素的事件会先被触发，然后再触发外部元素。 在   捕获   中，外部元素的事件会先被触发，然后才会触发内部元素的事件。">
@@ -406,14 +406,16 @@
 <a id="more"></a>
 <h2 id="冒泡和捕获"><a href="#冒泡和捕获" class="headerlink" title="冒泡和捕获"></a>冒泡和捕获</h2><p>参考以下代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onload = () =&gt; &#123;</div><div class="line">    $(&apos;#level1&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;1&apos;)&#125;);</div><div class="line">    $(&apos;#level2&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;2&apos;)&#125;);</div><div class="line">    $(&apos;#level3&apos;).addEventListener(&quot;click&quot;,()=&gt;&#123;console.log(&apos;3&apos;)&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>在这个例子中，id 为 level3 的元素在 level2 元素内部，而 level2 元素又在 level1 的元素内部，因此点击了 level3 的元素，这个点击事件也会被 level2 和 level1 的元素接收到。因此这时会输出 <code>3 2 1</code>。这就是冒泡。</p>
-<p>而为了触发 捕获，则需要将 addEventListener 的第三个参数设置为 true(默认是 false)。这时候就会输出 <code>1 2 3</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  $(<span class="string">'#level1'</span>).addEventListener(<span class="string">'click'</span>, () =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">'1'</span>);&#125;);</div><div class="line">  $(<span class="string">'#level2'</span>).addEventListener(<span class="string">'click'</span>, () =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">'2'</span>);&#125;);</div><div class="line">  $(<span class="string">'#level3'</span>).addEventListener(<span class="string">'click'</span>, () =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">'3'</span>);&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在这个例子中，id 为 level3 的元素在 level2 元素内部，而 level2 元素又在 level1 的元素内部，因此点击了 level3 的元素，这个点击事件也会传递给 level2 和 level1 的元素，这时会输出 <code>3 2 1</code>。这就是冒泡。</p>
+<p>而为了触发 捕获，则需要将 addEventListener 的第三个参数设置为 true(默认是 false)，这时就会输出 <code>1 2 3</code>。</p>
 <h2 id="阻止事件传递"><a href="#阻止事件传递" class="headerlink" title="阻止事件传递"></a>阻止事件传递</h2><p>为了在点击 level3 元素时，不发生 level1 和 level2 元素的点击事件，就需要对事件传递进行阻止。</p>
 <p>w3c 的方法是 <code>e.stopPropagation()</code>，也是目前最常使用的方法(兼容性为除了 IE9 以下,Edge12 以下的所有浏览器)，IE 则是使用 <code>e.cancelBubble = true</code>(IE6 7 8)</p>
 <p><code>stopPropagation</code> 是事件对象(Event)的一个方法，作用是阻止目标元素的冒泡事件，但不会阻止默认行为。</p>
 <h2 id="取消默认事件"><a href="#取消默认事件" class="headerlink" title="取消默认事件"></a>取消默认事件</h2><p>w3c 的方法是 <code>e.preventDefault()</code> ，IE 则是使用 <code>e.returnValue = false</code>;</p>
 <p><code>preventDefault</code> 它是事件对象(Event)的一个方法，作用是取消一个目标元素的默认行为。既然是说默认行为，当然是元素必须有默认行为才能被取消。如链接 <code>&lt;a&gt;</code>，提交按钮 <code>&lt;input type=”submit”&gt;</code>等。当 Event 对象的 cancelable 为 false 时，表示没有默认行为，这时即使有默认行为，调用 preventDefault 也是不会起作用的。</p>
+<p>比如，用来禁止选择网页上的文字：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'selectstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">	e.preventDefault();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="return-false"><a href="#return-false" class="headerlink" title="return false"></a>return false</h2><p><code>return false</code> 等效于同时调用 <code>e.preventDefault()</code>和 <code>e.stopPropagation()</code></p>
 <p><code>return false</code> 除了阻止默认行为之外，还会阻止事件冒泡。</p>
 <p>在 jQuery 的源码中，有如下代码：</p>
@@ -552,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -650,7 +652,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -958,7 +962,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客共 40.1k字</span>
+  <span class="post-count">博客共 40.7k字</span>
 </div
         
 
