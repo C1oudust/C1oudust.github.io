@@ -39,6 +39,30 @@
   </entry>
   
   <entry>
+    <title>Vue之动态渲染的input框获取焦点问题</title>
+    <link href="http://yoursite.com/blog/Vue%E4%B9%8B%E5%8A%A8%E6%80%81%E6%B8%B2%E6%9F%93%E7%9A%84input%E6%A1%86%E8%8E%B7%E5%8F%96%E7%84%A6%E7%82%B9%E9%97%AE%E9%A2%9820200415/"/>
+    <id>http://yoursite.com/blog/Vue之动态渲染的input框获取焦点问题20200415/</id>
+    <published>2020-04-14T16:00:00.000Z</published>
+    <updated>2020-04-20T16:30:19.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>场景：个人信息页面，点击资料显示输入框以更改信息，这里用 v-show 显示和隐藏 input 元素，所以需要让使用 v-show 或者 v-if 动态控制的 input 输入框在显示时自动获取焦点。</p><a id="more"></a><h2 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h2><ol><li><p>在元素标签加上 <code>autofocus=&quot;autofocus&quot;</code></p><p>无效</p><p>原因：autofocus 属性是在当页面加载时自动获得焦点。</p></li><li><p>使用 vue 指令 <code>v-focus</code></p><p>无效</p></li><li><p>使用 ref 传递 input 元素，手动添加 focus 事件， <code>this.$refs.input.focus()</code>;</p><p>无效，并报错。错误原因，点击是元素还未被渲染，因此无法获取到元素本身，自然无法找到 focus 事件</p></li><li><p>在尝试 3 的基础上使用 <code>$nextTick</code>的回调函数</p></li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.$refs.input.focus()</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p>问题解决。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 vue 中，并不是每次数据改变都会触发更新 DOM，而是将这些操作都缓存在一个队列，在一个事件循环结束之后，刷新队列，统一执行 DOM 更新操作。</p><p>通常情况下，我们不需要关心这个问题，而如果想在 DOM 状态更新后做点什么，则需要用到 nextTick。</p><p>在 vue 生命周期的 created()钩子函数进行的 DOM 操作要放在 Vue.nextTick()的回调函数中，因为 created()钩子函数执行的时候 DOM 并未进行任何渲染，而此时进行 DOM 操作是徒劳的，所以此处一定要将 DOM 操作的 JS 代码放进 Vue.nextTick()的回调函数中。</p><p>参考：<a href="https://cn.vuejs.org/v2/guide/reactivity.html#%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E9%98%9F%E5%88%97" target="_blank" rel="external">官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;场景：个人信息页面，点击资料显示输入框以更改信息，这里用 v-show 显示和隐藏 input 元素，所以需要让使用 v-show 或者 v-if 动态控制的 input 输入框在显示时自动获取焦点。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/source/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="http://yoursite.com/source/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于解决移动端Retina屏幕1px边框问题的方法</title>
     <link href="http://yoursite.com/blog/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3%E7%A7%BB%E5%8A%A8%E7%AB%AFRetina%E5%B1%8F%E5%B9%951px%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%9520200403/"/>
     <id>http://yoursite.com/blog/关于解决移动端Retina屏幕1px边框问题的方法20200403/</id>
@@ -493,30 +517,6 @@ img{text-align: center; margin: 0 auto;}
     
     
       <category term="EasyX" scheme="http://yoursite.com/source/tags/EasyX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#中的结构和类</title>
-    <link href="http://yoursite.com/blog/CSharp%E4%B8%AD%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E7%B1%BB20180629/"/>
-    <id>http://yoursite.com/blog/CSharp中的结构和类20180629/</id>
-    <published>2018-06-28T16:00:00.000Z</published>
-    <updated>2019-02-10T07:17:20.653Z</updated>
-    
-    <content type="html"><![CDATA[<p>对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。<br><a id="more"></a></p><p>以下定义一个结构体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public struct MyStruct</div><div class="line">&#123;</div><div class="line">    private string MyString;</div><div class="line">    private int MyNum;</div><div class="line">    public string MyString</div><div class="line">    &#123;</div><div class="line">        get</div><div class="line">        &#123;</div><div class="line">            return MyString;</div><div class="line">        &#125;</div><div class="line">        set</div><div class="line">        &#123;</div><div class="line">            MyString = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    public int GetMyNum()</div><div class="line">    &#123;</div><div class="line">        return MyNum;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>可以看到结构体和类非常相似,但细纠起来，还是有很多的不同。</p><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul><li>结构属于值类型，继承自System.ValueType，值类型在堆栈上分配地址。值类型能够降低垃圾回收，表现出更好的性能。但其也有不好的一面，比如会涉及到装箱拆箱等操作,因此不适合处理逻辑复杂的对象。所有基类型都是结构类型，如int 对应的是System.int32结构。</li><li>对于值类型，编译器既不会生成默认构造函数。也不会调用默认构造函数。因此C#不允许结构体有无参的默认构造函数。结构体的构造函数内必须初始化所有变量。</li><li>结构体对象之间赋值是创建新的结构，结构体不能从另外的结构继承，本身也不能够被继承，虽然结构没有明确的用 sealed 声明，可是结构是隐式的 sealed。</li><li>虽然结构不能被继承 可是结构能够继承接口，方法和类继承接口一样。</li></ul><h3 id="内部结构"><a href="#内部结构" class="headerlink" title="内部结构"></a>内部结构</h3><blockquote><ul><li>没有默认的构造函数，但是能够添加构造函数；</li><li>没有析构函数；</li><li>没有abstract和sealed，不能有protected修饰符；</li><li>可以不使用new实例化；</li><li>在结构初始化实例字段是错误的。</li></ul></blockquote><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul><li><p>类是属于引用类型，继承自System.Object，引用类型是在堆上面分配地址。类对象之间的赋值是通过复制引用实现的。</p></li><li><p>如何不加sealed修饰符，类是可以继承其他类和接口且本身也可被继承。</p></li></ul><h3 id="内部结构-1"><a href="#内部结构-1" class="headerlink" title="内部结构"></a>内部结构</h3><blockquote><ul><li>有默认的构造函数；</li><li>有析构函数；</li><li>可以使用abstract和sealed，有protected修饰符；</li><li>必须使用new初始化。</li></ul></blockquote><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul><li>堆栈的空间有限，对于有大量逻辑的复杂对象，使用类比结构体好一些。</li><li>在表示抽象和多级别层次的对象时，使用类是更好的选择。</li><li>在大多数情况下对象的类型只是数据时，使用结构是最好的选择。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对于C/C++而言，结构和类的差别非常小，而在C#中，很多时候，只是声明的时候关键字一个是class，一个是struct而已。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="C#" scheme="http://yoursite.com/categories/C/"/>
-    
-    
-      <category term="C#" scheme="http://yoursite.com/source/tags/C/"/>
-    
-      <category term="strcut" scheme="http://yoursite.com/source/tags/strcut/"/>
     
   </entry>
   
