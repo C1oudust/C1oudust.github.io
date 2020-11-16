@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('这篇文章加密了哦') !== ''){
+                alert('不对哟，联系博主获取密码吧！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/m.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/s.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="前端,Vue," />
+
+
+<meta name="description" content="uniapp-qq 开放数据使用用途  展示用户个人信息如头像等，类似 getUserInfo()。  展示针对用户好友对于某一产品或某一产品下的不同选项的选择。">
+<meta name="keywords" content="前端,Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp-qq开放数据使用">
+<meta property="og:url" content="http://yoursite.com/blog/uniapp-qq开放数据使用20201111/index.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="uniapp-qq 开放数据使用用途  展示用户个人信息如头像等，类似 getUserInfo()。  展示针对用户好友对于某一产品或某一产品下的不同选项的选择。">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45d73a9e76a.png">
+<meta property="og:image" content="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45de7431b41.jpg">
+<meta property="og:image" content="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45d87eaee30.png">
+<meta property="og:updated_time" content="2020-11-16T13:08:12.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="uniapp-qq开放数据使用">
+<meta name="twitter:description" content="uniapp-qq 开放数据使用用途  展示用户个人信息如头像等，类似 getUserInfo()。  展示针对用户好友对于某一产品或某一产品下的不同选项的选择。">
+<meta name="twitter:image" content="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45d73a9e76a.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Vedfolnir" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/blog/uniapp-qq开放数据使用20201111/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>uniapp-qq开放数据使用 | Vedfolnir</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?821acc7516b2aa98e5f7718aced95e55";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/C1oudust" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vedfolnir</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我们飞翔得越高,在那些不能飞翔的人眼中的形象越渺小</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/uniapp-qq开放数据使用20201111/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="C1oudust">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vedfolnir">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">uniapp-qq开放数据使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-11T00:00:00+08:00">2020-11-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/uniapp-qq开放数据使用20201111/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/uniapp-qq开放数据使用20201111/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="uniapp-qq-开放数据使用"><a href="#uniapp-qq-开放数据使用" class="headerlink" title="uniapp-qq 开放数据使用"></a>uniapp-qq 开放数据使用</h1><p>用途</p>
+<ol>
+<li><p>展示用户个人信息如头像等，类似 <code>getUserInfo()</code>。</p>
+</li>
+<li><p>展示针对用户好友对于某一产品或某一产品下的不同选项的选择。</p>
+</li>
+</ol>
+<a id="more"></a>
+<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><p><img src="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45d73a9e76a.png" alt=""></p>
+<h2 id="uniapp-中具体使用方式"><a href="#uniapp-中具体使用方式" class="headerlink" title="uniapp 中具体使用方式"></a>uniapp 中具体使用方式</h2><ul>
+<li><p>创建一个组件并在要展示用户数据的页面引入，此处为 <code>FriendList.vue</code>。</p>
+<h6 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	&lt;view class=&quot;friend-content&quot; v-for=&quot;item of userList&quot;&gt;</div><div class="line">		&lt;image class=&quot;image&quot; :src=&quot;item.avatarUrl&quot; mode=&quot;widthFix&quot;&gt;&lt;/image&gt;</div><div class="line">	&lt;/view&gt;</div><div class="line">	&lt;view&gt;&#123;&#123; componentData.value &#125;&#125;&lt;/view&gt;</div><div class="line">	&lt;view&gt;&#123;&#123; item.kvDataList[0].value &#125;&#125;&lt;/view&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">	props: [&apos;userList&apos;, &apos;componentData&apos;],</div><div class="line">&#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>调用 <code>qq.setUserCloudStorage()</code>方法托管用户关系数据。</li>
+</ul>
+<p><strong>具体属性:</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KVDataList</td>
+<td>Array.<kvdata></kvdata></td>
+<td>是</td>
+<td>要修改的 KV 数据列表</td>
+</tr>
+<tr>
+<td>success</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用成功的回调函数</td>
+</tr>
+<tr>
+<td>fail</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用失败的回调函数</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用结束的回调函数（调用成功、失败都会执行）</td>
+</tr>
+</tbody>
+</table>
+<h6 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">qq.setUserCloudStorage(&#123;</div><div class="line">	KVDataList: [</div><div class="line">		&#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</div><div class="line">	],</div><div class="line">	success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'set UserCloudStorage success！'</span>);</div><div class="line">	&#125;,</div><div class="line">	fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">		<span class="built_in">console</span>.warn(<span class="string">'set UserCloudStorage failed！'</span>, res);</div><div class="line">	&#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h6 id="托管数据的限制"><a href="#托管数据的限制" class="headerlink" title="托管数据的限制"></a>托管数据的限制</h6><ol>
+<li>每个 openid 所标识的 QQ 用户在每个游戏上托管的数据不能超过 128 个 key-value 对。</li>
+<li>上报的 key-value 列表当中每一项的 key+value 长度都不能超过 1K(1024)字节。</li>
+<li>上报的 key-value 列表当中每一个 key 长度都不能超过 128 字节。</li>
+</ol>
+<ul>
+<li><p>在想展示好友关系链的地方使用 open-data 标签</p>
+<h6 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h6></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">open-data</span></span></div><div class="line"><span class="tag">	<span class="attr">type</span>=<span class="string">"friendCloudStorage"</span></span></div><div class="line"><span class="tag">	<span class="attr">generic:simple-component</span>=<span class="string">"friendlist"</span></span></div><div class="line"><span class="tag">	<span class="attr">:keyList</span>=<span class="string">"[item.id]"</span></span></div><div class="line"><span class="tag">	<span class="attr">:component-data</span>=<span class="string">"data"</span></span></div><div class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data: &#123;</div><div class="line">	value: <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>open-data 标签用于展示 QQ 开放数据。</p>
+<p><strong>具体属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>String</td>
+<td></td>
+<td>开放数据类型</td>
+<td></td>
+</tr>
+<tr>
+<td>open-gid</td>
+<td>String</td>
+<td></td>
+<td>当 type=”groupName” 时生效, 群 id</td>
+<td></td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=”user*“ 时生效，以哪种语言展示 userInfo，有效值有：en, zh_CN, zh_TW</td>
+<td></td>
+</tr>
+<tr>
+<td>share-ticket</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=groupCloudStorage 时有效，群分享对应的 shareTicket</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>key-list</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效，指定要拉取的 key 列表</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>component-data</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>generic:simple-component</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效,指定使用哪个自定义开放数据域组件来渲染开放数据,具体说明见下方</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>binderror</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效,开放数据请求或定向分享失败时触发，event.detail = {errMsg: “getGroupCloudStorage:fail no data”}</td>
+<td>1.17.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>type 有效值：</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupName</td>
+<td>拉取群名称,只有当前用户在此群内才能拉取到群名称</td>
+<td></td>
+</tr>
+<tr>
+<td>userNickName</td>
+<td>用户昵称</td>
+<td></td>
+</tr>
+<tr>
+<td>userAvatarUrl</td>
+<td>用户头像</td>
+<td></td>
+</tr>
+<tr>
+<td>userGender</td>
+<td>用户性别</td>
+<td></td>
+</tr>
+<tr>
+<td>userCity</td>
+<td>用户所在城市</td>
+<td></td>
+</tr>
+<tr>
+<td>userProvince</td>
+<td>用户所在省份</td>
+<td></td>
+</tr>
+<tr>
+<td>userCountry</td>
+<td>用户所在国家</td>
+<td></td>
+</tr>
+<tr>
+<td>userLanguage</td>
+<td>用户的语言</td>
+<td></td>
+</tr>
+<tr>
+<td>userCloudStorage</td>
+<td>获取当前用户的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>friendCloudStorage</td>
+<td>获取当前用户也玩该小程序的好友的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>groupCloudStorage</td>
+<td>获取当前用户在某个群中也玩该小程序的成员的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="关系链数据展示说明"><a href="#关系链数据展示说明" class="headerlink" title="关系链数据展示说明"></a>关系链数据展示说明</h5><p>当 type=*CloudStorage, 可通过 <code>generic:simple-component</code>属性指定<code>自定义开放数据域组件</code></p>
+<p>指定的<code>自定义开放数据域组件</code>中会在<code>props</code>中自动注入以下属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kvDataList</td>
+<td>Array.<kvdata></kvdata></td>
+<td>当<code>type=userCloudStorage</code>时</td>
+</tr>
+<tr>
+<td>userList</td>
+<td>Array.<userdata></userdata></td>
+<td>当<code>type=friendCloudStorage</code> 或 <code>type=groupCloudStorage</code> 时</td>
+</tr>
+<tr>
+<td>componentData</td>
+<td>Object</td>
+<td>从主域透传给开放数据域的数据</td>
+</tr>
+</tbody>
+</table>
+<p><code>KVData</code>数据结构说明</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>数据的 key</td>
+</tr>
+<tr>
+<td>value</td>
+<td>KVData</td>
+<td>数据的 value</td>
+</tr>
+</tbody>
+</table>
+<p><code>UserData</code>数据结构说明</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openid</td>
+<td>string</td>
+<td>用户的 openid</td>
+</tr>
+<tr>
+<td>avatarUrl</td>
+<td>string</td>
+<td>用户的 QQ 头像 url</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>string</td>
+<td>用户的 QQ 昵称</td>
+</tr>
+<tr>
+<td>kvDataList</td>
+<td>Array.<kvdata></kvdata></td>
+<td>用户的应用数据</td>
+</tr>
+</tbody>
+</table>
+<p>用户的 <code>应用数据</code> 指的是用户的分数、段位等小程序业务特有的数据，通过调用 <code>qq.setUserCloudStorage()</code> 可以将当前用户的应用数据托管在 QQ 后台。只有被托管过数据的用户，才会被视为 <code>玩过</code> 该小程序的用户，才会出现在 <code>type=friendCloudStorage</code> 和 <code>type=groupCloudStorage</code> 的<code>&lt;open-data&gt;</code>组件中</p>
+<h2 id="一些限制及处理方法"><a href="#一些限制及处理方法" class="headerlink" title="一些限制及处理方法"></a>一些限制及处理方法</h2><ol>
+<li><p>自定义组件中无法对<code>userList</code>进行操作，无法将<code>userList</code>赋值给在<code>data</code>中的变量，无法使用<code>watch</code>监控<code>userList</code>使其存在后赋值给<code>data</code>里的变量，无法使用 data 中定义的变量。</p>
+<ul>
+<li><p>需要显示固定数量的用户数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;view v-for=&quot;item of userList.slice(0,3)&quot;&gt;  // 无法显示</div><div class="line">&lt;view v-for=&quot;(item, index) of userList&quot; v-if=&quot;index &lt; 4&quot;&gt; // 正常显示</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>自定义组件中无法使用<code>methods</code>中的方法（不识别 methods），无法使用外部导入的 js 中的方法（打包后找不到 js 文件）</p>
+<ul>
+<li><p>需要对用户数据进行排序：</p>
+<p>在打包后的代码中使用官方文档中的原生排序方法 （<strong>参考文档 3</strong>）</p>
+</li>
+</ul>
+</li>
+<li><p>关于 componentData ，需要传递对象类型。</p>
+<p>​ 示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">dataList: [</div><div class="line">	&#123;</div><div class="line">		id: <span class="string">'1'</span>,</div><div class="line">		data: &#123;</div><div class="line">			value: <span class="number">1</span>,</div><div class="line">		&#125;,</div><div class="line">	&#125;,</div><div class="line">	&#123;</div><div class="line">		id: <span class="string">'2'</span>,</div><div class="line">		data: &#123;</div><div class="line">			value: <span class="number">2</span>,</div><div class="line">		&#125;,</div><div class="line">	&#125;,</div><div class="line">];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;view v-for=&quot;item of dataList&quot;&gt;</div><div class="line">	&lt;open-data</div><div class="line">      type=&quot;friendCloudStorage&quot;</div><div class="line">      generic:simple-component=&quot;list&quot;</div><div class="line">      :keyList=&quot;[item.id]&quot;</div><div class="line">      :component-data=&quot;item.data&quot;</div><div class="line">    &gt;</div><div class="line">	&lt;/open-data&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45de7431b41.jpg" alt=""></p>
+</li>
+<li><p>关于记录存放上限：</p>
+<p>由于无法在自定义组件中对<code>userList</code>进行操作，从而无法根据产品去筛选其中的选项，因此采用一种妥协的处理方法——将单个选项的 id 作为 key，时间戳作为 value。缺点是最多只能存 128 条记录。因此当存储记录达到上限后会无法继续存用户数据。</p>
+<ul>
+<li>解决方法：在<code>storage</code>中添加数组 <code>keyList</code>同步云端数据的 key 进行更新，在<code>setUserCloudStorage</code>方法的回调里对<code>keyList</code>进行处理，弹出栈底的 key，这里的 key 同步云端最早添加的一条记录，调用<code>qq.removeUserCloudStorage()</code>方法删除云端数据。</li>
+<li>关于排序的补充，需要在<code>setUserCloudStorage</code>方法的回调里对<code>keyList</code>进行处理，移动已存在的数据至栈顶。从而保证云端数据表时间戳更新后和本地<code>keyList</code>顺序保持同步。</li>
+</ul>
+</li>
+<li><p>其他限制：</p>
+<ul>
+<li><p>组件所有的生命周期函数都不会被触发</p>
+</li>
+<li><p>无法绑定任何事件回调（所有事件绑定都会被过滤掉）</p>
+</li>
+<li><p>无法通过<code>createSelectorQuery</code>、<code>createIntersectionObserver</code> 接口获取<code>自定义开放数据域组件</code>的任何节点</p>
+</li>
+<li><p>仅支持使用<code>&lt;view&gt;</code>、<code>&lt;text&gt;</code>、<code>&lt;image&gt;</code>、<code>&lt;button&gt;</code> 组件,其他组件会被自动过滤掉</p>
+</li>
+<li><p>开放数据域组件内引用的任何组件，其<code>style</code>属性都会被置空</p>
+</li>
+<li><p>拥有独立的作用域，qml 文件引用的 qs 模块会重新生成新的实例</p>
+</li>
+</ul>
+</li>
+<li><p>调试工具中无法展示<code>open-data</code>中的数据，开发时需使用预览或真机调试。</p>
+<p><img src="http://doc.itwlw.com/server/../Public/Uploads/2020-08-26/5f45d87eaee30.png" alt=""></p>
+<p>预览模式在手机的调试窗口的 QML 中无法查看当前元素中的<code>key-list</code>值和<code>component-data</code> 值，需使用真机调试在 PC 的窗口中查看。</p>
+</li>
+</ol>
+<h2 id="处理逻辑代码参考"><a href="#处理逻辑代码参考" class="headerlink" title="处理逻辑代码参考"></a>处理逻辑代码参考</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">qq.setUserCloudStorage(&#123;</div><div class="line">	KVDataList: [</div><div class="line">		&#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</div><div class="line">	],</div><div class="line">	success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'set UserCloudStorage success！'</span>);</div><div class="line">		<span class="keyword">if</span> (uni.getStorageSync(<span class="string">'choiceIdList'</span>)) &#123;</div><div class="line">			self.choiceIdList = <span class="built_in">JSON</span>.parse(uni.getStorageSync(<span class="string">'choiceIdList'</span>));</div><div class="line">			<span class="comment">// 去重</span></div><div class="line">			<span class="keyword">var</span> index = self.choiceIdList.indexOf(self.lastChoiceId);</div><div class="line">			<span class="keyword">if</span> (index == <span class="number">-1</span>) &#123;</div><div class="line">				self.choiceIdList.push(self.lastChoiceId.toString());</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				self.choiceIdList.splice(index, <span class="number">1</span>);</div><div class="line">				self.choiceIdList.push(self.lastChoiceId.toString());</div><div class="line">			&#125;</div><div class="line">			<span class="comment">// self.choiceIdList = Array.from(new Set(self.choiceIdList));</span></div><div class="line"></div><div class="line">			uni.setStorageSync(<span class="string">'choiceIdList'</span>, <span class="built_in">JSON</span>.stringify(self.choiceIdList));</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">			temp.push(self.lastChoiceId.toString());</div><div class="line">			self.choiceIdList = temp;</div><div class="line">			uni.setStorageSync(<span class="string">'choiceIdList'</span>, <span class="built_in">JSON</span>.stringify(temp));</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (self.choiceIdList.length &gt; <span class="number">100</span>) &#123;</div><div class="line">			<span class="keyword">var</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">			key.push(self.choiceIdList.shift());</div><div class="line">			qq.removeUserCloudStorage(key);</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">		<span class="built_in">console</span>.log(res);</div><div class="line">	&#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>参考文档：</p>
+<p><a href="https://q.qq.com/wiki/develop/miniprogram/component/open-ability/open-data.html" target="_blank" rel="external">1. 开放能力-open-data</a></p>
+<p><a href="https://q.qq.com/wiki/develop/miniprogram/API/open_port/open-data.html" target="_blank" rel="external">2. 关系链数据</a></p>
+<p><a href="https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open-data.html#自定义开放数据域组件说明" target="_blank" rel="external">3. 自定义开放数据域组件说明</a></p>
+<p><a href="https://segmentfault.com/a/1190000015034592" target="_blank" rel="external">4. 微信小游戏 —— 关系链数据使用(排行榜的显示)</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/source/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/source/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/CSS0.5pxborder最终解决方案20201016/" rel="next" title="CSS 0.5px border最终解决方案">
+                <i class="fa fa-chevron-left"></i> CSS 0.5px border最终解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/微信浏览器video标签层级问题20201113/" rel="prev" title="微信浏览器video标签层级问题">
+                微信浏览器video标签层级问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a92feeba049a8fe" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg"
+                alt="C1oudust" />
+            
+              <p class="site-author-name" itemprop="name">C1oudust</p>
+              <p class="site-description motion-element" itemprop="description">灵魂, <br /> 躁动不安...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+              <a title="偶尔High一下ヾ(✿ﾟ▽ﾟ)ノ" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//c1oudust-blog.test.upcdn.net/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//c1oudust-blog.test.upcdn.net/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/u/2268085703" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/HINT_er" target="_blank" title="Zhihu"><i class="fa fa-fw fa-book"></i>Zhihu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/amerkiousy" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://space.bilibili.com/15185215" target="_blank" title="BiliBili"><i class="fa fa-fw fa-paper-plane"></i>BiliBili</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:amerkiousy@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.singlelovely.cn/" title="CZLisyx - 浮生志" target="_blank">CZLisyx - 浮生志</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.fireflyhut.cc/" title="萤虫屋" target="_blank">萤虫屋</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://menglei.xyz/" title="杨梦磊" target="_blank">杨梦磊</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#uniapp-qq-开放数据使用"><span class="nav-number">1.</span> <span class="nav-text">uniapp-qq 开放数据使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#示例："><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">示例：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniapp-中具体使用方式"><span class="nav-number">1.1.</span> <span class="nav-text">uniapp 中具体使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#示例"><span class="nav-number">1.1.0.0.0.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例：-1"><span class="nav-number">1.1.0.0.0.2.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#托管数据的限制"><span class="nav-number">1.1.0.0.0.3.</span> <span class="nav-text">托管数据的限制</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例-1"><span class="nav-number">1.1.0.0.0.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关系链数据展示说明"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">关系链数据展示说明</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些限制及处理方法"><span class="nav-number">1.2.</span> <span class="nav-text">一些限制及处理方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理逻辑代码参考"><span class="nav-number">1.3.</span> <span class="nav-text">处理逻辑代码参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C1oudust</span>
+
+  
+
+  
+</div>
+
+
+
+
+<div>
+ 冀ICP备 -
+<a style="color:#fff" href="http://www.beian.miit.gov.cn/" target="_blank">19035656号</a>
+</div>
+
+ <!--   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+  <div class="theme-info">
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  </div>
+
+-->
+
+
+  <div class="footer-custom"><i class="fa fa-bolt"></i> Powered By <a target="_blank" href="[图片]https://www.upyun.com/">又拍云</a></div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客共 45.6k字</span>
+</div
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'vYUXerjBfE6RCERqE2e4nkCf-gzGzoHsz',
+        appKey: 'EFq9TLGTQKotyFGe0hSaEuSn',
+        placeholder: '雁过留声，人过留名~',
+        avatar:'mp',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
