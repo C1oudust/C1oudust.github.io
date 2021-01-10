@@ -119,13 +119,13 @@
 <meta property="og:url" content="http://yoursite.com/blog/使用easyx图形库编写2D游戏20180723/index.html">
 <meta property="og:site_name" content="Vedfolnir">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20187Flappy_Paper_Plane_menu.png">
-<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20187fly.png">
-<meta property="og:image" content="http://c1oudust-blog.test.upcdn.net/20187plane_gameing.png">
-<meta property="og:updated_time" content="2018-11-03T05:25:24.893Z">
+<meta property="og:image" content="http://cdn.c1oudust.cn/20187Flappy_Paper_Plane_menu.png">
+<meta property="og:image" content="http://cdn.c1oudust.cn/20187fly.png">
+<meta property="og:image" content="http://cdn.c1oudust.cn/20187plane_gameing.png">
+<meta property="og:updated_time" content="2021-01-10T17:36:26.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用EasyX图形库编写2D游戏">
-<meta name="twitter:image" content="http://c1oudust-blog.test.upcdn.net/20187Flappy_Paper_Plane_menu.png">
+<meta name="twitter:image" content="http://cdn.c1oudust.cn/20187Flappy_Paper_Plane_menu.png">
 
 
 
@@ -313,7 +313,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="C1oudust">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg">
+      <meta itemprop="image" content="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -402,7 +402,7 @@
       
 
       
-        <p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20187Flappy_Paper_Plane_menu.png" alt=""><br><a id="more"></a></div></p>
+        <p><div align="center"><br><img src="//cdn.c1oudust.cn/20187Flappy_Paper_Plane_menu.png" alt=""><br><a id="more"></a></div></p>
 <h2 id="什么是-EasyX"><a href="#什么是-EasyX" class="headerlink" title="什么是 EasyX"></a>什么是 EasyX</h2><p>一言以蔽之，EasyX 是一个 C++ 图形库，封装了一些基本的绘图函数，可以实现在控制台窗口绘制图像，帮助 C/C++语言初学者快速上手图形编程。</p>
 <h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p>那么如何使用呢？<br>首先去它的<a href="https://www.easyx.cn/downloads/" target="_blank" rel="external">官网</a>下载安装包，选择对应的 VS 版本，可以看到这个库虽然年代比较久远，不过也对新版本的 VS 有所支持。<br>由于我使用的是 VS2017，所以下载最新的 2018 春分版。下载好解压，双击安装，库文件就会一键安装到你的 VS 路径里。<br>然后在项目里引用头文件 graphics.h 就可以使用了。<br>我们可以在 EasyX 官网的<a href="https://www.easyx.cn/samples/" target="_blank" rel="external">范例程序</a>里看到很多免费的小项目和例子，再结合官网的入门教程，就可以很轻松的入门了。</p>
 <h2 id="开始设计"><a href="#开始设计" class="headerlink" title="开始设计"></a>开始设计</h2><p>这里我用它来设计一个基础的小游戏 —— Flappy Paper Plane。<br>游戏类似 Flappy Bird ,玩家控制纸飞机躲避障碍。</p>
@@ -441,7 +441,7 @@
 <h4 id="加载游戏所需位图"><a href="#加载游戏所需位图" class="headerlink" title="加载游戏所需位图"></a>加载游戏所需位图</h4><p>我们需要实现一个图片的背景透明，方法之一就是使用位图的掩码图。</p>
 <p>拿玩家的图片为例：</p>
 <p>掩码图中想要显示的区域为黑色，想透明的区域为白色，如下：</p>
-<p><div align="center"><br><img src="http://c1oudust-blog.test.upcdn.net/20187fly.png" alt=""></div></p>
+<p><div align="center"><br><img src="//cdn.c1oudust.cn/20187fly.png" alt=""></div></p>
 <p>用 loadimage 函数将所有位图素材的引用保存到定义好的 IMAGE 变量中。拿玩家的位图为例,后两个参数为图片的尺寸（毫米）：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">IMAGE player,player_;</div><div class="line">loadimage(&amp;player, <span class="string">L"res\\fly.bmp"</span>, <span class="number">120</span>, <span class="number">46</span>);</div><div class="line">loadimage(&amp;player_, <span class="string">L"res\\flyx.bmp"</span>, <span class="number">120</span>, <span class="number">46</span>);</div></pre></td></tr></table></figure>
 <h4 id="控制玩家与障碍物移动"><a href="#控制玩家与障碍物移动" class="headerlink" title="控制玩家与障碍物移动"></a>控制玩家与障碍物移动</h4><p>采用两个变量 isPress 和 speed 控制玩家自然下落和按键上升。<br>当没有按下按键时，此时检测 isPress 的值为 false，玩家坐标下移。<br>当按下按键时，isPress 为 true，这是给 speed 一个值，即为按下按钮时玩家上升的速度。判断速度是否为 0，不为 0 时玩家坐标上移，speed 递减直到为 0。<br>这部分代码段如下：</p>
@@ -456,7 +456,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">putimage(playerPoint.x, playerPoint.y, &amp;player_, SRCAND);</div><div class="line">putimage(playerPoint.x, playerPoint.y, &amp;player, SRCPAINT);</div></pre></td></tr></table></figure>
 <p>putimage 函数的最后一个参数为三元光栅操作码，代表屏幕颜色和图像颜色的叠加方式，SRCAND 是 AND 方式，而 SRCPAINT 是 OR 方式，大概意思就是：</p>
 <p>白色(1)&amp;任何颜色=原颜色，黑色(0)&amp;任何颜色=黑色,黑色(0)| 任何颜色=原颜色</p>
-<h3 id="游戏效果"><a href="#游戏效果" class="headerlink" title="游戏效果"></a>游戏效果</h3><p><img src="http://c1oudust-blog.test.upcdn.net/20187plane_gameing.png" alt=""></p>
+<h3 id="游戏效果"><a href="#游戏效果" class="headerlink" title="游戏效果"></a>游戏效果</h3><p><img src="//cdn.c1oudust.cn/20187plane_gameing.png" alt=""></p>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><ul>
 <li>这个项目是我在课设中做的一个相当简陋的 demo，本来想做成 3D 视角，不过因为时间关系就放弃了。当时只实现了基本功能，甚至连计分功能的没有，不过作为 EasyX 的初学者示范程序来说还是很不错的。</li>
 <li>游戏背景来自画师 Philip Govedare，很喜欢他笔下的天空和大地。</li>
@@ -579,7 +579,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="http://c1oudust-blog.test.upcdn.net/67b7e7deefb87b514e63be1d63e2df24.jpg"
+                src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg"
                 alt="C1oudust" />
             
               <p class="site-author-name" itemprop="name">C1oudust</p>
