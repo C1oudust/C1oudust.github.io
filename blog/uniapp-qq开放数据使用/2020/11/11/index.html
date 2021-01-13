@@ -1,0 +1,790 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/small.png?v=2.6.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/medium.png?v=2.6.1" type="image/png" sizes="32x32"><meta name="description" content="uniapp-qq 开放数据使用       用途  展示用户个人信息如头像等，类似 getUserInfo()。  展示针对用户好友对于某一产品或某一产品下的不同选项的选择。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp-qq开放数据使用">
+<meta property="og:url" content="https://c1oudust.cn/blog/uniapp-qq%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8/2020/11/11/index.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="uniapp-qq 开放数据使用       用途  展示用户个人信息如头像等，类似 getUserInfo()。  展示针对用户好友对于某一产品或某一产品下的不同选项的选择。">
+<meta property="og:locale">
+<meta property="og:image" content="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45d73a9e76a.png">
+<meta property="og:image" content="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45de7431b41.jpg">
+<meta property="og:image" content="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45d87eaee30.png">
+<meta property="article:published_time" content="2020-11-10T16:00:00.000Z">
+<meta property="article:author" content="C1oudust">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45d73a9e76a.png"><title>uniapp-qq开放数据使用 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/uniapp-qq%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8/2020/11/11/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"50px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: undefined,
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></head><body dayimg="/images/bg1.jpg" nightimg="/images/bg0.jpg"><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fa fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fa fa-th"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fa fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fa fa-archive"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fa fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">uniapp-qq开放数据使用</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-11-11</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">2.1k</span></span></div></header><div class="post-body">
+        <h1 id="uniapp-qq-开放数据使用"   >
+          <a href="#uniapp-qq-开放数据使用" class="heading-link"><i class="fas fa-link"></i></a>uniapp-qq 开放数据使用</h1>
+      <p>用途</p>
+<ol>
+<li><p>展示用户个人信息如头像等，类似 <code>getUserInfo()</code>。</p>
+</li>
+<li><p>展示针对用户好友对于某一产品或某一产品下的不同选项的选择。</p>
+</li>
+</ol>
+<a id="more"></a>
+
+
+        <h6 id="示例："   >
+          <a href="#示例：" class="heading-link"><i class="fas fa-link"></i></a>示例：</h6>
+      <p><img src="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45d73a9e76a.png"></p>
+
+        <h2 id="uniapp-中具体使用方式"   >
+          <a href="#uniapp-中具体使用方式" class="heading-link"><i class="fas fa-link"></i></a>uniapp 中具体使用方式</h2>
+      <ul>
+<li><p>创建一个组件并在要展示用户数据的页面引入，此处为 <code>FriendList.vue</code>。</p>
+
+        <h6 id="示例"   >
+          <a href="#示例" class="heading-link"><i class="fas fa-link"></i></a>示例</h6>
+      </li>
+</ul>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view class&#x3D;&quot;friend-content&quot; v-for&#x3D;&quot;item of userList&quot;&gt;</span><br><span class="line">    &lt;image class&#x3D;&quot;image&quot; :src&#x3D;&quot;item.avatarUrl&quot; mode&#x3D;&quot;widthFix&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; componentData.value &#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; item.kvDataList[0].value &#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;userList&#39;, &#39;componentData&#39;],</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>调用 <code>qq.setUserCloudStorage()</code>方法托管用户关系数据。</li>
+</ul>
+<p><strong>具体属性:</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KVDataList</td>
+<td>Array.<KVData></td>
+<td>是</td>
+<td>要修改的 KV 数据列表</td>
+</tr>
+<tr>
+<td>success</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用成功的回调函数</td>
+</tr>
+<tr>
+<td>fail</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用失败的回调函数</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>function</td>
+<td>否</td>
+<td>接口调用结束的回调函数（调用成功、失败都会执行）</td>
+</tr>
+</tbody></table></div>
+
+        <h6 id="示例：-1"   >
+          <a href="#示例：-1" class="heading-link"><i class="fas fa-link"></i></a>示例：</h6>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">qq.setUserCloudStorage(&#123;</span><br><span class="line">  KVDataList: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">&#x27;set UserCloudStorage failed！&#x27;</span>, res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+        <h6 id="托管数据的限制"   >
+          <a href="#托管数据的限制" class="heading-link"><i class="fas fa-link"></i></a>托管数据的限制</h6>
+      <ol>
+<li>每个 openid 所标识的 QQ 用户在每个游戏上托管的数据不能超过 128 个 key-value 对。</li>
+<li>上报的 key-value 列表当中每一项的 key+value 长度都不能超过 1K(1024)字节。</li>
+<li>上报的 key-value 列表当中每一个 key 长度都不能超过 128 字节。</li>
+</ol>
+<ul>
+<li><p>在想展示好友关系链的地方使用 open-data 标签</p>
+
+        <h6 id="示例-1"   >
+          <a href="#示例-1" class="heading-link"><i class="fas fa-link"></i></a>示例</h6>
+      </li>
+</ul>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;open-data</span><br><span class="line">  type=&quot;friendCloudStorage&quot;</span><br><span class="line">  generic:simple-component=&quot;friendlist&quot;</span><br><span class="line">  :keyList=&quot;[item.id]&quot;</span><br><span class="line">  :component-data=&quot;data&quot;</span><br><span class="line">&gt;<span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  value: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>open-data 标签用于展示 QQ 开放数据。</p>
+<p><strong>具体属性：</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>String</td>
+<td></td>
+<td>开放数据类型</td>
+<td></td>
+</tr>
+<tr>
+<td>open-gid</td>
+<td>String</td>
+<td></td>
+<td>当 type=”groupName” 时生效, 群 id</td>
+<td></td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=”user*“ 时生效，以哪种语言展示 userInfo，有效值有：en, zh_CN, zh_TW</td>
+<td></td>
+</tr>
+<tr>
+<td>share-ticket</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=groupCloudStorage 时有效，群分享对应的 shareTicket</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>key-list</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效，指定要拉取的 key 列表</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>component-data</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>generic:simple-component</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效,指定使用哪个自定义开放数据域组件来渲染开放数据,具体说明见下方</td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>binderror</td>
+<td>String</td>
+<td>en</td>
+<td>当 type=*CloudStorage 时有效,开放数据请求或定向分享失败时触发，event.detail = {errMsg: “getGroupCloudStorage:fail no data”}</td>
+<td>1.17.0</td>
+</tr>
+</tbody></table></div>
+<p><strong>type 有效值：</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>groupName</td>
+<td>拉取群名称,只有当前用户在此群内才能拉取到群名称</td>
+<td></td>
+</tr>
+<tr>
+<td>userNickName</td>
+<td>用户昵称</td>
+<td></td>
+</tr>
+<tr>
+<td>userAvatarUrl</td>
+<td>用户头像</td>
+<td></td>
+</tr>
+<tr>
+<td>userGender</td>
+<td>用户性别</td>
+<td></td>
+</tr>
+<tr>
+<td>userCity</td>
+<td>用户所在城市</td>
+<td></td>
+</tr>
+<tr>
+<td>userProvince</td>
+<td>用户所在省份</td>
+<td></td>
+</tr>
+<tr>
+<td>userCountry</td>
+<td>用户所在国家</td>
+<td></td>
+</tr>
+<tr>
+<td>userLanguage</td>
+<td>用户的语言</td>
+<td></td>
+</tr>
+<tr>
+<td>userCloudStorage</td>
+<td>获取当前用户的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>friendCloudStorage</td>
+<td>获取当前用户也玩该小程序的好友的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td>groupCloudStorage</td>
+<td>获取当前用户在某个群中也玩该小程序的成员的<code>应用数据</code></td>
+<td>1.17.0</td>
+</tr>
+</tbody></table></div>
+
+        <h5 id="关系链数据展示说明"   >
+          <a href="#关系链数据展示说明" class="heading-link"><i class="fas fa-link"></i></a>关系链数据展示说明</h5>
+      <p>当 type=*CloudStorage, 可通过 <code>generic:simple-component</code>属性指定<code>自定义开放数据域组件</code></p>
+<p>指定的<code>自定义开放数据域组件</code>中会在<code>props</code>中自动注入以下属性</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>kvDataList</td>
+<td>Array.<KVData></td>
+<td>当<code>type=userCloudStorage</code>时</td>
+</tr>
+<tr>
+<td>userList</td>
+<td>Array.<UserData></td>
+<td>当<code>type=friendCloudStorage</code> 或 <code>type=groupCloudStorage</code> 时</td>
+</tr>
+<tr>
+<td>componentData</td>
+<td>Object</td>
+<td>从主域透传给开放数据域的数据</td>
+</tr>
+</tbody></table></div>
+<p><code>KVData</code>数据结构说明</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>key</td>
+<td>string</td>
+<td>数据的 key</td>
+</tr>
+<tr>
+<td>value</td>
+<td>KVData</td>
+<td>数据的 value</td>
+</tr>
+</tbody></table></div>
+<p><code>UserData</code>数据结构说明</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>openid</td>
+<td>string</td>
+<td>用户的 openid</td>
+</tr>
+<tr>
+<td>avatarUrl</td>
+<td>string</td>
+<td>用户的 QQ 头像 url</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>string</td>
+<td>用户的 QQ 昵称</td>
+</tr>
+<tr>
+<td>kvDataList</td>
+<td>Array.<KVData></td>
+<td>用户的应用数据</td>
+</tr>
+</tbody></table></div>
+<p>用户的 <code>应用数据</code> 指的是用户的分数、段位等小程序业务特有的数据，通过调用 <code>qq.setUserCloudStorage()</code> 可以将当前用户的应用数据托管在 QQ 后台。只有被托管过数据的用户，才会被视为 <code>玩过</code> 该小程序的用户，才会出现在 <code>type=friendCloudStorage</code> 和 <code>type=groupCloudStorage</code> 的<code>&lt;open-data&gt;</code>组件中</p>
+
+        <h2 id="一些限制及处理方法"   >
+          <a href="#一些限制及处理方法" class="heading-link"><i class="fas fa-link"></i></a>一些限制及处理方法</h2>
+      <ol>
+<li><p>自定义组件中无法对<code>userList</code>进行操作，无法将<code>userList</code>赋值给在<code>data</code>中的变量，无法使用<code>watch</code>监控<code>userList</code>使其存在后赋值给<code>data</code>里的变量，无法使用 data 中定义的变量。</p>
+<ul>
+<li><p>需要显示固定数量的用户数据：</p>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for&#x3D;&quot;item of userList.slice(0,3)&quot;&gt;  &#x2F;&#x2F; 无法显示</span><br><span class="line">&lt;view v-for&#x3D;&quot;(item, index) of userList&quot; v-if&#x3D;&quot;index &lt; 4&quot;&gt; &#x2F;&#x2F; 正常显示</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+</li>
+<li><p>自定义组件中无法使用<code>methods</code>中的方法（不识别 methods），无法使用外部导入的 js 中的方法（打包后找不到 js 文件）</p>
+<ul>
+<li><p>需要对用户数据进行排序：</p>
+<p>在打包后的代码中使用官方文档中的原生排序方法 （<strong>参考文档 3</strong>）</p>
+</li>
+</ul>
+</li>
+<li><p>关于 componentData ，需要传递对象类型。</p>
+<p>​ 示例：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dataList: [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      value: <span class="number">1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      value: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for&#x3D;&quot;item of dataList&quot;&gt;</span><br><span class="line">	&lt;open-data</span><br><span class="line">      type&#x3D;&quot;friendCloudStorage&quot;</span><br><span class="line">      generic:simple-component&#x3D;&quot;list&quot;</span><br><span class="line">      :keyList&#x3D;&quot;[item.id]&quot;</span><br><span class="line">      :component-data&#x3D;&quot;item.data&quot;</span><br><span class="line">    &gt;</span><br><span class="line">	&lt;&#x2F;open-data&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br></pre></td></tr></table></div></figure>
+<p>结果：</p>
+<p><img src="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45de7431b41.jpg"></p>
+</li>
+<li><p>关于记录存放上限：</p>
+<p>由于无法在自定义组件中对<code>userList</code>进行操作，从而无法根据产品去筛选其中的选项，因此采用一种妥协的处理方法——将单个选项的 id 作为 key，时间戳作为 value。缺点是最多只能存 128 条记录。因此当存储记录达到上限后会无法继续存用户数据。</p>
+<ul>
+<li>解决方法：在<code>storage</code>中添加数组 <code>keyList</code>同步云端数据的 key 进行更新，在<code>setUserCloudStorage</code>方法的回调里对<code>keyList</code>进行处理，弹出栈底的 key，这里的 key 同步云端最早添加的一条记录，调用<code>qq.removeUserCloudStorage()</code>方法删除云端数据。</li>
+<li>关于排序的补充，需要在<code>setUserCloudStorage</code>方法的回调里对<code>keyList</code>进行处理，移动已存在的数据至栈顶。从而保证云端数据表时间戳更新后和本地<code>keyList</code>顺序保持同步。</li>
+</ul>
+</li>
+<li><p>其他限制：</p>
+<ul>
+<li><p>组件所有的生命周期函数都不会被触发</p>
+</li>
+<li><p>无法绑定任何事件回调（所有事件绑定都会被过滤掉）</p>
+</li>
+<li><p>无法通过<code>createSelectorQuery</code>、<code>createIntersectionObserver</code> 接口获取<code>自定义开放数据域组件</code>的任何节点</p>
+</li>
+<li><p>仅支持使用<code>&lt;view&gt;</code>、<code>&lt;text&gt;</code>、<code>&lt;image&gt;</code>、<code>&lt;button&gt;</code> 组件,其他组件会被自动过滤掉</p>
+</li>
+<li><p>开放数据域组件内引用的任何组件，其<code>style</code>属性都会被置空</p>
+</li>
+<li><p>拥有独立的作用域，qml 文件引用的 qs 模块会重新生成新的实例</p>
+</li>
+</ul>
+</li>
+<li><p>调试工具中无法展示<code>open-data</code>中的数据，开发时需使用预览或真机调试。</p>
+<p><img src="http://doc.itwlw.com/Public/Uploads/2020-08-26/5f45d87eaee30.png"></p>
+<p>预览模式在手机的调试窗口的 QML 中无法查看当前元素中的<code>key-list</code>值和<code> component-data</code> 值，需使用真机调试在 PC 的窗口中查看。</p>
+</li>
+</ol>
+
+        <h2 id="处理逻辑代码参考"   >
+          <a href="#处理逻辑代码参考" class="heading-link"><i class="fas fa-link"></i></a>处理逻辑代码参考</h2>
+      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">qq.setUserCloudStorage(&#123;</span><br><span class="line">  KVDataList: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (uni.getStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>)) &#123;</span><br><span class="line">      self.choiceIdList = <span class="built_in">JSON</span>.parse(uni.getStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>));</span><br><span class="line">      <span class="comment">// 去重</span></span><br><span class="line">      <span class="keyword">var</span> index = self.choiceIdList.indexOf(self.lastChoiceId);</span><br><span class="line">      <span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</span><br><span class="line">        self.choiceIdList.push(self.lastChoiceId.toString());</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        self.choiceIdList.splice(index, <span class="number">1</span>);</span><br><span class="line">        self.choiceIdList.push(self.lastChoiceId.toString());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// self.choiceIdList = Array.from(new Set(self.choiceIdList));</span></span><br><span class="line"></span><br><span class="line">      uni.setStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="built_in">JSON</span>.stringify(self.choiceIdList));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">      temp.push(self.lastChoiceId.toString());</span><br><span class="line">      self.choiceIdList = temp;</span><br><span class="line">      uni.setStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="built_in">JSON</span>.stringify(temp));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (self.choiceIdList.length &gt; <span class="number">100</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">      key.push(self.choiceIdList.shift());</span><br><span class="line">      qq.removeUserCloudStorage(key);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+<p>参考文档：</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/component/open-ability/open-data.html" >1. 开放能力-open-data</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/API/open_port/open-data.html" >2. 关系链数据</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open-data.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E5%9F%9F%E7%BB%84%E4%BB%B6%E8%AF%B4%E6%98%8E" >3. 自定义开放数据域组件说明</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015034592" >4. 微信小游戏 —— 关系链数据使用(排行榜的显示)</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div><footer class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Vue/">Vue</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, twitter">分享:</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8video%E6%A0%87%E7%AD%BE%E5%B1%82%E7%BA%A7%E9%97%AE%E9%A2%98/2020/11/13/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">微信浏览器video标签层级问题</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/CSS0.5pxborder%E6%9C%80%E7%BB%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/2020/10/16/"><span class="paginator-prev__text">CSS 0.5px border最终解决方案</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uniapp-qq-%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">
+          uniapp-qq 开放数据使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">
+          示例：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uniapp-%E4%B8%AD%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">
+          uniapp 中具体使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.0.0.0.1.</span> <span class="toc-text">
+          示例</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A-1"><span class="toc-number">1.1.0.0.0.2.</span> <span class="toc-text">
+          示例：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%89%98%E7%AE%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">1.1.0.0.0.3.</span> <span class="toc-text">
+          托管数据的限制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.1.0.0.0.4.</span> <span class="toc-text">
+          示例</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E9%93%BE%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">
+          关系链数据展示说明</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%99%90%E5%88%B6%E5%8F%8A%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">
+          一些限制及处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text">
+          处理逻辑代码参考</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">灵魂，躁动不安</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/C1oudust" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/2268085703" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/HINT_er" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="mailto:amerkiousy@outlook.com" target="_blank" rel="noopener" data-popover="联系我" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">36</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">26</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__icon"><i class="fas fa-user"></i></span><span>C1oudust</span><span class="footer__devider">|</span><span>冀ICP备 - 19035656号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'https://c1oudust.cn/blog/uniapp-qq%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8/2020/11/11/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'vYUXerjBfE6RCERqE2e4nkCf-gzGzoHsz',
+    appKey: 'EFq9TLGTQKotyFGe0hSaEuSn',
+    notify: true,
+    verify: true,
+    placeholder: '雁过留声，人过留名~',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.1"></script><script src="/js/stun-boot.js?v=2.6.1"></script><script src="/js/scroll.js?v=2.6.1"></script><script src="/js/header.js?v=2.6.1"></script><script src="/js/sidebar.js?v=2.6.1"></script><script type="application/json" src="/search.xml"></script></body></html>

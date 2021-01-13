@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/small.png?v=2.6.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/medium.png?v=2.6.1" type="image/png" sizes="32x32"><meta name="description" content="在使用 Vue 进行实际开发中，遇到了不少问题，在成功解决后，我觉得有必要把遇到的问题记录下来。一是以后遇到类似的问题时，方便查阅，二是能够激励自己继续学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习中的一些感悟">
+<meta property="og:url" content="https://c1oudust.cn/blog/Vue%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/2020/04/01/index.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="在使用 Vue 进行实际开发中，遇到了不少问题，在成功解决后，我觉得有必要把遇到的问题记录下来。一是以后遇到类似的问题时，方便查阅，二是能够激励自己继续学习。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-03-31T16:00:00.000Z">
+<meta property="article:author" content="C1oudust">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary"><title>Vue学习中的一些感悟 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/Vue%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/2020/04/01/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"50px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: undefined,
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></head><body dayimg="/images/bg1.jpg" nightimg="/images/bg0.jpg"><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fa fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fa fa-th"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fa fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fa fa-archive"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fa fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Vue学习中的一些感悟</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-04-01</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">896</span></span></div></header><div class="post-body"><p>在使用 Vue 进行实际开发中，遇到了不少问题，在成功解决后，我觉得有必要把遇到的问题记录下来。一是以后遇到类似的问题时，方便查阅，二是能够激励自己继续学习。</p>
+<a id="more"></a>
+
+
+        <h2 id="关于-e-target-和-e-currentTarget"   >
+          <a href="#关于-e-target-和-e-currentTarget" class="heading-link"><i class="fas fa-link"></i></a>关于 e.target 和 e.currentTarget</h2>
+      <p>场景：给 v-for 循环渲染出的含有子元素的元素添加了 click 事件，并且动态绑定了 id 属性，想要在点击该元素时，输出对应的 id 值。</p>
+<p>在这里需要使用 <code>e.currentTarget.id</code> 而不是 <code>e.target.id</code>。</p>
+<p>解释如下：</p>
+<p>当点击事件发生在绑定事件对象的子元素上时，<code>e.currentTarget</code>.会始终返回绑定事件的对象，而 <code>e.target</code> 会返回绑定点击事件的元素的子元素。</p>
+<p>不管你点击的是元素本身或者元素里面任何子元素，<code>currentTarget</code> 获取到的对象都为绑定事件的元素。当使用 <code>target</code> 时，如果你点击到绑定事件的元素则返回该元素，如果点击到它之中的某个子级元素则返回它之中的某个元素。</p>
+<p>上文可能有点啰嗦，总结一下，<code>target</code> 会变，点到谁身上就返回谁，<code>currentTarget</code> 不会变，返回事件源对象。</p>
+
+        <h2 id="返回上一页的解决方式"   >
+          <a href="#返回上一页的解决方式" class="heading-link"><i class="fas fa-link"></i></a>返回上一页的解决方式</h2>
+      
+        <h3 id="使用-go-和-back"   >
+          <a href="#使用-go-和-back" class="heading-link"><i class="fas fa-link"></i></a>使用 go()和 back()</h3>
+      <p>history.go(-1)：后退同时刷新页面</p>
+<p>history.go(1)：前进</p>
+<p>使用 go，原页面表单中的内容会丢失。</p>
+<p>history.back()：后退</p>
+<p>history.back(0)：刷新</p>
+<p>history.back(1)：前进</p>
+<p>使用 back，原页表表单中的内容会保留</p>
+
+        <h3 id="vue-router"   >
+          <a href="#vue-router" class="heading-link"><i class="fas fa-link"></i></a>vue-router</h3>
+      <p>使用了 vue-router 的话，可以用 this.$router.go(-1) 返回上一页。</p>
+<p>这里需要注意的是：history.go(-1)是回到浏览器上一页，但是由于 Vue 应用是单页应用，浏览器的访问历史未必和 Vue 的浏览历史相同。</p>
+
+        <h2 id="watch-中的-deep-和-immediate-参数"   >
+          <a href="#watch-中的-deep-和-immediate-参数" class="heading-link"><i class="fas fa-link"></i></a>watch 中的 deep 和 immediate 参数</h2>
+      <p>这两个选项在<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#watch" >官方文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>中一笔带过。</p>
+<p>个人感觉有需要的时候还是很好用的，比如使用 deep 监听对象中属性的变化。</p>
+
+        <h2 id="vue-router-项目的-404-页面"   >
+          <a href="#vue-router-项目的-404-页面" class="heading-link"><i class="fas fa-link"></i></a>vue-router 项目的 404 页面</h2>
+      <p>这个只需要在路由配置中加入 path 值为*的选项：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path: <span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">  component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./notFindPage&#x27;</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="vue-router-跳转页面记忆页面的滚动位置"   >
+          <a href="#vue-router-跳转页面记忆页面的滚动位置" class="heading-link"><i class="fas fa-link"></i></a>vue-router 跳转页面记忆页面的滚动位置</h2>
+      <p>开始做的时候用了非常麻烦的方法，后来去看文档，发现只需要一个设置而已。</p>
+<p>首先需要开启 vue-router 的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#html5-history-%E6%A8%A1%E5%BC%8F" >history 模式</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>然后具体设置如下：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123; <span class="comment">//如果savedPosition存在，滚动条会自动跳到记录的值的地方</span></span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;<span class="comment">//savedPosition也是一个记录x轴和y轴位置的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;，</span><br><span class="line">  routes: [...]</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></div></figure>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html" >官方文档里</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>关于配置也讲的很详细。</p>
+
+        <h2 id="总结与吐槽"   >
+          <a href="#总结与吐槽" class="heading-link"><i class="fas fa-link"></i></a>总结与吐槽</h2>
+      <p>以上就是我这段时间学习 Vue 的一些感悟，虽然不是很深入的东西，但新手学习东西不免会遇到坑，只有跨过这些坑才能更好地掌握一门技术。</p>
+<p>其实最好的解决方法就是去查看官方文档，文档里讲的比任何地方都全，这段时间看文档，受益良多。</p>
+<p>网上的教程质量确实参差不齐，就拿 csdn 举例，之前搜教程的时候看到<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/xingyu_qie/article/details/78831045" >这么一篇文章</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，作者大佬确实言辞比较激烈，个人感觉话糙理不糙，这段时间学下来，感觉解决问题最好的论坛就是<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://segmentfault.com/" >segmentfault</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 和<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://stackoverflow.com/" >stack overflow.</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>了。</p>
+</div><footer class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Vue/">Vue</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, twitter">分享:</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3%E7%A7%BB%E5%8A%A8%E7%AB%AFRetina%E5%B1%8F%E5%B9%951px%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95/2020/04/03/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">关于解决移动端Retina屏幕1px边框问题的方法</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/Vue%E4%B9%8Bbetter-scroll%E5%AF%BC%E8%87%B4click%E4%BA%8B%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/2020/03/24/"><span class="paginator-prev__text">Vue之better-scroll导致click事件失效问题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="valine-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-e-target-%E5%92%8C-e-currentTarget"><span class="toc-number">1.</span> <span class="toc-text">
+          关于 e.target 和 e.currentTarget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E4%B8%8A%E4%B8%80%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">
+          返回上一页的解决方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-go-%E5%92%8C-back"><span class="toc-number">2.1.</span> <span class="toc-text">
+          使用 go()和 back()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-router"><span class="toc-number">2.2.</span> <span class="toc-text">
+          vue-router</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#watch-%E4%B8%AD%E7%9A%84-deep-%E5%92%8C-immediate-%E5%8F%82%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">
+          watch 中的 deep 和 immediate 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-router-%E9%A1%B9%E7%9B%AE%E7%9A%84-404-%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">
+          vue-router 项目的 404 页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-router-%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E8%AE%B0%E5%BF%86%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%BB%9A%E5%8A%A8%E4%BD%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">
+          vue-router 跳转页面记忆页面的滚动位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E5%90%90%E6%A7%BD"><span class="toc-number">6.</span> <span class="toc-text">
+          总结与吐槽</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">灵魂，躁动不安</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/C1oudust" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/2268085703" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/HINT_er" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="mailto:amerkiousy@outlook.com" target="_blank" rel="noopener" data-popover="联系我" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">36</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">26</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__icon"><i class="fas fa-user"></i></span><span>C1oudust</span><span class="footer__devider">|</span><span>冀ICP备 - 19035656号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'https://c1oudust.cn/blog/Vue%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/2020/04/01/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link';
+
+  guest_info = guest_info.split(',').filter(function(item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#valine-container',
+    appId: 'vYUXerjBfE6RCERqE2e4nkCf-gzGzoHsz',
+    appKey: 'EFq9TLGTQKotyFGe0hSaEuSn',
+    notify: true,
+    verify: true,
+    placeholder: '雁过留声，人过留名~',
+    avatar: 'mp',
+    meta: guest_info,
+    pageSize: '10' || 10,
+    visitor: false,
+    recordIP: false,
+    lang: '' || 'zh-cn',
+    path: window.location.pathname
+  });
+}
+
+if (true) {
+  loadValine();
+} else {
+  window.addEventListener('DOMContentLoaded', loadValine, false);
+}</script><script src="/js/utils.js?v=2.6.1"></script><script src="/js/stun-boot.js?v=2.6.1"></script><script src="/js/scroll.js?v=2.6.1"></script><script src="/js/header.js?v=2.6.1"></script><script src="/js/sidebar.js?v=2.6.1"></script><script type="application/json" src="/search.xml"></script></body></html>
