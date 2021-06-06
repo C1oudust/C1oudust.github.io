@@ -5,13 +5,13 @@
 <meta property="og:site_name" content="Vedfolnir">
 <meta property="og:description" content="最近阅读了Vuex3.x的源码，这篇文章主要是对Vuex的实现思路做一个分析并且最后实现一个mini-vuex。">
 <meta property="og:locale">
-<meta property="og:image" content="https://cdn.c1oudust.cn/2021_vuex_sourcecode.jpg">
+<meta property="og:image" content="https://cdn.c1oudust.cn/2021_vuex_sourcecode.png">
 <meta property="article:published_time" content="2021-06-05T16:00:00.000Z">
 <meta property="article:author" content="C1oudust">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.c1oudust.cn/2021_vuex_sourcecode.jpg"><title>Vuex源码阅读笔记 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/Vuex%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/2021/06/06/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://cdn.c1oudust.cn/2021_vuex_sourcecode.png"><title>Vuex源码阅读笔记 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/Vuex%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/2021/06/06/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -41,7 +41,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></he
 
         <h1 id="源码目录结构"   >
           <a href="#源码目录结构" class="heading-link"><i class="fas fa-link"></i></a>源码目录结构</h1>
-      <p><img src="//cdn.c1oudust.cn/2021_vuex_sourcecode.jpg" alt="vuex_sourcecode"></p>
+      <p><img src="//cdn.c1oudust.cn/2021_vuex_sourcecode.png" alt="vuex_sourcecode"></p>
 <ul>
 <li><p>module</p>
 <ul>
