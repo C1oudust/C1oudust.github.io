@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Vuex源码阅读笔记</title>
+      <link href="blog/Vuex%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/2021/06/06/"/>
+      <url>blog/Vuex%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/2021/06/06/</url>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微信浏览器video标签层级问题</title>
       <link href="blog/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8video%E6%A0%87%E7%AD%BE%E5%B1%82%E7%BA%A7%E9%97%AE%E9%A2%98/2020/11/13/"/>
       <url>blog/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8video%E6%A0%87%E7%AD%BE%E5%B1%82%E7%BA%A7%E9%97%AE%E9%A2%98/2020/11/13/</url>
@@ -613,31 +638,6 @@
     
     
     <entry>
-      <title>Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</title>
-      <link href="blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/2018/05/09/"/>
-      <url>blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/2018/05/09/</url>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Ubuntu </tag>
-            
-            <tag> Windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>腾讯没梦想，自媒体有春梦</title>
       <link href="blog/%E8%85%BE%E8%AE%AF%E6%B2%A1%E6%A2%A6%E6%83%B3%EF%BC%8C%E8%87%AA%E5%AA%92%E4%BD%93%E6%9C%89%E6%98%A5%E6%A2%A6/2018/05/09/"/>
       <url>blog/%E8%85%BE%E8%AE%AF%E6%B2%A1%E6%A2%A6%E6%83%B3%EF%BC%8C%E8%87%AA%E5%AA%92%E4%BD%93%E6%9C%89%E6%98%A5%E6%A2%A6/2018/05/09/</url>
@@ -655,6 +655,31 @@
             <tag> 随笔 </tag>
             
             <tag> 互联网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</title>
+      <link href="blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/2018/05/09/"/>
+      <url>blog/Windows10%E4%B8%8B%E4%BD%BF%E7%94%A8Linux%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20%E2%80%94%E2%80%94%20WSL%E4%B8%8E%E5%85%B6%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/2018/05/09/</url>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
