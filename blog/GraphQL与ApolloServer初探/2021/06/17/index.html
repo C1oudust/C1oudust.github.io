@@ -53,7 +53,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></he
 <p>举例说明：</p>
 <p>我们想要查询一个班的男女生人数。那该怎么定义数据呢？</p>
 <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">type Class&#123;</span><br><span class="line">    id:ID!</span><br><span class="line">    boy:Int</span><br><span class="line">    girl:Int</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p>这里使用 <code>type</code>定义了一个对象类型，名字叫<code>Class</code>，其中包括 <code>id</code>，<code>boy</code>，<code>girl</code>三个字段。每个字段后面的<code>ID</code>和<code>Number</code>则表示该字段的类型，这里使用的是<code>GraphQL</code>给我们提供的基础标量类型。后面的！则表示该字段不能为空。</p>
+<p>这里使用 <code>type</code>定义了一个对象类型，名字叫<code>Class</code>，其中包括 <code>id</code>，<code>boy</code>，<code>girl</code>三个字段。每个字段后面的<code>ID</code>和<code>Number</code>则表示该字段的类型，这里使用的是<code>GraphQL</code>给我们提供的基础标量类型。后面的<code>!</code>则表示该字段不能为空。</p>
 <p>基础标量类型有这么几种：</p>
 <ul>
 <li><code>Int</code>：有符号 32 位整数。</li>
