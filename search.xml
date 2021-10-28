@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>使用el-upload组件上传图片至七牛云</title>
+      <link href="blog/%E4%BD%BF%E7%94%A8el-upload%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E4%B8%83%E7%89%9B%E4%BA%91/2021/10/20/"/>
+      <url>blog/%E4%BD%BF%E7%94%A8el-upload%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E4%B8%83%E7%89%9B%E4%BA%91/2021/10/20/</url>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用uniapp开发跨平台app</title>
+      <link href="blog/%E4%BD%BF%E7%94%A8uniapp%E5%BC%80%E5%8F%91%E8%B7%A8%E5%B9%B3%E5%8F%B0app/2021/10/05/"/>
+      <url>blog/%E4%BD%BF%E7%94%A8uniapp%E5%BC%80%E5%8F%91%E8%B7%A8%E5%B9%B3%E5%8F%B0app/2021/10/05/</url>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+            <tag> app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LayaBox安卓APP接入微信登录</title>
       <link href="blog/LayaBox%E5%AE%89%E5%8D%93APP%E6%8E%A5%E5%85%A5%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/2021/08/12/"/>
       <url>blog/LayaBox%E5%AE%89%E5%8D%93APP%E6%8E%A5%E5%85%A5%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/2021/08/12/</url>
