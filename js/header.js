@@ -95,6 +95,8 @@ $(document).ready(function () {
         // $('body::after').css("background","url(" + night2+  ") no-repeat center / cover")
         isNightMode = true
       } else {
+        var day =  $('.header-banner').attr('dayimg')
+        $('.header-banner').css("background","url(" + day+  ") no-repeat center / cover")
         isNightMode = false
       }
       $('.mode').on('click', function (e) {
