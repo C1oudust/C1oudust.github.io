@@ -90,9 +90,7 @@ $(document).ready(function () {
         $('html').addClass('nightmode')
 
         var night =  $('.header-banner').attr('nightimg')
-        // var night2 =  $('body').attr('nightimg')
         $('.header-banner').css("background","url(" + night+  ") no-repeat center / cover")
-        // $('body::after').css("background","url(" + night2+  ") no-repeat center / cover")
         isNightMode = true
       } else {
         var day =  $('.header-banner').attr('dayimg')

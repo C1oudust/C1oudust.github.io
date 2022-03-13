@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Docker部署vue项目实践</title>
+      <link href="blog/Docker%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/2022/02/20/"/>
+      <url>blog/Docker%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/2022/02/20/</url>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用el-upload组件上传图片至七牛云</title>
       <link href="blog/%E4%BD%BF%E7%94%A8el-upload%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E4%B8%83%E7%89%9B%E4%BA%91/2021/10/20/"/>
       <url>blog/%E4%BD%BF%E7%94%A8el-upload%E7%BB%84%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E4%B8%83%E7%89%9B%E4%BA%91/2021/10/20/</url>
