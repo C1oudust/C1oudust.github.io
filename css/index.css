@@ -1108,6 +1108,25 @@ kbd {
   padding: 1rem;
   width: 300px;
   font-size: 16px;
+  position: relative;
+}
+.sidebar .sakana {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 400px;
+  left: 50px;
+}
+.sidebar .sakana .sakana-widget-ctrl {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.sidebar .sakana a {
+  display: none;
 }
 .sidebar--sticky {
   position: fixed;
