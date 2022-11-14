@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/small.png?v=2.6.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/medium.png?v=2.6.1" type="image/png" sizes="32x32"><meta name="msvalidate.01" content="E55772816155C73A7C73C9F8635F3B21"><meta name="baidu-site-verification" content="code-mptQdGMLI7"><meta name="description" content="img{text-align: center; margin: 0 auto;}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始的rEFind引导Windows10+Ubutnu双系统教程">
+<meta property="og:url" content="https://c1oudust.cn/blog/f454b815b1d18a61.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="img{text-align: center; margin: 0 auto;}">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_xiaoguotu.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_fenqu.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_grhub.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install1.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install2.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install3.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install4.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install5.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install6.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install7.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install8.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_install9.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_ubuntu_grhub2.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_guazai.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_diskgenius.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_mycomputer.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_diskgenius2.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_find_refindx64.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_boot_change.png">
+<meta property="og:image" content="https://cdn.c1oudust.cn/year-month_xiaoguotu.png">
+<meta property="article:published_time" content="2018-01-28T16:00:00.000Z">
+<meta property="article:author" content="C1oudust">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="双系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.c1oudust.cn/year-month_xiaoguotu.png"><title>从零开始的rEFind引导Windows10+Ubutnu双系统教程 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/f454b815b1d18a61.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"50px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: undefined,
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fa fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fa fa-th"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fa fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fa fa-archive"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fa fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">从零开始的rEFind引导Windows10+Ubutnu双系统教程</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2018-01-29</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">1.7k</span></span></div></header><div class="post-body"><style type="text/css">
+img{text-align: center; margin: 0 auto;}
+</style>
+
+<p><img src="//cdn.c1oudust.cn/year-month_xiaoguotu.png" alt="引导页面"></p>
+<a id="more"></a>
+
+
+        <h3 id="准备工具"   >
+          <a href="#准备工具" class="heading-link"><i class="fas fa-link"></i></a>准备工具</h3>
+      <ul>
+<li><p>重新安装 windows 则需要下载：</p>
+<p>国人收集的 windows 原版镜像 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.itellyou.cn/" >http://www.itellyou.cn/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>微软官网 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows10" >https://www.microsoft.com/zh-cn/software-download/windows10</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p>Ubuntu 镜像 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.ubuntu.com/download" >https://www.ubuntu.com/download</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p>U 盘，做 PE 和系统盘。<br>当然不用 PE 也可以完成安装流程。制作系统启动盘，用软碟通刻录或者直接将镜像解压至 U 盘。</p>
+<p>教程参考 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/d713063568b20413fdf4752c.html" >https://jingyan.baidu.com/article/d713063568b20413fdf4752c.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>推荐微 PE 工具箱(很纯净并支持 uefi 启动) <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.wepe.com.cn/download.html" >http://www.wepe.com.cn/download.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p><code>refind</code> 文件下载</p>
+<p>官网：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.rodsbooks.com/refind/" >http://www.rodsbooks.com/refind/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>我已经配置好的（带主题）：链接：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bzSbr4" >https://pan.baidu.com/s/1bzSbr4</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 密码：<code>5sak</code></p>
+<p><code>DiskGenius</code> 软件：网上可以找到，这里提供一个 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.upantool.com/qidong/2012/DiskGenius_3.7.1.html" >http://www.upantool.com/qidong/2012/DiskGenius_3.7.1.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><code>Bootice</code> 或 <code>EasyUEFI</code> 工具 网上都能找到。这里提供一个 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.ipauly.com/2015/11/15/bootice/" >http://www.ipauly.com/2015/11/15/bootice/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+</ul>
+
+        <h3 id="安装-win10-并给-Ubuntu-分区"   >
+          <a href="#安装-win10-并给-Ubuntu-分区" class="heading-link"><i class="fas fa-link"></i></a>安装 win10 并给 Ubuntu 分区</h3>
+      <p>安装 win10 的教程网上很多，在这里就不多加赘述了。如果电脑中已有 win10，那么请直接分区。<br>现在我们给 Ubuntu 系统分出预留的硬盘空间以便于后续安装</p>
+<ul>
+<li><p>方法一：<br>使用 PE 里的 DiskGenius 或者直接使用 DiskGenius<br>已经装好 PE 的 U 盘插到电脑上，U 盘启动，一般的电脑都有热键，在机子重启时，按下 f12（一般 lenovo，Dell 的为 f12，华硕的为 Esc，战神等 f7，自己可以百度电脑型号），进入选择界面后选择 U 盘（一般名字是你的 U 盘品牌）可以直接 Enter 进入，一些机子是要设置 U 盘为第一启动项才能进入。进入 PE 系统后打开分区管理工具 DiskGenius，</p>
+<p>如果你不想保留电脑里的东西可以直接删除所有分区，选择你的硬盘右键选择转换分区表类型为 GUID 格式并保存，再选择快速分区（最主要的是 ESP 分区，为启动分区），自己分区，可以现在就留出 ubuntu 的安装位置，（最小为 8G，推荐一般 50G）,分好区后把预留 ubuntu 的分区右键删除当前分区留空（因为 linux 的文件系统不同于 windows，留空以后安装 ubuntu）。进入电脑的 bios，开启 UEFI（具体百度，一般很简单，都有自己机子的教程）。</p>
+</li>
+<li><p>方法二：<br>安装 win10 后使用 windows 自带的磁盘管理工具（右键我的电脑&gt;管理&gt;磁盘管理）压缩出一个新的分区，删除卷，留给 ubuntu 一块未分配的空间（最小为 8G，推荐一般 50G）</p>
+<p><img src="//cdn.c1oudust.cn/year-month_fenqu.png" alt="分区"></p>
+<p>图文教程参照： <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/7f766dafbbcdf34100e1d049.html" >http://jingyan.baidu.com/article/7f766dafbbcdf34100e1d049.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>进入 bios 里关闭<code>sectrue boot</code>，（如果开了<code>sectrue boot</code>就只能安装 windows，所以要关闭），具体可以百度</p>
+</li>
+</ul>
+
+        <h3 id="安装-ubuntu"   >
+          <a href="#安装-ubuntu" class="heading-link"><i class="fas fa-link"></i></a>安装 ubuntu</h3>
+      <p>进入电脑 BIOS 设置 U 盘为第一启动项。插入 U 盘启动盘，重启电脑进入 GRUB 界面，选择 Install Ubuntu 进入安装 ubuntu 界面,选择中文简体.</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_grhub.png" alt="grub界面"></p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install1.png" alt="安装界面"></p>
+<p>安装类型选择其他选项，继续</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install2.png" alt="安装界面2"></p>
+<p>选择之前留空的分区点加号，先给 200M 的/boot 分区</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install3.png" alt="分区"></p>
+<p>确定后，选择剩余留空的分区再点加号，交换空间（swap 分区）给自己电脑内存大小的 2 倍空间，一般电脑为 4G，所以就给 8G 的交换空间。（图中虚拟机的内存为 2G，因此分配 4G 即 4096MB）</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install4.png" alt="分区2"></p>
+<p>确定，再次选择剩余留空的分区再点加号，接下来把剩下的所有空间全划给 /</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install5.png" alt="分区3"></p>
+<p>注意底下的安装启动引导器的设备，选择安装 windows 系统的硬盘或者固态，即/dev/sda。（通常要用 ubuntu 引导器代替 windows 引导器选/dev/sda，要保留 windows 引导器选/boot 区装完 ubuntu 重启能进 windows，在 windows 下使用软件添加 ubuntu 启项）<br>确定分区，就会进行格式化，接下来就会安装 ubuntu 系统，选择汉语，设置用户与密码。继续，等待安装完成</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install6.png" alt="分区4"></p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install7.png" alt="安装"></p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install8.png" alt="安装"></p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_install9.png" alt="安装"></p>
+<p>安装好 ubuntu 后，第一次重启是一般会出现下图的 GRUB 引导界面，可以选择 Windows 或者 Ubuntu 进去，在这里 我们可以进入 windows 或者 Ubuntu，在两个系统下都可以安装 refind 引导。这里我们进入 windows 系统，选择 Windows Boot Manager 进入。顺便一提，Linux 下安装 refind 的方法较 Windows 更简单。不过对于新手，还是建议使用 Windows 图形界面安装。如果您感兴趣也可以进入 Ubuntu 安装，方法会在之后讲到</p>
+<p><img src="//cdn.c1oudust.cn/year-month_ubuntu_grhub2.png" alt="启动"></p>
+
+        <h3 id="Refind-的安装与配置"   >
+          <a href="#Refind-的安装与配置" class="heading-link"><i class="fas fa-link"></i></a>Refind 的安装与配置</h3>
+      <ul>
+<li><p>windows 下：<br>首先我们需要挂载 <code>efi</code> 分区以方便将 <code>refind</code> 放进其中</p>
+<p>方法一：<br>打开终端（win+R，输入 cmd），输入 <code>mountvol z: /s</code> 之后输入 <code>mountvol</code> 会提示已经挂载至 Z：</p>
+<p><img src="//cdn.c1oudust.cn/year-month_guazai.png" alt="挂载efi分区"></p>
+<p>方法二：<br>进入 windows 系统后安装 DiskGenius 或者用 PE 系统的 DiskGenius，选择 ESP 分区右键指派新的驱动器号，选择一个电脑本身没有的盘符，确定。</p>
+<p><img src="//cdn.c1oudust.cn/year-month_diskgenius.png" alt="分配盘符"></p>
+<p>这样我们打开我的电脑。就能看到之前挂载的 efi 分区了</p>
+<p><img src="//cdn.c1oudust.cn/year-month_mycomputer.png" alt="挂载分区2"></p>
+<p>打开该磁盘，如果提示没有访问权限，请使用管理员权限打开文件管理器。建议在 PE 下进行挂载和安装 refind 操作或者使用 DiskGenius 软件访问 ESP 分区，把 refind 文件夹里的文件复制进去。注意，DiskGenius 中只能复制文件不能复制文件夹，所以文件夹还需要在 DiskGenius 中自行新建，然后右键复制文件到当前分区，选择 refind 文件夹里的文件即可。<br>将 refind 文件夹放入 EFI 中后如图</p>
+<p><img src="//cdn.c1oudust.cn/year-month_diskgenius2.png" alt="放入"></p>
+<p>使用 Bootice 或者 EasyUEFI 工具将 refind 添加至引导项，这里使用 Bootice。打开 Bootice，选择 UEFI，更改启动序列。添加，选择 EFI 文件夹里 refind 中的 refind_x64.efi，更改名字为 refind，并将该启动项上移至第一位。保存启动项。</p>
+<p><img src="//cdn.c1oudust.cn/year-month_find_refindx64.png" alt="添加启动项"></p>
+<p><img src="//cdn.c1oudust.cn/year-month_boot_change.png" alt="添加启动项"></p>
+<p>重启电脑，就能看到如效果图所示的引导界面了。</p>
+<p><img src="//cdn.c1oudust.cn/year-month_xiaoguotu.png" alt="效果图" title="效果图"></p>
+</li>
+<li><p>Linux 下：<br>下载 refind 安装包后解压，进入解压后的文件夹，运行下列命令<br>sudo bash refind-install<br>重启安装成功，同时需要设置 refind 为第一启动项。<br>重启进入 refind 引导界面。<br>关机重启时就出现系统选择界面。以上就完成了用 refind 引导 windows10+ubutnu 双系统。</p>
+</li>
+</ul>
+<p><strong>注：某些机型可能需要在 BIOS 里修改第一启动项为 refind，用第三方软件无效。</strong></p>
+
+        <h3 id="关于在-refind-选择-Ubuntu-后又进入-grub-引导页面的处理方法"   >
+          <a href="#关于在-refind-选择-Ubuntu-后又进入-grub-引导页面的处理方法" class="heading-link"><i class="fas fa-link"></i></a>关于在 refind 选择 Ubuntu 后又进入 grub 引导页面的处理方法</h3>
+      <p>在 Ubuntu 在打开终端：</p>
+<p>输入 sudo gedit /etc/default/grub 打开编辑器</p>
+<p>找到下面两句</p>
+<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_HIDDEN_TIMEOUT=0</span><br><span class="line">GRUB_TIMEOUT=3</span><br></pre></td></tr></table></div></figure>
+<p>将后面的数值均改为 0<br>然后 sudo update-grub</p>
+</div><footer class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Windows/">Windows</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Ubuntu/">Ubuntu</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/">双系统</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, twitter">分享:</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/a3691820e1b5b96b.html"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">个人电脑实用软件汇总——Windows(一)</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/4a71100df40c79d0.html"><span class="paginator-prev__text">起初</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">
+          准备工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-win10-%E5%B9%B6%E7%BB%99-Ubuntu-%E5%88%86%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">
+          安装 win10 并给 Ubuntu 分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-ubuntu"><span class="toc-number">3.</span> <span class="toc-text">
+          安装 ubuntu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Refind-%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">
+          Refind 的安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%9C%A8-refind-%E9%80%89%E6%8B%A9-Ubuntu-%E5%90%8E%E5%8F%88%E8%BF%9B%E5%85%A5-grub-%E5%BC%95%E5%AF%BC%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">
+          关于在 refind 选择 Ubuntu 后又进入 grub 引导页面的处理方法</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">灵魂，躁动不安</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/C1oudust" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/HINT_er" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="mailto:amerkiousy@outlook.com" target="_blank" rel="noopener" data-popover="联系我" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">43</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">30</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sakana" id="sakana-widget"></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2022</span><span class="footer__icon"><i class="fas fa-user"></i></span><span>C1oudust</span><span class="footer__devider">|</span><span>冀ICP备 - 19035656号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js" onload="initSakanaWidget()"></script><script type="text/javascript">function initSakanaWidget(){
+   new SakanaWidget().mount('#sakana-widget');
+}
+</script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'https://c1oudust.cn/blog/f454b815b1d18a61.html', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script src="/js/utils.js?v=2.6.1"></script><script src="/js/stun-boot.js?v=2.6.1"></script><script src="/js/scroll.js?v=2.6.1"></script><script src="/js/header.js?v=2.6.1"></script><script src="/js/sidebar.js?v=2.6.1"></script><script type="application/json" src="/search.xml"></script></body></html>
