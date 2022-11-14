@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/small.png?v=2.6.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/medium.png?v=2.6.1" type="image/png" sizes="32x32"><meta name="msvalidate.01" content="E55772816155C73A7C73C9F8635F3B21"><meta name="baidu-site-verification" content="code-mptQdGMLI7"><meta name="description" content="LayaBox接入微信登录的方式网上几乎没有，在官方文档和上古教程的双重折磨下摸索了一天，终于实现近乎完美的接入方式，并作以记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LayaBox安卓APP接入微信登录">
+<meta property="og:url" content="https://c1oudust.cn/blog/2021/62544c10439f.html">
+<meta property="og:site_name" content="Vedfolnir">
+<meta property="og:description" content="LayaBox接入微信登录的方式网上几乎没有，在官方文档和上古教程的双重折磨下摸索了一天，终于实现近乎完美的接入方式，并作以记录。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-08-11T16:00:00.000Z">
+<meta property="article:author" content="C1oudust">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="LayaBox">
+<meta name="twitter:card" content="summary"><title>LayaBox安卓APP接入微信登录 | Vedfolnir</title><link ref="canonical" href="https://c1oudust.cn/blog/2021/62544c10439f.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"50px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: undefined,
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fa fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fa fa-th"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fa fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fa fa-archive"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fa fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">LayaBox安卓APP接入微信登录</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-12</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">1.7k</span></span></div></header><div class="post-body"><p><code>LayaBox</code>接入微信登录的方式网上几乎没有，在官方文档和上古教程的双重折磨下摸索了一天，终于实现近乎完美的接入方式，并作以记录。</p>
+<a id="more"></a>
+
+<p>我们用Android Studo打开打包后的项目文件。</p>
+
+        <h2 id="基础框架配置"   >
+          <a href="#基础框架配置" class="heading-link"><i class="fas fa-link"></i></a>基础框架配置</h2>
+      <p>首先需要升级gradle tool和Android Gradle的版本，在用Android Studio打开工程时会提示更新，确认即可。</p>
+<p>手动更新是在项目的<code>build.gradle</code>中更改依赖为新版，这里用的是4.1.2版本。</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    classpath &#x27;com.android.tools.build:gradle:4.1.2&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>同时在<code>gradle-wrapper.properties</code>中更新gradle，这里用的是6.5版本</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip</span><br></pre></td></tr></table></div></figure>
+<p>打开模块的<code>build.gradle</code>文件。位于Gradle Script 下。</p>
+<ol>
+<li><p>在依赖项中添加微信的SDK。同时升级 <code>appcompat</code>到比较新的版本（打包后默认的版本很低）。</p>
+<figure class="highlight yml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">dependencies</span> &#123;</span><br><span class="line">    <span class="string">implementation</span> <span class="string">fileTree(dir:</span> <span class="string">&#x27;libs&#x27;</span>, <span class="attr">include:</span> [<span class="string">&#x27;*.jar&#x27;</span>]<span class="string">)</span></span><br><span class="line">    <span class="string">testImplementation</span> <span class="string">&#x27;junit:junit:4.12&#x27;</span></span><br><span class="line">    <span class="string">implementation</span> <span class="string">&#x27;com.android.support:appcompat-v7:28.0.0&#x27;</span></span><br><span class="line">    <span class="string">api</span> <span class="string">&#x27;com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+<li><p>更改默认配置中最低sdk版本为16或以上 ，默认为15，最新的微信SDK并不支持。</p>
+ <figure class="highlight yml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">defaultConfig</span> &#123;</span><br><span class="line">    <span class="string">applicationId</span> <span class="string">&quot;com.c1oudust.test&quot;</span></span><br><span class="line">    <span class="string">minSdkVersion</span> <span class="number">16</span></span><br><span class="line">    <span class="string">targetSdkVersion</span> <span class="number">28</span></span><br><span class="line">    <span class="string">versionCode</span> <span class="number">1</span></span><br><span class="line">    <span class="string">versionName</span> <span class="string">&quot;2.0&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+<li><p>同步<code>gradle</code>更改，完成配置。</p>
+</li>
+</ol>
+
+        <h2 id="SDK配置"   >
+          <a href="#SDK配置" class="heading-link"><i class="fas fa-link"></i></a>SDK配置</h2>
+      <p>在<code>java</code>目录下新建以包名命名的package。</p>
+<p>在此package中新建名为<code>wxapi</code>的package。</p>
+<p>在此package中新建名为<code>WXEntryActivity</code>的class并继承<code>AppCompatActivity</code>类和<code>IWXAPIEventHandler</code>接口。</p>
+<p><code>IWXAPIEventHandler</code>接口需要实现<code>onReq</code>和<code>onResp</code>两个方法。这里可以用自动补全一键生成。我们在<code>onResp</code>方法中处理登录回调。这里可以参考微信SDK官方文档</p>
+<p>重写<code>onCreate</code>方法，注册微信appid。</p>
+<p>在授权成功的回调中使用LayaBox提供的<code>ConchJNI.RunJS</code>调用JavaScript方法。此方法必须注册到<code>window</code>对象上，否则找不到，后文有详细方式。这里直接把获取到的登录<code>code</code>传给了Laya端。</p>
+<p>参考代码:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.c1oudust.test.wxapi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.os.PersistableBundle;</span><br><span class="line"><span class="keyword">import</span> android.support.annotation.Nullable;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelbase.BaseReq;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelbase.BaseResp;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelmsg.SendAuth;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPI;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.WXAPIFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> layaair.game.browser.ConchJNI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXEntryActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">IWXAPIEventHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> IWXAPI iwxapi;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String APP_ID = <span class="string">&quot;wx123456123456123&quot;</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        iwxapi = WXAPIFactory.createWXAPI(<span class="keyword">this</span>, APP_ID, <span class="keyword">false</span>);</span><br><span class="line">        iwxapi.handleIntent(getIntent(), <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReq</span><span class="params">(BaseReq baseReq)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//登录回调</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResp</span><span class="params">(BaseResp baseResp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (baseResp.errCode) &#123;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_OK: <span class="comment">// 用户授权成功</span></span><br><span class="line">                String code = ((SendAuth.Resp) baseResp).code;</span><br><span class="line">                ConchJNI.RunJS(<span class="string">&quot;wxLoginCallback(&#x27;&quot;</span> +code+<span class="string">&quot;&#x27;)&quot;</span>); </span><br><span class="line">                finish(); <span class="comment">// finish 是用来关闭当前activity的</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_AUTH_DENIED:<span class="comment">//用户拒绝授权</span></span><br><span class="line">                finish();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BaseResp.ErrCode.ERR_USER_CANCEL:<span class="comment">//用户取消</span></span><br><span class="line">                finish();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                finish();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>打开<code>AndroidManifest.xml</code>，我们需要在<code>MainActivity</code>中添加以下代码，<code>taskAffinity</code>为包名。</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">android:exported=&quot;true&quot;</span><br><span class="line">android:taskAffinity=&quot;com.c1oudust.test&quot;</span><br><span class="line">android:launchMode=&quot;singleTask&quot;</span><br></pre></td></tr></table></div></figure>
+<p>同时添加一个<code>activity</code>，注意<code>name</code>须为<code>WXEntryActivity</code>的路径。</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">&quot;com.c1oudust.test.wxapi.WXEntryActivity&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:label</span>=<span class="string">&quot;@string/app_name&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:exported</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>为了使安卓11的手机能调起微信，需要在根节点下添加以下代码，这部分在SDK文档的接入流程中。</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">queries</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">package</span> <span class="attr">android:name</span>=<span class="string">&quot;com.tencent.mm&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">queries</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>安卓端的配置基本完成。现在创建一个单独的静态方法，实现登录，供Laya端调用。</p>
+<p>这里我们在<code>java</code>目录新建<code>wx</code>包，并新建<code>wxLogin</code>类。</p>
+<p>参考代码：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> wx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.modelmsg.SendAuth;</span><br><span class="line"><span class="keyword">import</span> com.tencent.mm.opensdk.openapi.IWXAPI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">wxLogin</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> IWXAPI api;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!api.isWXAppInstalled()) &#123;</span><br><span class="line">            <span class="comment">// 未安装微信客户端</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> SendAuth.Req req =<span class="keyword">new</span> SendAuth.Req();</span><br><span class="line">        req.scope = <span class="string">&quot;snsapi_userinfo&quot;</span>;</span><br><span class="line">        req.state = <span class="string">&quot;wechat_sdk_demo_test&quot;</span>;</span><br><span class="line">        api.sendReq(req);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>其中的<code>IWXAPI</code>必须是之前注册过的，因此我们在<code>MainActivity</code>处理这部分。</p>
+<p>打开demo包中的<code>MainActivity</code>文件，可以理解为APP的主入口。</p>
+<p>在<code>onCreate</code>方法中注册<code>appid</code>并将<code>IWXAPI</code>赋值给<code>wxLogin</code>中的<code>IWXAPI</code>。</p>
+<p>参考代码：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String APP_ID = <span class="string">&quot;wx123456123456123&quot;</span>;</span><br><span class="line"><span class="keyword">private</span> IWXAPI api;</span><br><span class="line"><span class="meta">@Override</span>    </span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    getWindow().requestFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br><span class="line">    JSBridge.mMainActivity = <span class="keyword">this</span>;</span><br><span class="line">    mSplashDialog = <span class="keyword">new</span> SplashDialog(<span class="keyword">this</span>);</span><br><span class="line">    mSplashDialog.showSplash();</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 如果不想使用更新流程，可以屏蔽checkApkUpdate函数，直接打开initEngine函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">// checkApkUpdate(this);</span></span><br><span class="line">    regToWx();</span><br><span class="line">    initEngine();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">regToWx</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    api = WXAPIFactory.createWXAPI(<span class="keyword">this</span>, APP_ID, <span class="keyword">false</span>);</span><br><span class="line">    api.registerApp(APP_ID);</span><br><span class="line">    wxLogin.api = api; <span class="comment">// 赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="Laya端处理"   >
+          <a href="#Laya端处理" class="heading-link"><i class="fas fa-link"></i></a>Laya端处理</h2>
+      <ol>
+<li><p>在想要调起微信登录的方法中添加</p>
+<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>[<span class="string">&#x27;PlatformClass&#x27;</span>]) &#123;</span><br><span class="line">    <span class="keyword">var</span> wxLogin = <span class="built_in">window</span>[<span class="string">&#x27;PlatformClass&#x27;</span>].createClass(<span class="string">&#x27;wx.wxLogin&#x27;</span>);</span><br><span class="line">    wxLogin.call(<span class="string">&#x27;login&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这里的<code>createClass</code>参数即为之前创建的调起登录的java类。然后我们使用<code>call</code>来调起<code>wxLogin</code>类中的<code>login</code>方法。</p>
+</li>
+<li><p>登录回调。在APP主页面的构造器中为<code>window</code>对象添加一个方法，方法名需要和<code>onResp</code>回调中<code>ConchJNI.RunJS</code>执行的方法名一样。</p>
+<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Laya.Browser.window[<span class="string">&#x27;wxLoginCallback&#x27;</span>] = <span class="function">(<span class="params">code</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;返回的code: &#x27;</span> + code);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+<p>这里会拿到登录回调传过来的<code>code</code>。</p>
+</li>
+</ol>
+
+        <h2 id="登录处理"   >
+          <a href="#登录处理" class="heading-link"><i class="fas fa-link"></i></a>登录处理</h2>
+      <p>以上操作初步完成了调起微信登录的流程。那么怎么获取到用户的个人信息呢？</p>
+<p>这里在微信SDK文档中已经说的很清楚了，大概方式是通过登录返回的<code>code</code>获取<code>access_token</code>，再通过<code>access_token</code>来获取用户个人信息。</p>
+<p><code>access_token</code>涉及到有效期，有效期过了就需要重新获取。</p>
+<p>由于获取<code>access_token</code>涉及到注册微信开放平台的app secret，因此建议把这部分放在后端。</p>
+<p>在这里由于是demo，因此本人给出一个大概的流程，请求我们用Okhttp框架。</p>
+<p>我们在登录成功的回调中不要把code传给前端，而是调用<code>getAccessToken</code>方法。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getAccessToken</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">    StringBuffer loginUrl = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    loginUrl.append(<span class="string">&quot;https://api.weixin.qq.com/sns/oauth2/access_token&quot;</span>)</span><br><span class="line">        .append(<span class="string">&quot;?appid=&quot;</span>)</span><br><span class="line">        .append(APP_ID)</span><br><span class="line">        .append(<span class="string">&quot;&amp;secret=&quot;</span>)</span><br><span class="line">        .append(SECRET)</span><br><span class="line">        .append(<span class="string">&quot;&amp;code=&quot;</span>)</span><br><span class="line">        .append(code)</span><br><span class="line">        .append(<span class="string">&quot;&amp;grant_type=authorization_code&quot;</span>);</span><br><span class="line"></span><br><span class="line">    OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">    <span class="keyword">final</span> Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(loginUrl.toString())</span><br><span class="line">        .get()</span><br><span class="line">        .build();</span><br><span class="line">    Call call = okHttpClient.newCall(request);</span><br><span class="line">    call.enqueue(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call call, IOException e)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call call, Response response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">            String responseInfo= response.body().string();</span><br><span class="line">            String access = <span class="keyword">null</span>;</span><br><span class="line">            String openId = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                JSONObject jsonObject = <span class="keyword">new</span> JSONObject(responseInfo);</span><br><span class="line">                access = jsonObject.getString(<span class="string">&quot;access_token&quot;</span>);</span><br><span class="line">                openid = jsonObject.getString(<span class="string">&quot;openid&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            getUserInfo(token, openid);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>我们把<code>access_token</code>和<code>openid</code>传给<code>getUserInfo</code>方法来获取个人信息。这里没有对<code>access_token</code>失效的处理，各位可以自行发挥。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getUserInfo</span><span class="params">(String token, String openid)</span> </span>&#123;</span><br><span class="line">    String getUserInfoUrl = <span class="string">&quot;https://api.weixin.qq.com/sns/userinfo?access_token=&quot;</span> + token + <span class="string">&quot;&amp;openid=&quot;</span> + openid;</span><br><span class="line"></span><br><span class="line">    OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">    <span class="keyword">final</span> Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(getUserInfoUrl)</span><br><span class="line">        .get()</span><br><span class="line">        .build();</span><br><span class="line">    Call call = okHttpClient.newCall(request);</span><br><span class="line">    call.enqueue(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call call, IOException e)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call call, Response response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">            String responseInfo= response.body().string();</span><br><span class="line">            <span class="comment">// 我们在这里调用Laya端方法传递用户信息responseInfo即可</span></span><br><span class="line">            finish();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="参考文档"   >
+          <a href="#参考文档" class="heading-link"><i class="fas fa-link"></i></a>参考文档</h2>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/Android.html" >微信开放文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://ldc2.layabox.com/doc/?nav=zh-ts-6-2-1" >Laya官方文档 - 二次开发</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/xmx5166/article/details/106650449/" >Laya打包AndroidStudio工程二次开发之相互调用</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div><footer class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/LayaBox/">LayaBox</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, twitter">分享:</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/2021/55383c3b0f8b.html"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">使用uniapp开发跨平台app</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/2021/c85e5a93cdb4.html"><span class="paginator-prev__text">GraphQL与ApolloServer初探</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">
+          基础框架配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SDK%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">
+          SDK配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Laya%E7%AB%AF%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">
+          Laya端处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">
+          登录处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">5.</span> <span class="toc-text">
+          参考文档</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">灵魂，躁动不安</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/C1oudust" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/HINT_er" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="mailto:amerkiousy@outlook.com" target="_blank" rel="noopener" data-popover="联系我" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">43</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">30</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sakana" id="sakana-widget"></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2022</span><span class="footer__icon"><i class="fas fa-user"></i></span><span>C1oudust</span><span class="footer__devider">|</span><span>冀ICP备 - 19035656号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js" onload="initSakanaWidget()"></script><script type="text/javascript">function initSakanaWidget(){
+   new SakanaWidget().mount('#sakana-widget');
+}
+</script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (true) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'https://c1oudust.cn/blog/2021/62544c10439f.html', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script src="/js/utils.js?v=2.6.1"></script><script src="/js/stun-boot.js?v=2.6.1"></script><script src="/js/scroll.js?v=2.6.1"></script><script src="/js/header.js?v=2.6.1"></script><script src="/js/sidebar.js?v=2.6.1"></script><script type="application/json" src="/search.xml"></script></body></html>
