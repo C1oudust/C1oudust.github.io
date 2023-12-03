@@ -1,4 +1,4 @@
-Stun.utils = Stun.$u = {
+Utils = {
   /**
    * Debounce
    * @param {Object} func Callback function
@@ -82,7 +82,7 @@ Stun.utils = Stun.$u = {
     return !this.isTablet() && !this.isMobile()
   },
   Cookies: function () {
-    function extend () {
+    function extend() {
       var i = 0
       var result = {}
       for (; i < arguments.length; i++) {
@@ -94,8 +94,8 @@ Stun.utils = Stun.$u = {
       return result
     }
 
-    function init (converter) {
-      function api (key, value, attributes) {
+    function init(converter) {
+      function api(key, value, attributes) {
         var result
         if (typeof document === 'undefined') {
           return
@@ -170,7 +170,7 @@ Stun.utils = Stun.$u = {
             cookie = converter.read
               ? converter.read(cookie, name)
               : converter(cookie, name) ||
-                cookie.replace(rdecode, decodeURIComponent)
+              cookie.replace(rdecode, decodeURIComponent)
             if (this.json) {
               try {
                 cookie = JSON.parse(cookie)
@@ -205,16 +205,27 @@ Stun.utils = Stun.$u = {
       api.withConverter = init
       return api
     }
-    return init(function () {})
+    return init(function () { })
   },
   showThemeInConsole: function () {
-    var stunInfo = 'welcome to c1oudust.cn'
+    var stunInfo = '主题不错？⭐star 支持一下 ->'
+    var stunURL = 'https://github.com/liuyib/hexo-theme-stun'
+    var stunNameStr =
+      '\n\n      ___          ___            ___            ___      \n     /\\  \\        /\\  \\          /\\__\\          /\\__\\     \n    /::\\  \\       \\:\\  \\        /:/  /         /::|  |    \n   /:/\\ \\  \\       \\:\\  \\      /:/  /         /:|:|  |    \n  _\\:\\ \\ \\  \\      /::\\  \\    /:/  /  ___    /:/|:|  |__  \n /\\ \\:\\ \\ \\__\\    /:/\\:\\__\\  /:/__/  /\\__\\  /:/ |:| /\\__\\ \n \\:\\ \\:\\ \\/__/   /:/  \\/__/  \\:\\  \\ /:/  /  \\/__|:|/:/  / \n  \\:\\ \\:\\__\\    /:/  /        \\:\\  /:/  /       |:/:/  /  \n   \\:\\/:/  /    \\/__/          \\:\\/:/  /        |::/  /   \n    \\::/  /                     \\::/  /         /:/  /    \n     \\/__/                       \\/__/          \\/__/     \n                                                          \n'
     var stunInfoStyle =
-      'background-color: #49b1f5; color: #fff; padding: 8px 50px; font-size: 14px;'
+      'background-color: #49b1f5; color: #fff; padding: 8px; font-size: 14px;'
+    var stunURLStyle =
+      'background-color: #ffbca2; padding: 8px; font-size: 14px;'
+    var stunNameStyle = 'background-color: #eaf8ff;'
+
     console.log(
-      '%c%s',
+      '%c%s%c%s%c%s',
       stunInfoStyle,
       stunInfo,
+      stunURLStyle,
+      stunURL,
+      stunNameStyle,
+      stunNameStr
     )
   },
   /**
@@ -243,11 +254,11 @@ Stun.utils = Stun.$u = {
 
     var $alert = $(
       '<div class="stun-message">' +
-        `<div class="stun-alert stun-alert-${status}">` +
-        `<i class="stun-alert-icon ${CONFIG.fontIcon.prompt[status]}"></i>` +
-        `<span class="stun-alert-description">${text}</span>` +
-        '</div>' +
-        '</div>'
+      `<div class="stun-alert stun-alert-${status}">` +
+      `<i class="stun-alert-icon ${CONFIG.fontIcon.prompt[status]}"></i>` +
+      `<span class="stun-alert-description">${text}</span>` +
+      '</div>' +
+      '</div>'
     )
 
     $('body').append($alert)
@@ -376,8 +387,8 @@ Stun.utils = Stun.$u = {
     var $wrapper = $('<span class="exturl"></span>')
     var $icon = $(
       '<span class="exturl__icon">' +
-        `<i class="${CONFIG.externalLink.icon.name}"></i>` +
-        '</span>'
+      `<i class="${CONFIG.externalLink.icon.name}"></i>` +
+      '</span>'
     )
 
     $(container)
@@ -486,7 +497,7 @@ Stun.utils = Stun.$u = {
       )
     })
 
-    function closeZoom () {
+    function closeZoom() {
       if (!isZoom) {
         return
       }
@@ -522,12 +533,12 @@ Stun.utils = Stun.$u = {
           content += `<div class="custom-lang">${lang}</div>`
         } else if (type === 'carbon') {
           content += `
-            <div class="custom-carbon">
-              <div class="custom-carbon-dot custom-carbon-dot--red"></div>
-              <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
-              <div class="custom-carbon-dot custom-carbon-dot--green"></div>
-            </div>
-          `
+              <div class="custom-carbon">
+                <div class="custom-carbon-dot custom-carbon-dot--red"></div>
+                <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
+                <div class="custom-carbon-dot custom-carbon-dot--green"></div>
+              </div>
+            `
         }
 
         $(`<figcaption class="custom">${content}</figcaption>`).insertBefore(
@@ -542,8 +553,8 @@ Stun.utils = Stun.$u = {
     var btnContainer = '.post-copyright,'
     var $copyIcon = $(
       `<div class="copy-button" data-popover="${CONFIG.prompt.copyButton}" data-popover-pos="up">` +
-        `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
-        '</div>'
+      `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
+      '</div>'
     )
 
     if (type === 'simple' || type === 'carbon') {

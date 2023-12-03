@@ -26,11 +26,14 @@ window.CONFIG = CONFIG;</script><script>function getDarkMode() {
 if (getDarkMode()) {
   document.querySelector('html').classList = 'dark';
 }</script><meta name="generator" content="Hexo 6.3.0"></head><body><header class="header"><nav class="nav"><div class="spacer"></div><div class="menu"><a class="menu-item" href="/" title="首页"><span class="menu-item__text">首页</span></a><div class="dark-mode"><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-moon" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"></path></svg></a><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-sun" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></a></div></div></nav></header><main class="main"><div id="is-post"></div><div class="post-header"><h1 class="post-title slide-enter-50">Vue学习中的一些感悟</h1><div class="post-meta slide-enter-50"><span class="item-meta--createtime">04-01</span><span class="item-meta--readtime">· 3分钟</span></div></div><article><div class="content slide-enter-content"><p>在使用 Vue 进行实际开发中，遇到了不少问题，在成功解决后，我觉得有必要把遇到的问题记录下来。一是以后遇到类似的问题时，方便查阅，二是能够激励自己继续学习。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 
-        <h2 id="关于-e-target-和-e-currentTarget"   >
-          <a href="#关于-e-target-和-e-currentTarget" class="heading-link"><i class="fas fa-link"></i></a>关于 e.target 和 e.currentTarget</h2>
+        <h2 id=""   >
+          <a href="#关于-e-target-和-e-currentTarget" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="关于-e-target-和-e-currentTarget"></div>
+          <a href="#关于-e-target-和-e-currentTarget" class="headerlink" title="关于 e.target 和 e.currentTarget"></a>关于 e.target 和 e.currentTarget
+        </h2>
       <p>场景：给 v-for 循环渲染出的含有子元素的元素添加了 click 事件，并且动态绑定了 id 属性，想要在点击该元素时，输出对应的 id 值。</p>
 <p>在这里需要使用 <code>e.currentTarget.id</code> 而不是 <code>e.target.id</code>。</p>
 <p>解释如下：</p>
@@ -38,11 +41,17 @@ if (getDarkMode()) {
 <p>不管你点击的是元素本身或者元素里面任何子元素，<code>currentTarget</code> 获取到的对象都为绑定事件的元素。当使用 <code>target</code> 时，如果你点击到绑定事件的元素则返回该元素，如果点击到它之中的某个子级元素则返回它之中的某个元素。</p>
 <p>上文可能有点啰嗦，总结一下，<code>target</code> 会变，点到谁身上就返回谁，<code>currentTarget</code> 不会变，返回事件源对象。</p>
 
-        <h2 id="返回上一页的解决方式"   >
-          <a href="#返回上一页的解决方式" class="heading-link"><i class="fas fa-link"></i></a>返回上一页的解决方式</h2>
+        <h2 id=""   >
+          <a href="#返回上一页的解决方式" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="返回上一页的解决方式"></div>
+          <a href="#返回上一页的解决方式" class="headerlink" title="返回上一页的解决方式"></a>返回上一页的解决方式
+        </h2>
       
-        <h3 id="使用-go-和-back"   >
-          <a href="#使用-go-和-back" class="heading-link"><i class="fas fa-link"></i></a>使用 go()和 back()</h3>
+        <h3 id=""   >
+          <a href="#使用-go-和-back" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="使用-go-和-back"></div>
+          <a href="#使用-go-和-back" class="headerlink" title="使用 go()和 back()"></a>使用 go()和 back()
+        </h3>
       <p>history.go(-1)：后退同时刷新页面</p>
 <p>history.go(1)：前进</p>
 <p>使用 go，原页面表单中的内容会丢失。</p>
@@ -51,34 +60,51 @@ if (getDarkMode()) {
 <p>history.back(1)：前进</p>
 <p>使用 back，原页表表单中的内容会保留</p>
 
-        <h3 id="vue-router"   >
-          <a href="#vue-router" class="heading-link"><i class="fas fa-link"></i></a>vue-router</h3>
+        <h3 id=""   >
+          <a href="#vue-router" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="vue-router"></div>
+          <a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router
+        </h3>
       <p>使用了 vue-router 的话，可以用 this.$router.go(-1) 返回上一页。</p>
 <p>这里需要注意的是：history.go(-1)是回到浏览器上一页，但是由于 Vue 应用是单页应用，浏览器的访问历史未必和 Vue 的浏览历史相同。</p>
 
-        <h2 id="watch-中的-deep-和-immediate-参数"   >
-          <a href="#watch-中的-deep-和-immediate-参数" class="heading-link"><i class="fas fa-link"></i></a>watch 中的 deep 和 immediate 参数</h2>
-      <p>这两个选项在<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#watch" >官方文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>中一笔带过。</p>
+        <h2 id=""   >
+          <a href="#watch-中的-deep-和-immediate-参数" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="watch-中的-deep-和-immediate-参数"></div>
+          <a href="#watch-中的-deep-和-immediate-参数" class="headerlink" title="watch 中的 deep 和 immediate 参数"></a>watch 中的 deep 和 immediate 参数
+        </h2>
+      <p>这两个选项在<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#watch">官方文档</a>中一笔带过。</p>
 <p>个人感觉有需要的时候还是很好用的，比如使用 deep 监听对象中属性的变化。</p>
 
-        <h2 id="vue-router-项目的-404-页面"   >
-          <a href="#vue-router-项目的-404-页面" class="heading-link"><i class="fas fa-link"></i></a>vue-router 项目的 404 页面</h2>
+        <h2 id=""   >
+          <a href="#vue-router-项目的-404-页面" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="vue-router-项目的-404-页面"></div>
+          <a href="#vue-router-项目的-404-页面" class="headerlink" title="vue-router 项目的 404 页面"></a>vue-router 项目的 404 页面
+        </h2>
       <p>这个只需要在路由配置中加入 path 值为*的选项：</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path: <span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">  component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./notFindPage&#x27;</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">  <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./notFindPage&#x27;</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
-        <h2 id="vue-router-跳转页面记忆页面的滚动位置"   >
-          <a href="#vue-router-跳转页面记忆页面的滚动位置" class="heading-link"><i class="fas fa-link"></i></a>vue-router 跳转页面记忆页面的滚动位置</h2>
+
+        <h2 id=""   >
+          <a href="#vue-router-跳转页面记忆页面的滚动位置" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="vue-router-跳转页面记忆页面的滚动位置"></div>
+          <a href="#vue-router-跳转页面记忆页面的滚动位置" class="headerlink" title="vue-router 跳转页面记忆页面的滚动位置"></a>vue-router 跳转页面记忆页面的滚动位置
+        </h2>
       <p>开始做的时候用了非常麻烦的方法，后来去看文档，发现只需要一个设置而已。</p>
-<p>首先需要开启 vue-router 的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#html5-history-%E6%A8%A1%E5%BC%8F" >history 模式</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>首先需要开启 vue-router 的<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#html5-history-%E6%A8%A1%E5%BC%8F">history 模式</a></p>
 <p>然后具体设置如下：</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123; <span class="comment">//如果savedPosition存在，滚动条会自动跳到记录的值的地方</span></span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;<span class="comment">//savedPosition也是一个记录x轴和y轴位置的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;，</span><br><span class="line">  routes: [...]</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></div></figure>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html" >官方文档里</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>关于配置也讲的很详细。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123; <span class="comment">//如果savedPosition存在，滚动条会自动跳到记录的值的地方</span></span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;<span class="comment">//savedPosition也是一个记录x轴和y轴位置的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;，</span><br><span class="line">  <span class="attr">routes</span>: [...]</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
 
-        <h2 id="总结与吐槽"   >
-          <a href="#总结与吐槽" class="heading-link"><i class="fas fa-link"></i></a>总结与吐槽</h2>
+<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html">官方文档里</a>关于配置也讲的很详细。</p>
+
+        <h2 id=""   >
+          <a href="#总结与吐槽" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="总结与吐槽"></div>
+          <a href="#总结与吐槽" class="headerlink" title="总结与吐槽"></a>总结与吐槽
+        </h2>
       <p>以上就是我这段时间学习 Vue 的一些感悟，虽然不是很深入的东西，但新手学习东西不免会遇到坑，只有跨过这些坑才能更好地掌握一门技术。</p>
 <p>其实最好的解决方法就是去查看官方文档，文档里讲的比任何地方都全，这段时间看文档，受益良多。</p>
-<p>网上的教程质量确实参差不齐，就拿 csdn 举例，之前搜教程的时候看到<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/xingyu_qie/article/details/78831045" >这么一篇文章</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，作者大佬确实言辞比较激烈，个人感觉话糙理不糙，这段时间学下来，感觉解决问题最好的论坛就是<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://segmentfault.com/" >segmentfault</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 和<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://stackoverflow.com/" >stack overflow.</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>了。</p>
+<p>网上的教程质量确实参差不齐，就拿 csdn 举例，之前搜教程的时候看到<a target="_blank" rel="noopener" href="https://blog.csdn.net/xingyu_qie/article/details/78831045">这么一篇文章</a>，作者大佬确实言辞比较激烈，个人感觉话糙理不糙，这段时间学下来，感觉解决问题最好的论坛就是<a target="_blank" rel="noopener" href="https://segmentfault.com/">segmentfault</a> 和<a target="_blank" rel="noopener" href="https://stackoverflow.com/">stack overflow.</a>了。</p>
 </div></article><div class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Vue/">Vue</a></span></div><nav class="post-paginator paginator"><div class="paginator-inner"><a class="paginator-prev prev extend" href="/blog/2020/39d79b9df39e.html" title="关于解决移动端Retina屏幕1px边框问题的方法"><i class="fa-solid fa-chevron-left"></i></a><a class="paginator-next next extend" href="/blog/2020/3f0494dcd174.html" title="Vue之better-scroll导致click事件失效问题"><i class="fa-solid fa-chevron-right"></i></a></div></nav></div></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
   var pjax = new Pjax({"selectors":["head title",".main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器

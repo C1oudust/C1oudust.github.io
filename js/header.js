@@ -1,247 +1,58 @@
 $(document).ready(function () {
-  var $menuBtn = $('.header-nav-menubtn')
-  var $menu = $('.header-nav-menu')
-  var $menuItem = $('.header-nav-menu-item')
-  var $submenu = $('.header-nav-submenu')
-  var isMobile = $menuBtn.is(':visible')
+  var $menuBtn = $('.header-nav-menubtn');
+  var isMobile = $menuBtn.is(':visible');
+  var $mode = $('.mode');
+  var dark = false;
 
-  var isMenuShow = false
-  var isSubmenuShow = false
-
-  function resetMenuHeight () {
-    $menuItem.velocity(
-      {
-        height: $menuItem.outerHeight()
-      },
-      {
-        complete: function () {
-          $submenu.css({ display: 'none', opacity: 0 })
-        }
-      }
-    )
-  }
-
-  $(window).on(
-    'resize',
-    Stun.utils.throttle(function () {
-      isMobile = $menuBtn.is(':visible')
-      if (isMobile) {
-        $submenu.removeClass('hide--force')
-
-        if (isSubmenuShow) {
-          resetMenuHeight()
-          isSubmenuShow = false
-        }
+  Util.initHeader = () => {
+    if (CONFIG.theme.dark_mode.enable) {
+      $mode = $('.mode');
+      if (getDarkMode()) {
+        $('.mode-button-sun').fadeToggle('fast');
+        dark = true;
       } else {
-        $submenu.css({ display: 'none', opacity: 0 })
+        dark = false;
+        $('.mode-button-moon').fadeToggle('fast');
       }
-    }, 200)
-  )
-
-  var isNightModeFocus = true
-  var $nightMode = $('.mode')
-
-  $(document).on('click', function () {
-    if ($menu.is(':visible')) {
-      if (isMobile && isSubmenuShow) {
-        resetMenuHeight()
-        isSubmenuShow = false
-      }
-      $menu.css({ display: 'none' })
-      isMenuShow = false
+      $('.dark-mode').on('click', (e) => {
+        e.stopPropagation();
+        useTransition(e.clientX, e.clientY, () => {
+          dark = !dark;
+          localStorage.setItem('dark', dark ? '1' : '0');
+          $('html').toggleClass('dark');
+          $('.mode-button-moon').toggle();
+          $('.mode-button-sun').toggle();
+        });
+      });
     }
-    if (isNightModeFocus) {
-      $nightMode.removeClass('mode--focus')
-      isNightModeFocus = false
-    }
-  })
+  };
 
-  Stun.utils.pjaxReloadHeader = function () {
-    $menuBtn = $('.header-nav-menubtn')
-    $menu = $('.header-nav-menu')
-    $menuItem = $('.header-nav-menu-item')
-    $submenu = $('.header-nav-submenu')
-    isMobile = $menuBtn.is(':visible')
+  const useTransition = (x, y, callback) => {
+    const isAppearanceTransition = document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    isMenuShow = false
-    isSubmenuShow = false
-
-    function getNightMode () {
-      var nightMode = false
-      try {
-        if (parseInt(Stun.utils.Cookies().get(NIGHT_MODE_COOKIES_KEY))) {
-          nightMode = true
-        }
-      } catch (err) {
-        /* empty */
-      }
-      return nightMode
+    if (!isAppearanceTransition) {
+      callback();
+      return;
     }
 
-    if (CONFIG.nightMode && CONFIG.nightMode.enable) {
-      var isNightMode = false
-      var NIGHT_MODE_COOKIES_KEY = 'night_mode'
-      $nightMode = $('.mode')
-      isNightModeFocus = true
+    const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
-      if (getNightMode()) {
-        $nightMode.addClass('mode--checked')
-        $nightMode.addClass('mode--focus')
-        $('html').addClass('nightmode')
-
-        var night =  $('.header-banner').attr('nightimg')
-        $('.header-banner').css("background","url(" + night+  ") no-repeat center / cover")
-        isNightMode = true
-      } else {
-        var day =  $('.header-banner').attr('dayimg')
-        $('.header-banner').css("background","url(" + day+  ") no-repeat center / cover")
-        isNightMode = false
-      }
-      $('.mode').on('click', function (e) {
-        e.stopPropagation()
-        isNightMode = !isNightMode
-        if(isNightMode){
-          // var a = $('.header-banner').css('background').toString();
-          var night =  $('.header-banner').attr('nightimg')
-          // var night2 =  $('body').attr('nightimg')
-
-          $('.header-banner').css("background","url(" + night+  ") no-repeat center / cover")
-          // $('body::after').css("background","url(" + night2+  ") no-repeat center / cover")
-
-          // var isNight = a.indexOf(day);
-          // console.log(isNight == -1);
-        }
-        else{
-          var day =  $('.header-banner').attr('dayimg')
-          // var day2 =  $('body').attr('dayimg')
-          $('.header-banner').css("background","url(" + day+  ") no-repeat center / cover")
-          // $('body::after').css("background","url(" + day2+  ") no-repeat center / cover")
-
-        }
-        isNightModeFocus = true
-        Stun.utils.Cookies().set(NIGHT_MODE_COOKIES_KEY, isNightMode ? 1 : 0)
-        $nightMode.toggleClass('mode--checked')
-        $nightMode.addClass('mode--focus')
-        $('html').toggleClass('nightmode')
-      })
-    }
-
-    $menuBtn.on('click', function (e) {
-      e.stopPropagation()
-      if (isMobile && isMenuShow && isSubmenuShow) {
-        resetMenuHeight()
-        isSubmenuShow = false
-      }
-      if (!isMenuShow) {
-        isMenuShow = true
-      } else {
-        isMenuShow = false
-      }
-      $menu.velocity('stop').velocity(
+    const transition = document.startViewTransition(() => {
+      callback();
+    });
+    transition.ready.then(() => {
+      const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
+      document.documentElement.animate(
         {
-          opacity: isMenuShow ? 1 : 0
+          clipPath: dark ? [...clipPath].reverse() : clipPath,
         },
         {
-          duration: isMenuShow ? 200 : 0,
-          display: isMenuShow ? 'block' : 'none'
+          duration: 300,
+          easing: 'ease-out',
+          pseudoElement: dark ? '::view-transition-old(root)' : '::view-transition-new(root)',
         }
-      )
-    })
-
-    // Whether to allow events to bubble in the menu.
-    var isBubbleInMenu = false
-    $('.header-nav-submenu-item').on('click', function () {
-      isBubbleInMenu = true
-    })
-
-    $menuItem.on('click', function (e) {
-      // 点击menu选项滑动banner
-      // console.log($(e.currentTarget).children('.header-nav-menu-item__link').attr('href'));
-      setTimeout(() => {
-        // 首页选项不触发
-        if($(e.currentTarget).children('.header-nav-menu-item__link').attr('href') =='/' ) return;
-        if($('#container').offset().top < $('#header').outerHeight()){
-          $('#container').velocity('scroll', {
-            offset: $('#header').outerHeight()
-          })
-        }
-      }, 500);
-      if (!isMobile) {
-        return
-      }
-
-      var $submenu = $(this).find('.header-nav-submenu')
-      if (!$submenu.length) {
-        return
-      }
-      if (!isBubbleInMenu) {
-        e.stopPropagation()
-      } else {
-        isBubbleInMenu = false
-      }
-
-      var menuItemHeight = $menuItem.outerHeight()
-      var submenuHeight =
-        menuItemHeight + Math.floor($submenu.outerHeight()) * $submenu.length
-      var menuShowHeight = 0
-
-      if ($(this).outerHeight() > menuItemHeight) {
-        isSubmenuShow = false
-        menuShowHeight = menuItemHeight
-      } else {
-        isSubmenuShow = true
-        menuShowHeight = submenuHeight
-      }
-      $submenu.css({ display: 'block', opacity: 1 })
-      // Accordion effect.
-      $(this)
-        .velocity('stop')
-        .velocity({ height: menuShowHeight }, { duration: 300 })
-        .siblings()
-        .velocity({ height: menuItemHeight }, { duration: 300 })
-    })
-
-    $menuItem.on('mouseenter', function () {
-      var $submenu = $(this).find('.header-nav-submenu')
-      if (!$submenu.length) {
-        return
-      }
-      if (!$submenu.is(':visible')) {
-        if (isMobile) {
-          $submenu.css({ display: 'block', opacity: 1 })
-        } else {
-          $submenu.removeClass('hide--force')
-          $submenu
-            .velocity('stop')
-            .velocity('transition.slideUpIn', { duration: 200 })
-        }
-      }
-    })
-
-    $menuItem.on('mouseleave', function () {
-      var $submenu = $(this).find('.header-nav-submenu')
-      if (!$submenu.length) {
-        return
-      }
-      if (!isMobile) {
-        $submenu.addClass('hide--force')
-        isSubmenuShow = false
-      }
-    })
-  }
-
-  Stun.utils.pjaxReloadScrollIcon = function () {
-    if (CONFIG.header && CONFIG.header.scrollDownIcon) {
-      $('.header-banner-arrow').on('click', function (e) {
-        e.stopPropagation()
-        $('#container').velocity('scroll', {
-          offset: $('#header').outerHeight()
-        })
-      })
-    }
-  }
-
-  // Initializaiton
-  Stun.utils.pjaxReloadHeader()
-  Stun.utils.pjaxReloadScrollIcon()
-})
+      );
+    });
+  };
+  Util.initHeader();
+});

@@ -29,17 +29,17 @@ if (getDarkMode()) {
 <p>解决方法是在<code>video</code>标签里添加属性</p>
 <ul>
 <li><p>安卓：</p>
-<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x5-video-player-type=&quot;h5&quot;</span><br><span class="line">webkit-playsinline=&quot;true&quot;</span><br><span class="line">playsinline=&quot;true&quot;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x5-<span class="selector-tag">video</span>-player-type=&quot;<span class="selector-tag">h5</span>&quot;</span><br><span class="line">webkit-playsinline=&quot;true&quot;</span><br><span class="line">playsinline=&quot;true&quot;</span><br></pre></td></tr></table></figure>
+
 <p>注意：安卓下不要添加 <code>x5-playsinline</code> 属性，会导致其他属性全部失效。</p>
 </li>
 <li><p>iOS</p>
-<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">x5-playsinline</span> <span class="selector-tag">playsinline</span> <span class="selector-tag">webkit-playsinline</span></span><br></pre></td></tr></table></div></figure>
-<p>参考链接：</p>
-</li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x5-playsinline playsinline webkit-playsinline</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/wisewrong/p/10276947.html" >大事记 - 安卓微信浏览器 video 标签层级过高</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.pianshen.com/article/57831927397/" >微信内置浏览器 video 标签自动全屏播放以及层级过高问题</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/baiyygynui/p/6323565.html" >video 标签在微信浏览器的问题解决方法</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>参考链接：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wisewrong/p/10276947.html">大事记 - 安卓微信浏览器 video 标签层级过高</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.pianshen.com/article/57831927397/">微信内置浏览器 video 标签自动全屏播放以及层级过高问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baiyygynui/p/6323565.html">video 标签在微信浏览器的问题解决方法</a></p>
 </div></article><div class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a></span></div><nav class="post-paginator paginator"><div class="paginator-inner"><a class="paginator-prev prev extend" href="/blog/2021/e2654b102767.html" title="Vuex源码阅读笔记"><i class="fa-solid fa-chevron-left"></i></a><a class="paginator-next next extend" href="/blog/2020/db9b57d5d44e.html" title="uniapp-qq开放数据使用"><i class="fa-solid fa-chevron-right"></i></a></div></nav></div></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
   var pjax = new Pjax({"selectors":["head title",".main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器

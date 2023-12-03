@@ -26,8 +26,11 @@ window.CONFIG = CONFIG;</script><script>function getDarkMode() {
 if (getDarkMode()) {
   document.querySelector('html').classList = 'dark';
 }</script><meta name="generator" content="Hexo 6.3.0"></head><body><header class="header"><nav class="nav"><div class="spacer"></div><div class="menu"><a class="menu-item" href="/" title="首页"><span class="menu-item__text">首页</span></a><div class="dark-mode"><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-moon" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"></path></svg></a><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-sun" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></a></div></div></nav></header><main class="main"><div id="is-post"></div><div class="post-header"><h1 class="post-title slide-enter-50">uniapp-qq开放数据使用</h1><div class="post-meta slide-enter-50"><span class="item-meta--createtime">11-11</span><span class="item-meta--readtime">· 8分钟</span></div></div><article><div class="content slide-enter-content">
-        <h1 id="uniapp-qq-开放数据使用"   >
-          <a href="#uniapp-qq-开放数据使用" class="heading-link"><i class="fas fa-link"></i></a>uniapp-qq 开放数据使用</h1>
+        <h1 id=""   >
+          <a href="#uniapp-qq-开放数据使用" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="uniapp-qq-开放数据使用"></div>
+          <a href="#uniapp-qq-开放数据使用" class="headerlink" title="uniapp-qq 开放数据使用"></a>uniapp-qq 开放数据使用
+        </h1>
       <p>用途</p>
 <ol>
 <li><p>展示用户个人信息如头像等，类似 <code>getUserInfo()</code>。</p>
@@ -35,28 +38,38 @@ if (getDarkMode()) {
 <li><p>展示针对用户好友对于某一产品或某一产品下的不同选项的选择。</p>
 </li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 
 
-        <h6 id="示例："   >
-          <a href="#示例：" class="heading-link"><i class="fas fa-link"></i></a>示例：</h6>
+        <h6 id=""   >
+          <a href="#示例：" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="示例："></div>
+          <a href="#示例：" class="headerlink" title="示例："></a>示例：
+        </h6>
       <p><img src="//cdn.c1oudust.cn/opendata/1.png"></p>
 
-        <h2 id="uniapp-中具体使用方式"   >
-          <a href="#uniapp-中具体使用方式" class="heading-link"><i class="fas fa-link"></i></a>uniapp 中具体使用方式</h2>
+        <h2 id=""   >
+          <a href="#uniapp-中具体使用方式" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="uniapp-中具体使用方式"></div>
+          <a href="#uniapp-中具体使用方式" class="headerlink" title="uniapp 中具体使用方式"></a>uniapp 中具体使用方式
+        </h2>
       <ul>
 <li><p>创建一个组件并在要展示用户数据的页面引入，此处为 <code>FriendList.vue</code>。</p>
 
-        <h6 id="示例"   >
-          <a href="#示例" class="heading-link"><i class="fas fa-link"></i></a>示例</h6>
+        <h6 id=""   >
+          <a href="#示例" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="示例"></div>
+          <a href="#示例" class="headerlink" title="示例"></a>示例
+        </h6>
       </li>
 </ul>
-<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view class&#x3D;&quot;friend-content&quot; v-for&#x3D;&quot;item of userList&quot;&gt;</span><br><span class="line">    &lt;image class&#x3D;&quot;image&quot; :src&#x3D;&quot;item.avatarUrl&quot; mode&#x3D;&quot;widthFix&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; componentData.value &#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; item.kvDataList[0].value &#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;userList&#39;, &#39;componentData&#39;],</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view class=&quot;friend-content&quot; v-for=&quot;item of userList&quot;&gt;</span><br><span class="line">    &lt;image class=&quot;image&quot; :src=&quot;item.avatarUrl&quot; mode=&quot;widthFix&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; componentData.value &#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;view&gt;&#123;&#123; item.kvDataList[0].value &#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#x27;userList&#x27;, &#x27;componentData&#x27;],</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>调用 <code>qq.setUserCloudStorage()</code>方法托管用户关系数据。</li>
 </ul>
 <p><strong>具体属性:</strong></p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -89,14 +102,21 @@ if (getDarkMode()) {
 <td>否</td>
 <td>接口调用结束的回调函数（调用成功、失败都会执行）</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 
-        <h6 id="示例：-1"   >
-          <a href="#示例：-1" class="heading-link"><i class="fas fa-link"></i></a>示例：</h6>
-      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">qq.setUserCloudStorage(&#123;</span><br><span class="line">  KVDataList: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">&#x27;set UserCloudStorage failed！&#x27;</span>, res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+        <h6 id=""   >
+          <a href="#示例：-1" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="示例：-1"></div>
+          <a href="#示例：-1" class="headerlink" title="示例："></a>示例：
+        </h6>
+      <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">qq.<span class="title function_">setUserCloudStorage</span>(&#123;</span><br><span class="line">  <span class="title class_">KVDataList</span>: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.<span class="property">lastChoiceId</span>, <span class="attr">value</span>: <span class="title class_">Date</span>.<span class="title function_">parse</span>(<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">toString</span>() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">fail</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;set UserCloudStorage failed！&#x27;</span>, res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-        <h6 id="托管数据的限制"   >
-          <a href="#托管数据的限制" class="heading-link"><i class="fas fa-link"></i></a>托管数据的限制</h6>
+
+        <h6 id=""   >
+          <a href="#托管数据的限制" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="托管数据的限制"></div>
+          <a href="#托管数据的限制" class="headerlink" title="托管数据的限制"></a>托管数据的限制
+        </h6>
       <ol>
 <li>每个 openid 所标识的 QQ 用户在每个游戏上托管的数据不能超过 128 个 key-value 对。</li>
 <li>上报的 key-value 列表当中每一项的 key+value 长度都不能超过 1K(1024)字节。</li>
@@ -105,15 +125,20 @@ if (getDarkMode()) {
 <ul>
 <li><p>在想展示好友关系链的地方使用 open-data 标签</p>
 
-        <h6 id="示例-1"   >
-          <a href="#示例-1" class="heading-link"><i class="fas fa-link"></i></a>示例</h6>
+        <h6 id=""   >
+          <a href="#示例-1" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="示例-1"></div>
+          <a href="#示例-1" class="headerlink" title="示例"></a>示例
+        </h6>
       </li>
 </ul>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;open-data</span><br><span class="line">  type=&quot;friendCloudStorage&quot;</span><br><span class="line">  generic:simple-component=&quot;friendlist&quot;</span><br><span class="line">  :keyList=&quot;[item.id]&quot;</span><br><span class="line">  :component-data=&quot;data&quot;</span><br><span class="line">&gt;<span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  value: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">open-data</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">&quot;friendCloudStorage&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">generic:simple-component</span>=<span class="string">&quot;friendlist&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:keyList</span>=<span class="string">&quot;[item.id]&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:component-data</span>=<span class="string">&quot;data&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>open-data 标签用于展示 QQ 开放数据。</p>
 <p><strong>具体属性：</strong></p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>属性名</th>
@@ -134,54 +159,54 @@ if (getDarkMode()) {
 <td>open-gid</td>
 <td>String</td>
 <td></td>
-<td>当 type=”groupName” 时生效, 群 id</td>
+<td>当 type&#x3D;”groupName” 时生效, 群 id</td>
 <td></td>
 </tr>
 <tr>
 <td>lang</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=”user*“ 时生效，以哪种语言展示 userInfo，有效值有：en, zh_CN, zh_TW</td>
+<td>当 type&#x3D;”user*“ 时生效，以哪种语言展示 userInfo，有效值有：en, zh_CN, zh_TW</td>
 <td></td>
 </tr>
 <tr>
 <td>share-ticket</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=groupCloudStorage 时有效，群分享对应的 shareTicket</td>
+<td>当 type&#x3D;groupCloudStorage 时有效，群分享对应的 shareTicket</td>
 <td>1.17.0</td>
 </tr>
 <tr>
 <td>key-list</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=*CloudStorage 时有效，指定要拉取的 key 列表</td>
+<td>当 type&#x3D;*CloudStorage 时有效，指定要拉取的 key 列表</td>
 <td>1.17.0</td>
 </tr>
 <tr>
 <td>component-data</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中</td>
+<td>当 type&#x3D;*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中</td>
 <td>1.17.0</td>
 </tr>
 <tr>
 <td>generic:simple-component</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=*CloudStorage 时有效,指定使用哪个自定义开放数据域组件来渲染开放数据,具体说明见下方</td>
+<td>当 type&#x3D;*CloudStorage 时有效,指定使用哪个自定义开放数据域组件来渲染开放数据,具体说明见下方</td>
 <td>1.17.0</td>
 </tr>
 <tr>
 <td>binderror</td>
 <td>String</td>
 <td>en</td>
-<td>当 type=*CloudStorage 时有效,开放数据请求或定向分享失败时触发，event.detail = {errMsg: “getGroupCloudStorage:fail no data”}</td>
+<td>当 type&#x3D;*CloudStorage 时有效,开放数据请求或定向分享失败时触发，event.detail &#x3D; {errMsg: “getGroupCloudStorage:fail no data”}</td>
 <td>1.17.0</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 <p><strong>type 有效值：</strong></p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>值</th>
@@ -244,13 +269,16 @@ if (getDarkMode()) {
 <td>获取当前用户在某个群中也玩该小程序的成员的<code>应用数据</code></td>
 <td>1.17.0</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 
-        <h5 id="关系链数据展示说明"   >
-          <a href="#关系链数据展示说明" class="heading-link"><i class="fas fa-link"></i></a>关系链数据展示说明</h5>
-      <p>当 type=*CloudStorage, 可通过 <code>generic:simple-component</code>属性指定<code>自定义开放数据域组件</code></p>
+        <h5 id=""   >
+          <a href="#关系链数据展示说明" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="关系链数据展示说明"></div>
+          <a href="#关系链数据展示说明" class="headerlink" title="关系链数据展示说明"></a>关系链数据展示说明
+        </h5>
+      <p>当 type&#x3D;*CloudStorage, 可通过 <code>generic:simple-component</code>属性指定<code>自定义开放数据域组件</code></p>
 <p>指定的<code>自定义开放数据域组件</code>中会在<code>props</code>中自动注入以下属性</p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -273,9 +301,9 @@ if (getDarkMode()) {
 <td>Object</td>
 <td>从主域透传给开放数据域的数据</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 <p><code>KVData</code>数据结构说明</p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -293,9 +321,9 @@ if (getDarkMode()) {
 <td>KVData</td>
 <td>数据的 value</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 <p><code>UserData</code>数据结构说明</p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -323,16 +351,19 @@ if (getDarkMode()) {
 <td>Array.<KVData></td>
 <td>用户的应用数据</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 <p>用户的 <code>应用数据</code> 指的是用户的分数、段位等小程序业务特有的数据，通过调用 <code>qq.setUserCloudStorage()</code> 可以将当前用户的应用数据托管在 QQ 后台。只有被托管过数据的用户，才会被视为 <code>玩过</code> 该小程序的用户，才会出现在 <code>type=friendCloudStorage</code> 和 <code>type=groupCloudStorage</code> 的<code>&lt;open-data&gt;</code>组件中</p>
 
-        <h2 id="一些限制及处理方法"   >
-          <a href="#一些限制及处理方法" class="heading-link"><i class="fas fa-link"></i></a>一些限制及处理方法</h2>
+        <h2 id=""   >
+          <a href="#一些限制及处理方法" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="一些限制及处理方法"></div>
+          <a href="#一些限制及处理方法" class="headerlink" title="一些限制及处理方法"></a>一些限制及处理方法
+        </h2>
       <ol>
 <li><p>自定义组件中无法对<code>userList</code>进行操作，无法将<code>userList</code>赋值给在<code>data</code>中的变量，无法使用<code>watch</code>监控<code>userList</code>使其存在后赋值给<code>data</code>里的变量，无法使用 data 中定义的变量。</p>
 <ul>
 <li><p>需要显示固定数量的用户数据：</p>
-<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for&#x3D;&quot;item of userList.slice(0,3)&quot;&gt;  &#x2F;&#x2F; 无法显示</span><br><span class="line">&lt;view v-for&#x3D;&quot;(item, index) of userList&quot; v-if&#x3D;&quot;index &lt; 4&quot;&gt; &#x2F;&#x2F; 正常显示</span><br></pre></td></tr></table></div></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for=&quot;item of userList.slice(0,3)&quot;&gt;  // 无法显示</span><br><span class="line">&lt;view v-for=&quot;(item, index) of userList&quot; v-if=&quot;index &lt; 4&quot;&gt; // 正常显示</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>自定义组件中无法使用<code>methods</code>中的方法（不识别 methods），无法使用外部导入的 js 中的方法（打包后找不到 js 文件）</p>
@@ -344,10 +375,12 @@ if (getDarkMode()) {
 </li>
 <li><p>关于 componentData ，需要传递对象类型。</p>
 <p>​ 示例：</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dataList: [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      value: <span class="number">1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      value: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></div></figure>
-<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for&#x3D;&quot;item of dataList&quot;&gt;</span><br><span class="line">	&lt;open-data</span><br><span class="line">      type&#x3D;&quot;friendCloudStorage&quot;</span><br><span class="line">      generic:simple-component&#x3D;&quot;list&quot;</span><br><span class="line">      :keyList&#x3D;&quot;[item.id]&quot;</span><br><span class="line">      :component-data&#x3D;&quot;item.data&quot;</span><br><span class="line">    &gt;</span><br><span class="line">	&lt;&#x2F;open-data&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataList</span>: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">value</span>: <span class="number">1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">value</span>: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;view v-for=&quot;item of dataList&quot;&gt;</span><br><span class="line">	&lt;open-data</span><br><span class="line">      type=&quot;friendCloudStorage&quot;</span><br><span class="line">      generic:simple-component=&quot;list&quot;</span><br><span class="line">      :keyList=&quot;[item.id]&quot;</span><br><span class="line">      :component-data=&quot;item.data&quot;</span><br><span class="line">    &gt;</span><br><span class="line">	&lt;/open-data&gt;</span><br><span class="line">  &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
 <p>结果：</p>
-<p><img src="cdn.c1oudust.cn/opendata/2.jpg"></p>
+<p><img src="/cdn.c1oudust.cn/opendata/2.jpg"></p>
 </li>
 <li><p>关于记录存放上限：</p>
 <p>由于无法在自定义组件中对<code>userList</code>进行操作，从而无法根据产品去筛选其中的选项，因此采用一种妥协的处理方法——将单个选项的 id 作为 key，时间戳作为 value。缺点是最多只能存 128 条记录。因此当存储记录达到上限后会无法继续存用户数据。</p>
@@ -378,14 +411,18 @@ if (getDarkMode()) {
 </li>
 </ol>
 
-        <h2 id="处理逻辑代码参考"   >
-          <a href="#处理逻辑代码参考" class="heading-link"><i class="fas fa-link"></i></a>处理逻辑代码参考</h2>
-      <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">qq.setUserCloudStorage(&#123;</span><br><span class="line">  KVDataList: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.lastChoiceId, <span class="attr">value</span>: <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (uni.getStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>)) &#123;</span><br><span class="line">      self.choiceIdList = <span class="built_in">JSON</span>.parse(uni.getStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>));</span><br><span class="line">      <span class="comment">// 去重</span></span><br><span class="line">      <span class="keyword">var</span> index = self.choiceIdList.indexOf(self.lastChoiceId);</span><br><span class="line">      <span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</span><br><span class="line">        self.choiceIdList.push(self.lastChoiceId.toString());</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        self.choiceIdList.splice(index, <span class="number">1</span>);</span><br><span class="line">        self.choiceIdList.push(self.lastChoiceId.toString());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// self.choiceIdList = Array.from(new Set(self.choiceIdList));</span></span><br><span class="line"></span><br><span class="line">      uni.setStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="built_in">JSON</span>.stringify(self.choiceIdList));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">      temp.push(self.lastChoiceId.toString());</span><br><span class="line">      self.choiceIdList = temp;</span><br><span class="line">      uni.setStorageSync(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="built_in">JSON</span>.stringify(temp));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (self.choiceIdList.length &gt; <span class="number">100</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> key = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">      key.push(self.choiceIdList.shift());</span><br><span class="line">      qq.removeUserCloudStorage(key);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+        <h2 id=""   >
+          <a href="#处理逻辑代码参考" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="处理逻辑代码参考"></div>
+          <a href="#处理逻辑代码参考" class="headerlink" title="处理逻辑代码参考"></a>处理逻辑代码参考
+        </h2>
+      <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">qq.<span class="title function_">setUserCloudStorage</span>(&#123;</span><br><span class="line">  <span class="title class_">KVDataList</span>: [</span><br><span class="line">    &#123; <span class="attr">key</span>: self.<span class="property">lastChoiceId</span>, <span class="attr">value</span>: <span class="title class_">Date</span>.<span class="title function_">parse</span>(<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">toString</span>() &#125;,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;set UserCloudStorage success！&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (uni.<span class="title function_">getStorageSync</span>(<span class="string">&#x27;choiceIdList&#x27;</span>)) &#123;</span><br><span class="line">      self.<span class="property">choiceIdList</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(uni.<span class="title function_">getStorageSync</span>(<span class="string">&#x27;choiceIdList&#x27;</span>));</span><br><span class="line">      <span class="comment">// 去重</span></span><br><span class="line">      <span class="keyword">var</span> index = self.<span class="property">choiceIdList</span>.<span class="title function_">indexOf</span>(self.<span class="property">lastChoiceId</span>);</span><br><span class="line">      <span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</span><br><span class="line">        self.<span class="property">choiceIdList</span>.<span class="title function_">push</span>(self.<span class="property">lastChoiceId</span>.<span class="title function_">toString</span>());</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        self.<span class="property">choiceIdList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">        self.<span class="property">choiceIdList</span>.<span class="title function_">push</span>(self.<span class="property">lastChoiceId</span>.<span class="title function_">toString</span>());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// self.choiceIdList = Array.from(new Set(self.choiceIdList));</span></span><br><span class="line"></span><br><span class="line">      uni.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(self.<span class="property">choiceIdList</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="title class_">Array</span>();</span><br><span class="line">      temp.<span class="title function_">push</span>(self.<span class="property">lastChoiceId</span>.<span class="title function_">toString</span>());</span><br><span class="line">      self.<span class="property">choiceIdList</span> = temp;</span><br><span class="line">      uni.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;choiceIdList&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(temp));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (self.<span class="property">choiceIdList</span>.<span class="property">length</span> &gt; <span class="number">100</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> key = <span class="keyword">new</span> <span class="title class_">Array</span>();</span><br><span class="line">      key.<span class="title function_">push</span>(self.<span class="property">choiceIdList</span>.<span class="title function_">shift</span>());</span><br><span class="line">      qq.<span class="title function_">removeUserCloudStorage</span>(key);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">fail</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>参考文档：</p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/component/open-ability/open-data.html" >1. 开放能力-open-data</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/API/open_port/open-data.html" >2. 关系链数据</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open-data.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E5%9F%9F%E7%BB%84%E4%BB%B6%E8%AF%B4%E6%98%8E" >3. 自定义开放数据域组件说明</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015034592" >4. 微信小游戏 —— 关系链数据使用(排行榜的显示)</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><a target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/component/open-ability/open-data.html">1. 开放能力-open-data</a></p>
+<p><a target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/API/open_port/open-data.html">2. 关系链数据</a></p>
+<p><a target="_blank" rel="noopener" href="https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open-data.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E5%9F%9F%E7%BB%84%E4%BB%B6%E8%AF%B4%E6%98%8E">3. 自定义开放数据域组件说明</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015034592">4. 微信小游戏 —— 关系链数据使用(排行榜的显示)</a></p>
 </div></article><div class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Vue/">Vue</a></span></div><nav class="post-paginator paginator"><div class="paginator-inner"><a class="paginator-prev prev extend" href="/blog/2020/a324b4b6becd.html" title="微信浏览器video标签层级问题"><i class="fa-solid fa-chevron-left"></i></a><a class="paginator-next next extend" href="/blog/2020/b29e74167cf2.html" title="CSS 0.5px border最终解决方案"><i class="fa-solid fa-chevron-right"></i></a></div></nav></div></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
   var pjax = new Pjax({"selectors":["head title",".main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器

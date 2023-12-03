@@ -28,44 +28,58 @@ if (getDarkMode()) {
 }</script><meta name="generator" content="Hexo 6.3.0"></head><body><header class="header"><nav class="nav"><div class="spacer"></div><div class="menu"><a class="menu-item" href="/" title="首页"><span class="menu-item__text">首页</span></a><div class="dark-mode"><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-moon" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"></path></svg></a><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-sun" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></a></div></div></nav></header><main class="main"><div id="is-post"></div><div class="post-header"><h1 class="post-title slide-enter-50">Windows下使用SublimeText3调试运行Pascal程序</h1><div class="post-meta slide-enter-50"><span class="item-meta--createtime">03-07</span><span class="item-meta--readtime">· 2分钟</span></div></div><article><div class="content slide-enter-content"><ul>
 <li>系统：Windows 10 64bit</li>
 <li>软件：Sublime Text 3.1.1 Build3176</li>
-<li>编译软件：Free Pascal<a id="more"></a>
-
-</li>
+<li>编译软件：Free Pascal<span id="more"></span></li>
 </ul>
 <blockquote>
 
-        <h2 id="安装环境"   >
-          <a href="#安装环境" class="heading-link"><i class="fas fa-link"></i></a>安装环境</h2>
+        <h2 id=""   >
+          <a href="#安装环境" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="安装环境"></div>
+          <a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境
+        </h2>
       </blockquote>
 
-        <h3 id="下载并安装-Free-Pascal"   >
-          <a href="#下载并安装-Free-Pascal" class="heading-link"><i class="fas fa-link"></i></a>下载并安装 Free Pascal</h3>
-      <p>下载地址：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.freepascal.org/down/i386/win32.html" >Download</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+        <h3 id=""   >
+          <a href="#下载并安装-Free-Pascal" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="下载并安装-Free-Pascal"></div>
+          <a href="#下载并安装-Free-Pascal" class="headerlink" title="下载并安装 Free Pascal"></a>下载并安装 Free Pascal
+        </h3>
+      <p>下载地址：<a target="_blank" rel="noopener" href="https://www.freepascal.org/down/i386/win32.html">Download</a></p>
 <p>安装最新的 3.0.4 版本。</p>
 <p>我这里选择把安装目录设为 D 盘的 FPC 文件夹。</p>
 <p>安装过程中安装器会自动帮我们添加好环境变量，为了保险起见，我们可以测试一下。打开 cmd 命令行，执行 fpc -v，若显示版本号，则说明安装成功，跳过下一步。若报错，则需要手动配置环境变量。</p>
 
-        <h3 id="配置环境变量"   >
-          <a href="#配置环境变量" class="heading-link"><i class="fas fa-link"></i></a>配置环境变量</h3>
+        <h3 id=""   >
+          <a href="#配置环境变量" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="配置环境变量"></div>
+          <a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量
+        </h3>
       <p>右击我的电脑，属性–&gt;高级–&gt;环境变量。</p>
 <p>在系统环境变量 PATH 里添加 D:\FPC\3.0.4\bin\i386-win32 （如果里面还有其他的变量，记得添加英文分号;）</p>
 <p>以上环境变量中的具体路径请根据本人实际的 i386-win32 文件夹 路径进行设置，默认地址在 C 盘。</p>
 <blockquote>
 
-        <h2 id="配置-sublime-text-编译系统"   >
-          <a href="#配置-sublime-text-编译系统" class="heading-link"><i class="fas fa-link"></i></a>配置 sublime text 编译系统</h2>
+        <h2 id=""   >
+          <a href="#配置-sublime-text-编译系统" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="配置-sublime-text-编译系统"></div>
+          <a href="#配置-sublime-text-编译系统" class="headerlink" title="配置 sublime text 编译系统"></a>配置 sublime text 编译系统
+        </h2>
       </blockquote>
 <p>需要的编译器到手了，现在我们来配置一下编辑器 Sublime Text3 的编译系统。<br>以管理员身份运行 Sublime Text 3,进入菜单 工具-&gt;编译系统-&gt;新编译系统。</p>
 <p><img src="//cdn.c1oudust.cn/ST3buildPascal/pascal_01.jpg"></p>
 <p>输入如下内容</p>
 <p><img src="//cdn.c1oudust.cn/ST3buildPascal/pascal_02.jpg"></p>
-<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;cmd&quot;</span>: [<span class="string">&quot;D:/FPC/3.0.4/bin/i386-win32/ppc386.exe&quot;</span>, <span class="string">&quot;$file&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;file_regex&quot;</span>: <span class="string">&quot;^(?:pas:)?[\t ](...*?):([0-9]*):?([0-9]*)&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;selector&quot;</span>: <span class="string">&quot;source.pas&quot;</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">&quot;variants&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Run&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;shell_cmd&quot;</span>: <span class="string">&quot;start cmd /c \&quot;\&quot;$&#123;file_path&#125;/$&#123;file_base_name&#125;\&quot; &amp; pause\&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;cmd&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;D:/FPC/3.0.4/bin/i386-win32/ppc386.exe&quot;</span><span class="punctuation">,</span> <span class="string">&quot;$file&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;file_regex&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^(?:pas:)?[\t ](...*?):([0-9]*):?([0-9]*)&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;selector&quot;</span><span class="punctuation">:</span> <span class="string">&quot;source.pas&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">&quot;variants&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Run&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;shell_cmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;start cmd /c \&quot;\&quot;$&#123;file_path&#125;/$&#123;file_base_name&#125;\&quot; &amp; pause\&quot;&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>把 cmd 后的路径改成你自己 ppc386.exed 的路径,将文件命名为 Pascal.sublime-build 保存至 C 盘 Users\用户名\AppData\Roaming\Sublime Text 3\Packages\User 目录下（默认就是这个）</p>
 <p><img src="//cdn.c1oudust.cn/ST3buildPascal/pascal_03.jpg"></p>
 <blockquote>
 
-        <h2 id="使用教程"   >
-          <a href="#使用教程" class="heading-link"><i class="fas fa-link"></i></a>使用教程</h2>
+        <h2 id=""   >
+          <a href="#使用教程" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="使用教程"></div>
+          <a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程
+        </h2>
       </blockquote>
 <ol>
 <li><p>完成之后，在 Sublime 中 Tools（工具）-&gt;bulid system（编译系统）中会出现一个 Pascal 的编译方式。选择后就可以使用了。</p>
@@ -83,8 +97,11 @@ if (getDarkMode()) {
 </ol>
 <blockquote>
 
-        <h2 id="中文乱码解决"   >
-          <a href="#中文乱码解决" class="heading-link"><i class="fas fa-link"></i></a>中文乱码解决</h2>
+        <h2 id=""   >
+          <a href="#中文乱码解决" class="header-anchor" aria-hidden="true">#</a>
+          <div style="position:relative;top:-6rem" id="中文乱码解决"></div>
+          <a href="#中文乱码解决" class="headerlink" title="中文乱码解决"></a>中文乱码解决
+        </h2>
       </blockquote>
 <ol>
 <li>Shift+Ctrl+P 召唤出搜索框；</li>
@@ -92,7 +109,7 @@ if (getDarkMode()) {
 <li>搜索安装 ConvertToUTF8 和 supportGBK；</li>
 <li>在 New File 新建 pas 代码文件之后，直接按住快捷键 Ctrl+Shift+C 设置文本的 Encoding 为 GBK 就能解决了。</li>
 </ol>
-</div></article><div class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Pascal/">Pascal</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Windows/">Windows</a></span></div><nav class="post-paginator paginator"><div class="paginator-inner"><a class="paginator-prev prev extend" href="/blog/2019/1c2879320ac4.html" title="微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance."><i class="fa-solid fa-chevron-left"></i></a><a class="paginator-next next extend" href="/blog/2019/faae816e9d45.html" title="对你来说活着意味着什么？"><i class="fa-solid fa-chevron-right"></i></a></div></nav></div></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+</div></article><div class="post-footer"><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Windows/">Windows</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fa-solid fa-hashtag"></i></span><a class="post-tags-item__link" href="https://c1oudust.cn/tags/Pascal/">Pascal</a></span></div><nav class="post-paginator paginator"><div class="paginator-inner"><a class="paginator-prev prev extend" href="/blog/2019/1c2879320ac4.html" title="微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance."><i class="fa-solid fa-chevron-left"></i></a><a class="paginator-next next extend" href="/blog/2019/faae816e9d45.html" title="对你来说活着意味着什么？"><i class="fa-solid fa-chevron-right"></i></a></div></nav></div></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
   var pjax = new Pjax({"selectors":["head title",".main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器
   var loadingTimer = null;
