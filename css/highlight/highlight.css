@@ -229,10 +229,9 @@ html.dark {
   color: var(--highlight-code-lang-color);
 }
 .highlight td.gutter {
-  border-right: 1px solid var(--gap-line-color);
+  opacity: 0.6;
   padding: 0.4rem 0.6rem;
   width: 2rem;
-  background-color: var(--highlight-side-bg-color);
   border-radius: 0.25rem;
 }
 .highlight td.gutter pre {
