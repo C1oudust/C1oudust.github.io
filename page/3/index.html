@@ -1,359 +1,37 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/small.png?v=2.6.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/medium.png?v=2.6.1" type="image/png" sizes="32x32"><meta name="msvalidate.01" content="E55772816155C73A7C73C9F8635F3B21"><meta name="baidu-site-verification" content="code-mptQdGMLI7"><meta name="description" content="c1oudust">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vedfolnir">
-<meta property="og:url" content="https://c1oudust.cn/page/3/index.html">
-<meta property="og:site_name" content="Vedfolnir">
-<meta property="og:description" content="c1oudust">
-<meta property="og:locale">
-<meta property="article:author" content="C1oudust">
-<meta property="article:tag" content="鸷鸟栖息之所,鸷鸟,LayaBox微信,JavaScript,前端,c1oudust,vedfolnir">
-<meta name="twitter:card" content="summary"><title>Vedfolnir | 鸷鸟栖息之所</title><link ref="canonical" href="https://c1oudust.cn/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.1"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"50px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
-  postWidget: undefined,
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"light","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: {"avoidBanner":false},
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><title>Vedfolnir</title><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=0.0.1"><script>var CONFIG = {
+  theme: {"images":"images","js":"js","css":"css","post":{"excerpt":false,"tags":true,"tags_icon":"fa-solid fa-hashtag"},"post_meta":{"created":{"enable":true,"icon":false},"updated":{"enable":false,"icon":false},"reading_time":{"enable":true,"icon":false},"word_count":{"enable":false,"icon":false}},"icon":{"paginator_prev":"fa-solid fa-chevron-left","paginator_next":"fa-solid fa-chevron-right"},"logo":null,"header":{"fixed":true,"blur":true},"menu":{"home":"/ || fas fa-home"},"menu_settings":{"icon_only":false,"text_only":true},"back2top":{"enable":true,"icon":"fa-solid fa-arrow-up"},"footer":{"copyright":{"enable":true,"start":2017,"end":null,"author":"C1oudust"},"beian":{"enable":true,"text":"冀ICP备 - 19035656号"},"powered":{"enable":true}},"dark_mode":{"enable":true,"default":"dark"},"layout":{"content":"768px","sidebar":"300px","content_sidebar_gap":"30px","main_padding":{"default":"20px","tablet":"15px","mobile":"10px"}},"pjax":{"enable":true,"avoid_banner":false,"elements":null,"selectors":null,"switches":null,"switchesOptions":null,"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0}},
 };
-
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fa fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fa fa-th"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fa fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fa fa-archive"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fa fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner" dayimg="http://cdn.c1oudust.cn/bg/light.png" nightimg="http://cdn.c1oudust.cn/bg/dark.png"><div class="header-banner-info"><div class="header-banner-info__title">Vedfolnir</div><div class="header-banner-info__subtitle">灵魂, 躁动不安...</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2020/4a0aa82965cc.html">markdownlint语法警告类型</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-03-15</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">2.8k</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="//cdn.c1oudust.cn/Markdownlint_warning.jpg" alt="头图"></p>
-<p>最近在 vscode 中安装了 markdownlint 插件来检查 markdown 语法的准确性，发现很多不准确的地方。于是参考官方文档，了解警告内容后，一一改正。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2020/4a0aa82965cc.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/3210037722c8.html">烈火燃尽后的生存与死亡</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-08-05</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">2.4k</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="//cdn.c1oudust.cn/20190805/TheBravest.jpg" alt="烈火英雄"></p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2019/3210037722c8.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/7ed18bec99b2.html">.NET Core + EF 报nuget包版本冲突错误</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-06-21</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">132</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>错误信息如下：</p>
-<p>错误<code>NU1107 Microsoft.EntityFrameworkCore</code> 中检测到版本冲突。直接安装/引用 <code>Microsoft.EntityFrameworkCore 2.2.4</code> 到项目 CoreWeb 可解决此问题。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2019/7ed18bec99b2.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/b7c2c87a2ee9.html">微信小程序报错:Page is not constructed because it is not found.</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-04-24</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">104</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在实际开发中遇到了一个错误：Page is not constructed because it is not found</p>
-<p><img src="//cdn.c1oudust.cn/WeChatmicroApp_error01.jpg" alt="error"></p>
-<p>该错误多发生在点击事件切换页面的时候<br>解决方法：<br>在需要切换到的那个页面的 js 文件中添加</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123; &#125;)</span><br></pre></td></tr></table></div></figure>
-<blockquote>
-<p><strong>Tips: 在 js 文件中输入 Page 回车，可自动添加 Page 方法，包括里面的 data 初始化数据及 onLoad 等生命中期方法。</strong></p>
-</blockquote>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/1c2879320ac4.html">微信小程序警告：Now you can provide attr &quot;wx:key&quot; for a &quot;wx:for&quot; to improve performance.</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-04-21</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">478</span></span></div></header><div class="post-body"><div class="post-excerpt"><style type="text/css">
-img{text-align: center; margin: 0 auto;}
-</style>
-
-<p>在实际开发中遇到了一个警告：Now you can provide attr <code>wx:key</code> for a <code>wx:for</code> to improve performance.</p>
-<p><img src="//cdn.c1oudust.cn/WeChatmicroApp_warning.jpg" alt="小程序报错"></p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2019/1c2879320ac4.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/a7f02940c46d.html">Windows下使用SublimeText3调试运行Pascal程序</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-03-07</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">590</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
-<li>系统：Windows 10 64bit</li>
-<li>软件：Sublime Text 3.1.1 Build3176</li>
-<li>编译软件：Free Pascal</div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2019/a7f02940c46d.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2019/faae816e9d45.html">对你来说活着意味着什么？</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2019-01-19</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">1.7k</span></span></div></header><div class="post-body"><div class="post-excerpt"><style type="text/css">
-img{text-align: center; margin: 0 auto;}
-</style>
-
-<p>小说是从 P 站上一位画师那知道的，自然被这个名字所吸引。联想到少年与少女站在樱花树下的插图和带有一丝悬疑色彩的名字，不由地想：“究竟是怎样一个故事呢？”直到看完了小说，电影，和最近上映的动漫电影。</p>
-<p><img src="//cdn.c1oudust.cn/50960701.jpg" alt="头图"></p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2019/faae816e9d45.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2018/208dd6d87891.html">计算机操作系统调度算法模拟程序设计（C#）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2018-12-14</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">3.3k</span></span></div></header><div class="post-body"><div class="post-excerpt"><blockquote>
-
-        <h2 id="实验目的"   >
-          <a href="#实验目的" class="heading-link"><i class="fas fa-link"></i></a>实验目的</h2>
-      </blockquote>
-<p>用 C#语言编程实现对 N 个进程采用四种进程调度算法——先来先服务算法（FCFS）、短进程优先算法（SJF）、高响应比优先调度算法(HRRN)和时间片轮转调度算法（RR）调度执行模拟。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2018/208dd6d87891.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2018/c4e3421c1358.html">《太吾绘卷》是否能成为武侠迷期待的真正江湖？</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2018-10-13</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">2k</span></span></div></header><div class="post-body"><div class="post-excerpt"><style type="text/css">
-img{text-align: center; margin: 0 auto;}
-</style>
-
-<p><img src="//cdn.c1oudust.cn/201810TheScrollofTaiwu.png" alt="头图"></p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2018/c4e3421c1358.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/blog/2018/c63c0cc6140a.html">使用EasyX图形库编写2D游戏</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2018-07-23</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数</span><span class="post-meta-item__value">1.3k</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="//cdn.c1oudust.cn/20187Flappy_Paper_Plane_menu.png" alt="fly_plane"></p></div><div class="post-readmore"><a class="post-readmore__link" href="/blog/2018/c63c0cc6140a.html"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://cdn.c1oudust.cn/67b7e7deefb87b514e63be1d63e2df24.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">灵魂，躁动不安</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/C1oudust" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/HINT_er" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="mailto:amerkiousy@outlook.com" target="_blank" rel="noopener" data-popover="联系我" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">43</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">30</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sakana" id="sakana-widget"></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2023</span><span class="footer__icon"><i class="fas fa-user"></i></span><span>C1oudust</span><span class="footer__devider">|</span><span>冀ICP备 - 19035656号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js" onload="initSakanaWidget()"></script><script type="text/javascript">function initSakanaWidget(){
-   new SakanaWidget().mount('#sakana-widget');
-}
-</script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function initSearch() {
-  var isXML = true;
-  var search_path = 'search.xml';
-
-  if (!search_path) {
-    search_path = 'search.xml';
-  } else if (/json$/i.test(search_path)) {
-    isXML = false;
-  }
-
-  var path = '/' + search_path;
-  $.ajax({
-    url: path,
-    dataType: isXML ? 'xml' : 'json',
-    async: true,
-    success: function (res) {
-      var datas = isXML ? $('entry', res).map(function () {
-        // 将 XML 转为 JSON
-        return {
-          title: $('title', this).text(),
-          content: $('content', this).text(),
-          url: $('url', this).text()
-        };
-      }).get() : res;
-      var $input = $('.search-input input');
-      var $result = $('.search-results');
-      // 搜索对象（标题、内容）的权重，影响显示顺序
-      var WEIGHT = { title: 100, content: 1 };
-      var searchPost = function () {
-        var searchText = $input.val().toLowerCase().trim();
-        // 根据空白字符分隔关键字
-        var keywords = searchText.split(/[\s]+/);
-        // 搜索结果
-        var matchPosts = [];
-
-        // 有多个关键字时，将原文字整个保存下来
-        if (keywords.length > 1) {
-          keywords.push(searchText);
-        }
-        // 防止未输入字符时搜索
-        if (searchText.length > 0) {
-          datas.forEach(function (data) {
-            var isMatch  = false;
-            // 没有标题的文章使用预设的 i18n 变量代替
-            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
-            var titleLower = title && title.toLowerCase();
-            // 删除 HTML 标签 和 所有空白字符
-            var content = data.content && data.content.replace(/<[^>]+>/g, '');
-            var contentLower = content && content.toLowerCase();
-            // 删除重复的 /
-            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
-            // 标题中匹配到的关键词
-            var titleHitSlice = [];
-            // 内容中匹配到的关键词
-            var contentHitSlice = [];
-
-            keywords.forEach(function (keyword) {
-              /**
-              * 获取匹配的关键词的索引
-              * @param {String} keyword 要匹配的关键字
-              * @param {String} text 原文字
-              * @param {Boolean} caseSensitive 是否区分大小写
-              * @param {Number} weight 匹配对象的权重。权重大的优先显示
-              * @return {Array}
-              */
-              function getIndexByword (word, text, caseSensitive, weight) {
-                if (!word || !text) {
-                  return [];
-                };
-
-                var startIndex = 0; // 每次匹配的开始索引
-                var index = -1;     // 匹配到的索引值
-                var result = [];    // 匹配结果
-
-                if (!caseSensitive) {
-                  word = word.toLowerCase();
-                  text = text.toLowerCase();
-                }
-
-                while((index = text.indexOf(word, startIndex)) !== -1) {
-                  var hasMatch = false;
-                  // 索引位置相同的关键词，保留长度较长的
-                  titleHitSlice.forEach(function (hit) {
-                    if (hit.index === index && hit.word.length < word.length) {
-                      hit.word = word;
-                      hasMatch = true;
-                    }
-                  });
-                  startIndex = index + word.length;
-                  !hasMatch && result.push({ index: index, word: word, weight: weight });
-                }
-                return result;
-              }
-              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
-              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
-            });
-
-            var hitTitle = titleHitSlice.length;
-            var hitContent = contentHitSlice.length;
-
-            if (hitTitle > 0 || hitContent > 0) {
-              isMatch = true;
-            }
-            if (isMatch) {
-              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
-                // 按照匹配文字的索引的递增顺序排序
-                hit.sort(function (left, right) {
-                  return left.index - right.index;
-                });
-              });
-              /**
-              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
-              * @param {String} text 原文本
-              * @param {Array} hitSlice 匹配项的索引信息
-              * @param {Number} start 开始索引
-              * @param {Number} end 结束索引
-              * @return {String}
-              */
-              function highlightKeyword (text, hitSlice, start, end) {
-                if (!text || !hitSlice || !hitSlice.length) {
-                  return;
-                }
-
-                var result = '';
-                var startIndex = start;
-                var endIndex = end;
-                hitSlice.forEach(function (hit) {
-                  if (hit.index < startIndex) {
-                    return;
-                  }
-
-                  var hitWordEnd = hit.index + hit.word.length;
-                  result += text.slice(startIndex, hit.index);
-                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
-                  startIndex = hitWordEnd;
-                });
-                result += text.slice(startIndex, endIndex);
-                return result;
-              }
-
-              var postData = {};
-              // 文章总的搜索权重
-              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
-              // 标记匹配关键词后的标题
-              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
-              // 标记匹配关键词后的内容
-              var postContent;
-              // 显示内容的长度
-              var SHOW_WORD_LENGTH = 200;
-              // 命中关键词前的字符显示长度
-              var SHOW_WORD_FRONT_LENGTH = 20;
-              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
-
-              // 截取匹配的第一个字符，前后共 200 个字符来显示
-              if (contentHitSlice.length > 0) {
-                var firstIndex = contentHitSlice[0].index;
-                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
-                var end = firstIndex + SHOW_WORD_END_LENGTH;
-                postContent = highlightKeyword(content, contentHitSlice, start, end);
-              } else { // 未匹配到内容，直接截取前 200 个字符来显示
-                postContent = content.slice(0, SHOW_WORD_LENGTH);
-              }
-              postData.title = postTitle;
-              postData.content = postContent;
-              postData.url = postURL;
-              postData.weight = postWeight;
-              matchPosts.push(postData);
-            }
-          });
-        }
-
-        var resultInnerHtml = '';
-        if (matchPosts.length) {
-          // 按权重递增的顺序排序，使权重大的优先显示
-          matchPosts.sort(function (left, right) {
-            return right.weight - left.weight;
-          });
-          resultInnerHtml += '<ul>';
-          matchPosts.forEach(function (post) {
-            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
-            resultInnerHtml += post.title;
-            resultInnerHtml += '</a><div class="search-results-content">';
-            resultInnerHtml += post.content;
-            resultInnerHtml += '</div></li>';
-          });
-          resultInnerHtml += '</ul>';
-        } else {
-          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
-        }
-        $result.html(resultInnerHtml);
-      };
-      $input.on('input', searchPost);
-      $input.on('keyup', function (e) {
-        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
-          searchPost();
-        }
-      });
+var Util = window.Util || {};
+window.CONFIG = CONFIG;</script><script>function getDarkMode() {
+  var darkMode = false;
+  try {
+    if (localStorage.getItem('dark') == '1') {
+      darkMode = true;
     }
-  });
-}
-
-function closeSearch () {
-  $('body').css({ overflow: 'auto' });
-  $('.search-popup').css({ display: 'none' });
-  $('.search-mask').css({ display: 'none' });
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-  Stun.utils.pjaxReloadLocalSearch = function () {
-    $('.header-nav-search').on('click', function (e) {
-      e.stopPropagation();
-      $('body').css('overflow', 'hidden');
-      $('.search-popup')
-        .velocity('stop')
-        .velocity('transition.expandIn', {
-          duration: 300,
-          complete: function () {
-            $('.search-popup input').focus();
-          }
-        });
-      $('.search-mask')
-        .velocity('stop')
-        .velocity('transition.fadeIn', {
-          duration: 300
-        });
-
-      initSearch();
-    });
-    $('.search-mask, .search-close').on('click', function () {
-      closeSearch();
-    });
-    $(document).on('keydown', function (e) {
-      // Escape <=> 27
-      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
-        closeSearch();
+    else if(!localStorage.getItem('dark')){
+      if (!localStorage.getItem('dark') && CONFIG.theme.dark_mode.default == 'dark'){
+        darkMode = true;
       }
-    });
-  };
-
-  Stun.utils.pjaxReloadLocalSearch();
-}, false);
-
-function safeOpenUrl(url) {
-  var newTab = window.open();
-  newTab.opener = null;
-  newTab.location = url;
-}
-
-function extSearch(engine) {
-  var engines = {
-    google: 'https://www.google.com/search?q=',
-    bing: 'https://cn.bing.com/search?q=',
-    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
-  };
-  var host = window.location.host;
-  var query = $('.search-input input').val().toLowerCase().trim();
-  var uri = engines[engine] + query + ' site:' + host;
-
-  if (query) {
-    safeOpenUrl(uri);
-  } else {
-    Stun.utils.popAlert('warning', '请输入字符');
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+        darkMode = true;
+      }
+    }
+  } catch (err) {
+    /* empty */
+    console.log('err',err)
   }
+  return darkMode;
 }
 
-var assistSearchList = window.CONFIG.assistSearch;
-
-if (Array.isArray(assistSearchList)) {
-  assistSearchList.forEach(function (name) {
-    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
-      extSearch(name);
-    }, false);
-  });
-}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
-  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-inner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+if (getDarkMode()) {
+  document.querySelector('html').classList = 'dark';
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><header class="header"><nav class="nav"><div class="spacer"></div><div class="menu"><a class="menu-item" href="/" title="首页"><span class="menu-item__text">首页</span></a><div class="dark-mode"><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-moon" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"></path></svg></a><a><svg xmlns="http://www.w3.org/2000/svg" class="mode-button-sun" viewBox="0 0 24 24" width="1.2em" height="1.2em" style="vertical-align: sub;display:none"><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></a></div></div></nav></header><main class="main"><canvas id="canvas"></canvas><article><div class="content"><ul class="slide-enter-content"><div class="date" style="--enter-stage: 1"><span>2018</span></div><div class="item" style="--enter-stage: 1"><a href="/blog/2018/16f1d322200e.html"><div class="item-title">Windows10下使用Linux的另一种方式 —— WSL与其桌面环境安装</div><div class="item-meta"><span class="item-meta--createtime">05-09</span><span class="item-meta--readtime">· 3分钟</span></div></a></div><div class="item" style="--enter-stage: 2"><a href="/blog/2018/689374856d47.html"><div class="item-title">腾讯没梦想，自媒体有春梦</div><div class="item-meta"><span class="item-meta--createtime">05-09</span><span class="item-meta--readtime">· 11分钟</span></div></a></div><div class="item" style="--enter-stage: 3"><a href="/blog/2018/6107727e15ce.html"><div class="item-title">《救赎之路》到底救赎了谁</div><div class="item-meta"><span class="item-meta--createtime">04-29</span><span class="item-meta--readtime">· 5分钟</span></div></a></div><div class="item" style="--enter-stage: 4"><a href="/blog/2018/aaa126b12a4b.html"><div class="item-title">不太“硬核”的硬核动作游戏 —— 《隐龙传隐踪》</div><div class="item-meta"><span class="item-meta--createtime">04-07</span><span class="item-meta--readtime">· 6分钟</span></div></a></div><div class="item" style="--enter-stage: 5"><a href="/blog/2018/68d74a260cb8.html"><div class="item-title">冰冷世界中的孤独爱恋 —— 《水形物语》与《沙耶之歌》</div><div class="item-meta"><span class="item-meta--createtime">03-22</span><span class="item-meta--readtime">· 4分钟</span></div></a></div><div class="item" style="--enter-stage: 6"><a href="/blog/2018/180698a01ca9.html"><div class="item-title">关于自学计算机专业课程的一点体会</div><div class="item-meta"><span class="item-meta--createtime">02-26</span><span class="item-meta--readtime">· 8分钟</span></div></a></div><div class="item" style="--enter-stage: 7"><a href="/blog/2018/6f05523804f4.html"><div class="item-title">关于手机刷机的个人总结</div><div class="item-meta"><span class="item-meta--createtime">02-19</span><span class="item-meta--readtime">· 6分钟</span></div></a></div><div class="item" style="--enter-stage: 8"><a href="/blog/2018/855271dc9226.html"><div class="item-title">个人电脑实用软件汇总——Windows(二)</div><div class="item-meta"><span class="item-meta--createtime">02-12</span><span class="item-meta--readtime">· 6分钟</span></div></a></div><div class="item" style="--enter-stage: 9"><a href="/blog/2018/da75e5d41552.html"><div class="item-title">个人电脑实用软件汇总——Windows(一)</div><div class="item-meta"><span class="item-meta--createtime">02-05</span><span class="item-meta--readtime">· 11分钟</span></div></a></div><div class="item" style="--enter-stage: 10"><a href="/blog/2018/8d012fb7c9c0.html"><div class="item-title">从零开始的rEFind引导Windows10+Ubutnu双系统教程</div><div class="item-meta"><span class="item-meta--createtime">01-29</span><span class="item-meta--readtime">· 6分钟</span></div></a></div><div class="date" style="--enter-stage: 11"><span>2017</span></div><div class="item" style="--enter-stage: 11"><a href="/blog/2017/4622ba2a587f.html"><div class="item-title">起初</div><div class="item-meta"><span class="item-meta--createtime">10-29</span><span class="item-meta--readtime">· 1分钟</span></div></a></div></ul></div></article><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fa-solid fa-chevron-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></main><footer class="footer"><div class="footer-info"><span>2017-2023 </span><div class="icon">©</div><span>C1oudust</span><span class="devider">|</span><a class="beian" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备 - 19035656号</a></div><div class="footer-powered"><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><i class="back2top__icon fa-solid fa-arrow-up"></i></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title",".main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器
   var loadingTimer = null;
 
   // 重置页面 Y 方向上的滚动偏移量
   document.addEventListener('pjax:send', function () {
-    $('.header-nav-menu').removeClass('show');
-    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
-      $('html').velocity('scroll', {
-        duration: 500,
-        offset: $('#header').height(),
-        easing: 'easeInOutCubic'
-      });
-    }
-
     var loadingBarWidth = 20;
     var MAX_LOADING_WIDTH = 95;
 
@@ -382,38 +60,17 @@ if (Array.isArray(assistSearchList)) {
     $('script[data-pjax], #pjax-reload script').each(function () {
       $(this).parent().append($(this).remove());
     });
+    //- if (Stun.utils.pjaxReloadBoot) {
+    //-   Stun.utils.pjaxReloadBoot();
+    //- }
+    //- if (Stun.utils.pjaxReloadScroll) {
+    //-   Stun.utils.pjaxReloadScroll();
+    //- }
+    //- if (Stun.utils.pjaxReloadSidebar) {
+    //-   Stun.utils.pjaxReloadSidebar();
+    //- }
+    //- Util.initHeader();
 
-    if (Stun.utils.pjaxReloadBoot) {
-      Stun.utils.pjaxReloadBoot();
-    }
-    if (Stun.utils.pjaxReloadScroll) {
-      Stun.utils.pjaxReloadScroll();
-    }
-    if (Stun.utils.pjaxReloadSidebar) {
-      Stun.utils.pjaxReloadSidebar();
-    }
-    if (true) {
-      if (Stun.utils.pjaxReloadHeader) {
-        Stun.utils.pjaxReloadHeader();
-      }
-      if (Stun.utils.pjaxReloadScrollIcon) {
-        Stun.utils.pjaxReloadScrollIcon();
-      }
-      if (Stun.utils.pjaxReloadLocalSearch) {
-        Stun.utils.pjaxReloadLocalSearch();
-      }
-    }
+    //- }
   }, false);
-}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
-  quicklink({
-    timeout: '10000',
-    priority: true,
-    ignores: [uri => uri.includes('#'), uri => uri === 'https://c1oudust.cn/page/3/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
-  });
-}
-
-if (true || false) {
-  initQuicklink();
-} else {
-  window.addEventListener('DOMContentLoaded', initQuicklink, false);
-}</script></div><script src="/js/utils.js?v=2.6.1"></script><script src="/js/stun-boot.js?v=2.6.1"></script><script src="/js/scroll.js?v=2.6.1"></script><script src="/js/header.js?v=2.6.1"></script><script src="/js/sidebar.js?v=2.6.1"></script><script type="application/json" src="/search.xml"></script></body></html>
+}, false);</script><script src="/js/header.js?v=0.0.1"></script><script src="/js/utils.js?v=0.0.1"></script><script src="/js/scroll.js?v=0.0.1"></script><script src="/js/canvas.js?v=0.0.1"></script></body></html>

@@ -1,0 +1,28 @@
+.header .nav {
+  padding: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto max-content;
+  z-index: 1;
+  position: fixed;
+  transition: box-shadow 0.2s;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.header .nav.fixed {
+  box-shadow: 0px 1px 4px var(--color-scrollbar);
+}
+.header .nav .menu {
+  display: grid;
+  grid-gap: 2.2rem;
+  grid-auto-flow: column;
+}
+.header .nav .menu-item {
+  transition: opacity 0.2s ease;
+  opacity: 0.6;
+  color: inherit;
+}
+.header .nav .menu-item:hover {
+  opacity: 1;
+  text-decoration-color: inherit;
+}

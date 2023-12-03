@@ -1,0 +1,62 @@
+.slide-enter-50 {
+  --enter-stage: 50;
+}
+.post-header {
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.post-header>:first-child {
+  margin-top: 0;
+}
+.post-header h1 {
+  color: var(--color-font-deeper);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.9em;
+  line-height: 1.1;
+  opacity: 0.9;
+}
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.5;
+  margin-top: -1.5rem;
+  color: var(--color-font-deep);
+}
+.post-tags {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+.post-tags-item {
+  margin: 0 0.5rem;
+}
+.post-tags-item:hover {
+  cursor: pointer;
+}
+.post-tags-item__icon,
+.post-tags-item__link {
+  margin: 0.1rem;
+  color: $post-tags-icon-color;
+  transition: color 0.2s;
+}
+.post-tags-item:hover .post-tags-item__icon,
+.post-tags-item:hover .post-tags-item__link {
+  color: $orange-dark;
+}
+article .content {
+  margin: 0 auto;
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+article .content p a {
+  color: var(--color-link);
+}
+article .content p a:hover {
+  text-decoration: underline;
+}

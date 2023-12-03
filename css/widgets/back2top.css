@@ -1,0 +1,25 @@
+.back2top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 6rem;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  z-index: 100;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.back2top.show {
+  opacity: 0.3;
+  cursor: pointer;
+}
+.back2top.show:hover {
+  opacity: 0.9;
+  background-color: rgba(136,136,136,0.2);
+}
+.back2top__icon {
+  font-size: 1rem;
+}

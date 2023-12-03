@@ -1,0 +1,17 @@
+.dark-mode {
+  position: relative;
+  border: 0;
+  padding: 0;
+  line-height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  width: 1.2em;
+  height: 1.2em;
+  transition: opacity 0.2s ease;
+  opacity: 0.6;
+  color: inherit;
+}
+.dark-mode:hover {
+  opacity: 1;
+}

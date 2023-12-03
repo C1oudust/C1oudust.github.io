@@ -1,0 +1,57 @@
+article .content {
+  margin: 0 auto;
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+article .content ul .date {
+  height: 5rem;
+  position: relative;
+  pointer-events: none;
+}
+article .content ul .date span {
+  position: absolute;
+  top: -2rem;
+  left: -3rem;
+  opacity: 0.1;
+  -webkit-text-stroke-color: #aaa;
+  -webkit-text-stroke-width: 2px;
+  color: transparent;
+  font-weight: 700;
+  font-size: 8em;
+}
+article .content ul .item {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+article .content ul .item a {
+  transition: 0.2s all ease-out;
+  text-decoration: none;
+  opacity: 0.6;
+  color: var(--color-font-deeper);
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  cursor: default;
+  margin: 0.5rem 0;
+}
+article .content ul .item a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+article .content ul .item a .item-title {
+  line-height: 1.2em;
+  font-size: 1.125rem;
+}
+article .content ul .item a .item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+article .content ul .item a .item-meta span {
+  opacity: 0.5;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}

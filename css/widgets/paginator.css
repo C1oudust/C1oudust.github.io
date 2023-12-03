@@ -1,0 +1,58 @@
+.paginator {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 65ch;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.paginator.post-paginator .paginator-inner {
+  width: 100%;
+}
+.paginator-inner {
+  width: 50%;
+  padding: 12px 0;
+  position: relative;
+}
+.paginator .page-number,
+.paginator .prev,
+.paginator .next {
+  display: inline-block;
+  margin: 0 0.5em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  transition: border 0.2s ease;
+  opacity: 0.5;
+}
+.paginator .page-number:not(.current):hover,
+.paginator .prev:not(.current):hover,
+.paginator .next:not(.current):hover {
+  opacity: 0.75;
+}
+.paginator .space {
+  opacity: 0.6;
+}
+.paginator .extend {
+  position: absolute;
+  margin: 0;
+}
+.paginator .extend i {
+  font-size: inherit;
+}
+.paginator .next {
+  right: 0;
+}
+.paginator .prev {
+  left: 0;
+}
+.paginator .current {
+  color: var(--color-gray-900);
+  opacity: 1;
+}
+.paginator.post-paginator {
+  height: 50px;
+}

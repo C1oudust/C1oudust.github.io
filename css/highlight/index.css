@@ -1,0 +1,428 @@
+:root {
+  --highlight-color: #333;
+  --highlight-background: #f5f6f7;
+  --highlight-side-color: #adadad;
+  --highlight-side-bg-color: var(--highlight-background);
+  --highlight-header-color: var(--highlight-color);
+  --highlight-header-bg-color: var(--highlight-side-bg-color);
+  --highlight-code-lang-color: #adadad;
+  --highlight-code-note-color: var(--highlight-header-color);
+  --copy-button-color: #adadad;
+  --gap-line-color: #dadde1;
+  --marked-line-bg-color: #e5e7ea;
+  --highlight-comment: #969896;
+  --highlight-red: #c82829;
+  --highlight-orange: #ee8019;
+  --highlight-yellow: #eab700;
+  --highlight-green: #4eb4b4;
+  --highlight-aqua: #4dc14c;
+  --highlight-blue: #2a75c8;
+  --highlight-purple: #be4dbc;
+}
+html.dark {
+  --highlight-color: rgba(219,215,202,0.933);
+  --highlight-background: #0e0e0e;
+  --highlight-side-color: var(--color-gray-550);
+  --highlight-side-bg-color: var(--color-gray-200);
+  --highlight-header-color: var(--color-gray-850);
+  --highlight-header-bg-color: var(--color-gray-200);
+  --highlight-code-lang-color: var(--color-gray-550);
+  --highlight-code-note-color: var(--color-gray-850);
+  --copy-button-color: var(--color-gray-550);
+  --gap-line-color: var(--color-gray-300);
+  --marked-line-bg-color: var(--color-gray-260);
+}
+:root {
+  --highlight-color: #333;
+  --highlight-background: #f5f6f7;
+  --highlight-side-color: #adadad;
+  --highlight-side-bg-color: var(--highlight-background);
+  --highlight-header-color: var(--highlight-color);
+  --highlight-header-bg-color: var(--highlight-side-bg-color);
+  --highlight-code-lang-color: #adadad;
+  --highlight-code-note-color: var(--highlight-header-color);
+  --copy-button-color: #adadad;
+  --gap-line-color: #dadde1;
+  --marked-line-bg-color: #e5e7ea;
+  --highlight-comment: #969896;
+  --highlight-red: #c82829;
+  --highlight-orange: #ee8019;
+  --highlight-yellow: #eab700;
+  --highlight-green: #4eb4b4;
+  --highlight-aqua: #4dc14c;
+  --highlight-blue: #2a75c8;
+  --highlight-purple: #be4dbc;
+}
+html.dark {
+  --highlight-color: rgba(219,215,202,0.933);
+  --highlight-background: #0e0e0e;
+  --highlight-side-color: var(--color-gray-550);
+  --highlight-side-bg-color: var(--color-gray-200);
+  --highlight-header-color: var(--color-gray-850);
+  --highlight-header-bg-color: var(--color-gray-200);
+  --highlight-code-lang-color: var(--color-gray-550);
+  --highlight-code-note-color: var(--color-gray-850);
+  --copy-button-color: var(--color-gray-550);
+  --gap-line-color: var(--color-gray-300);
+  --marked-line-bg-color: var(--color-gray-260);
+}
+:root {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: #f0fff4;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: #ffeef0;
+}
+html.dark {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: transparent;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: transparent;
+}
+.highlight {
+  display: block;
+  padding: 1rem;
+}
+.highlight figcaption span:first-child::before {
+  margin: 0 0.6rem 0 0;
+  color: var(--highlight-code-lang-color);
+}
+.highlight.markdown figcaption span:first-child::before {
+  content: 'markdown';
+}
+.highlight.md figcaption span:first-child::before {
+  content: 'md';
+}
+.highlight.diff figcaption span:first-child::before {
+  content: 'diff';
+}
+.highlight.javascript figcaption span:first-child::before {
+  content: 'javascript';
+}
+.highlight.js figcaption span:first-child::before {
+  content: 'js';
+}
+.highlight.typescript figcaption span:first-child::before {
+  content: 'typescript';
+}
+.highlight.ts figcaption span:first-child::before {
+  content: 'ts';
+}
+.highlight.java figcaption span:first-child::before {
+  content: 'java';
+}
+.highlight.json figcaption span:first-child::before {
+  content: 'json';
+}
+.highlight.html figcaption span:first-child::before {
+  content: 'html';
+}
+.highlight.xml figcaption span:first-child::before {
+  content: 'xml';
+}
+.highlight.css figcaption span:first-child::before {
+  content: 'css';
+}
+.highlight.less figcaption span:first-child::before {
+  content: 'less';
+}
+.highlight.scss figcaption span:first-child::before {
+  content: 'scss';
+}
+.highlight.stylus figcaption span:first-child::before {
+  content: 'stylus';
+}
+.highlight.styl figcaption span:first-child::before {
+  content: 'styl';
+}
+.highlight.sql figcaption span:first-child::before {
+  content: 'sql';
+}
+.highlight.bash figcaption span:first-child::before {
+  content: 'bash';
+}
+.highlight.shell figcaption span:first-child::before {
+  content: 'shell';
+}
+.highlight.python figcaption span:first-child::before {
+  content: 'python';
+}
+.highlight.py figcaption span:first-child::before {
+  content: 'py';
+}
+.highlight.ruby figcaption span:first-child::before {
+  content: 'ruby';
+}
+.highlight.cpp figcaption span:first-child::before {
+  content: 'cpp';
+}
+.highlight.c\+\+ figcaption span:first-child::before {
+  content: 'c\+\+';
+}
+.highlight.c\# figcaption span:first-child::before {
+  content: 'c\#';
+}
+.highlight.go figcaption span:first-child::before {
+  content: 'go';
+}
+.highlight.kotlin figcaption span:first-child::before {
+  content: 'kotlin';
+}
+.highlight.kt figcaption span:first-child::before {
+  content: 'kt';
+}
+.highlight.objectivec figcaption span:first-child::before {
+  content: 'objectivec';
+}
+.highlight.php figcaption span:first-child::before {
+  content: 'php';
+}
+.highlight.perl figcaption span:first-child::before {
+  content: 'perl';
+}
+.highlight.pl figcaption span:first-child::before {
+  content: 'pl';
+}
+.highlight.pm figcaption span:first-child::before {
+  content: 'pm';
+}
+.highlight.rust figcaption span:first-child::before {
+  content: 'rust';
+}
+.highlight.rs figcaption span:first-child::before {
+  content: 'rs';
+}
+.highlight.swift figcaption span:first-child::before {
+  content: 'swift';
+}
+.highlight.coffeescript figcaption span:first-child::before {
+  content: 'coffeescript';
+}
+.highlight.coffee figcaption span:first-child::before {
+  content: 'coffee';
+}
+.highlight.lua figcaption span:first-child::before {
+  content: 'lua';
+}
+.highlight.yaml figcaption span:first-child::before {
+  content: 'yaml';
+}
+.highlight.yml figcaption span:first-child::before {
+  content: 'yml';
+}
+.highlight.nginx figcaption span:first-child::before {
+  content: 'nginx';
+}
+.highlight.dockerfile figcaption span:first-child::before {
+  content: 'dockerfile';
+}
+.highlight.makefile figcaption span:first-child::before {
+  content: 'makefile';
+}
+.highlight {
+  margin: 0 0 1rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  line-height: var(--line-height-codeblock);
+  color: var(--marked-line-bg-colo) r;
+  background-color: var(--highlight-background);
+  overflow-x: auto;
+}
+.highlight pre,
+.highlight code {
+  font-family: var(--font-family-code);
+}
+.highlight pre {
+  margin: 0;
+}
+.highlight td {
+  border-width: 0;
+}
+.highlight figcaption {
+  position: relative;
+  width: 100%;
+  color: var(--highlight-header-color);
+  background-color: var(--highlight-header-bg-color);
+  padding: 0.1rem 0;
+}
+.highlight figcaption span:first-child {
+  float: left;
+  margin-left: 0.5rem;
+  color: var(--highlight-code-note-color);
+}
+.highlight figcaption span.external-link {
+  float: right;
+  margin-right: 2em;
+}
+.highlight figcaption.custom {
+  min-height: 1.5rem;
+  border-radius: 0.25rem;
+}
+.highlight figcaption.custom .custom-lang {
+  float: left;
+  margin: 0 0.6rem;
+  color: var(--highlight-code-lang-color);
+}
+.highlight td.gutter {
+  border-right: 1px solid var(--gap-line-color);
+  padding: 0.4rem 0.6rem;
+  width: 2rem;
+  background-color: var(--highlight-side-bg-color);
+  border-radius: 0.25rem;
+}
+.highlight td.gutter pre {
+  text-align: right;
+  white-space: nowrap;
+  color: var(--highlight-side-color);
+  background-color: inherit;
+}
+.highlight td.code {
+  padding: 0.5rem 0.6rem;
+}
+.highlight .marked {
+  background-color: var(--marked-line-bg-color);
+}
+.highlight .emphasis {
+  font-style: italic;
+}
+.highlight .strong {
+  font-weight: bold;
+}
+.highlight .comment {
+  color: var(--highlight-comment);
+}
+.highlight .quote,
+.highlight .params {
+  color: var(--highlight-color);
+}
+.highlight .selector-tag,
+.highlight .template-variable,
+.highlight .variable,
+.highlight .deletion,
+.highlight .regexp,
+.highlight .name,
+.highlight .tag {
+  color: var(--highlight-red);
+}
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .number,
+.highlight .type,
+.highlight .meta,
+.highlight .link {
+  color: var(--highlight-orange);
+}
+.highlight .class .keyword:first-child + .title,
+.highlight .built_in,
+.highlight .attribute {
+  color: var(--highlight-yellow);
+}
+.highlight .class .keyword ~ .title,
+.highlight .string .template-variable,
+.highlight .meta-string,
+.highlight .tag,
+.highlight .class,
+.highlight .subst,
+.highlight .regexp {
+  color: var(--highlight-green);
+}
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .addition {
+  color: var(--highlight-aqua);
+}
+.highlight .title,
+.highlight .section {
+  color: var(--highlight-blue);
+}
+.highlight .meta-keyword,
+.highlight .doctag,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-class,
+.highlight .selector-pseudo,
+.highlight .function,
+.highlight .tag .attr,
+.highlight .keyword {
+  color: var(--highlight-purple);
+}
+.bash .meta,
+.rust .meta {
+  color: var(--highlight-comment);
+}
+.c\+\+ .built_in,
+.cpp .built_in,
+.ini .variable,
+.ini .literal,
+.ini .number,
+.less .variable,
+.scss .variable,
+.styl .variable,
+.stylus .variable {
+  color: var(--highlight-color);
+}
+.html .meta,
+.xml .meta,
+.yaml .attr,
+.yml .attr {
+  color: var(--highlight-red);
+}
+.js .params,
+.javascript .params {
+  color: var(--highlight-orange);
+}
+.json .attr,
+.swift .type {
+  color: var(--highlight-yellow);
+}
+.variable .variable,
+.bash .variable,
+.c\+\+ .meta,
+.cpp .meta,
+.c\# .meta,
+.css .number,
+.diff .meta {
+  color: var(--highlight-green);
+}
+.md .section,
+.markdown .section,
+.py .string .meta,
+.python .string .meta {
+  color: var(--highlight-aqua);
+}
+.bash .built_in,
+.css .built_in,
+.go .built_in,
+.py .meta,
+.python .meta,
+.shell .meta,
+.shell .keyword,
+.shell .built_in {
+  color: var(--highlight-blue);
+}
+.ini .attr,
+.objectivec .meta,
+.yaml .type,
+.yml .type {
+  color: var(--highlight-purple);
+}
+.diff .addition {
+  color: var(--highlight-addition-color);
+  background-color: var(--highlight-addition-bg-color);
+}
+.diff .deletion {
+  color: var(--highlight-deletion-color);
+  background-color: var(--highlight-deletion-bg-color);
+}
+:root {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: #f0fff4;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: #ffeef0;
+}
+html.dark {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: transparent;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: transparent;
+}

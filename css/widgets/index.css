@@ -1,0 +1,124 @@
+.paginator {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 65ch;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.paginator.post-paginator .paginator-inner {
+  width: 100%;
+}
+.paginator-inner {
+  width: 50%;
+  padding: 12px 0;
+  position: relative;
+}
+.paginator .page-number,
+.paginator .prev,
+.paginator .next {
+  display: inline-block;
+  margin: 0 0.5em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  transition: border 0.2s ease;
+  opacity: 0.5;
+}
+.paginator .page-number:not(.current):hover,
+.paginator .prev:not(.current):hover,
+.paginator .next:not(.current):hover {
+  opacity: 0.75;
+}
+.paginator .space {
+  opacity: 0.6;
+}
+.paginator .extend {
+  position: absolute;
+  margin: 0;
+}
+.paginator .extend i {
+  font-size: inherit;
+}
+.paginator .next {
+  right: 0;
+}
+.paginator .prev {
+  left: 0;
+}
+.paginator .current {
+  color: var(--color-gray-900);
+  opacity: 1;
+}
+.paginator.post-paginator {
+  height: 50px;
+}
+.back2top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 6rem;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  z-index: 100;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.back2top.show {
+  opacity: 0.3;
+  cursor: pointer;
+}
+.back2top.show:hover {
+  opacity: 0.9;
+  background-color: rgba(136,136,136,0.2);
+}
+.back2top__icon {
+  font-size: 1rem;
+}
+.dark-mode {
+  position: relative;
+  border: 0;
+  padding: 0;
+  line-height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  width: 1.2em;
+  height: 1.2em;
+  transition: opacity 0.2s ease;
+  opacity: 0.6;
+  color: inherit;
+}
+.dark-mode:hover {
+  opacity: 1;
+}
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+.loading-bar__progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #919191;
+  box-shadow: 0 0 10px #909090;
+}
+.loading-bar.loading {
+  opacity: 1;
+  transition: none;
+}
+.loading-bar.loading .loading-bar__progress {
+  transition: width 0.4s ease;
+}

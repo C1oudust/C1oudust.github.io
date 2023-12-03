@@ -1,0 +1,12 @@
+:root {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: #f0fff4;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: #ffeef0;
+}
+html.dark {
+  --highlight-addition-color: #292;
+  --highlight-addition-bg-color: transparent;
+  --highlight-deletion-color: #d44;
+  --highlight-deletion-bg-color: transparent;
+}

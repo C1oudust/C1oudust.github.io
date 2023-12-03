@@ -1,0 +1,34 @@
+:root {
+  --highlight-color: #333;
+  --highlight-background: #f5f6f7;
+  --highlight-side-color: #adadad;
+  --highlight-side-bg-color: var(--highlight-background);
+  --highlight-header-color: var(--highlight-color);
+  --highlight-header-bg-color: var(--highlight-side-bg-color);
+  --highlight-code-lang-color: #adadad;
+  --highlight-code-note-color: var(--highlight-header-color);
+  --copy-button-color: #adadad;
+  --gap-line-color: #dadde1;
+  --marked-line-bg-color: #e5e7ea;
+  --highlight-comment: #969896;
+  --highlight-red: #c82829;
+  --highlight-orange: #ee8019;
+  --highlight-yellow: #eab700;
+  --highlight-green: #4eb4b4;
+  --highlight-aqua: #4dc14c;
+  --highlight-blue: #2a75c8;
+  --highlight-purple: #be4dbc;
+}
+html.dark {
+  --highlight-color: rgba(219,215,202,0.933);
+  --highlight-background: #0e0e0e;
+  --highlight-side-color: var(--color-gray-550);
+  --highlight-side-bg-color: var(--color-gray-200);
+  --highlight-header-color: var(--color-gray-850);
+  --highlight-header-bg-color: var(--color-gray-200);
+  --highlight-code-lang-color: var(--color-gray-550);
+  --highlight-code-note-color: var(--color-gray-850);
+  --copy-button-color: var(--color-gray-550);
+  --gap-line-color: var(--color-gray-300);
+  --marked-line-bg-color: var(--color-gray-260);
+}
